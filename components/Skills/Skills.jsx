@@ -1,165 +1,138 @@
 import React from "react";
 import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaJava,
-  FaPhp,
-  FaAws,
-  FaRobot,
-  FaCloud,
-  FaGitAlt,
-  FaLinux,
-  FaAngular,
-  FaVuejs,
+  FaBuilding,
+  FaHardHat,
+  FaTools,
+  FaTruck,
+  FaHome,
+  FaRoad,
+  FaTree,
+  FaPaintRoller,
+  FaSnowflake,
+  FaToolbox,
+  FaCogs,
+  FaBolt,
+  FaWater,
+  FaFireExtinguisher,
 } from "react-icons/fa";
 import {
-  SiMongodb,
-  SiMysql,
-  SiDocker,
-  SiTensorflow,
-  SiKeras,
-  SiPytorch,
-  SiOpencv,
-  SiGooglecloud,
-  SiKubernetes,
-  SiRedux,
-  SiGraphql,
-  SiSolidity,
-  SiJenkins,
-  SiFlutter,
-  SiDjango,
-} from "react-icons/si";
-import { GiArtificialIntelligence, GiCube } from "react-icons/gi";
+  GiBrickWall,
+  GiConcreteBag,
+  GiSteelBeams,
+  GiDigDug,
+  GiHammerNails,
+  GiStoneWall,
+  GiRoof,
+  GiFloorPolisher,
+} from "react-icons/gi";
 import "./Skills.css";
+
+// Safe icon component that handles undefined icons
+const SafeIcon = ({ icon: Icon, className, name }) => {
+  if (!Icon || typeof Icon === 'undefined') {
+    return <div className={className}>🏗️</div>;
+  }
+  return <Icon className={className} />;
+};
 
 export default function TechMarquee({ lang = "en" }) {
   // Translations
   const translations = {
     en: {
-      heading: "Technologies We Use",
-      description:
-        "From web and mobile to AI, DevOps, and Cloud — we leverage cutting-edge technologies to build innovative solutions.",
+      heading: "Construction Technologies & Methods",
+      description: "From modern building techniques to advanced construction equipment and sustainable practices — we utilize cutting-edge technologies for superior project delivery.",
       techNames: {
-        HTML5: "HTML5",
-        CSS3: "CSS3",
-        JavaScript: "JavaScript",
-        React: "React",
-        Angular: "Angular",
-        "Vue.js": "Vue.js",
-        Redux: "Redux",
-        GraphQL: "GraphQL",
-        "Node.js": "Node.js",
-        Python: "Python",
-        Django: "Django",
-        Flutter: "Flutter",
-        Java: "Java",
-        PHP: "PHP",
-        MySQL: "MySQL",
-        MongoDB: "MongoDB",
-        Docker: "Docker",
-        Kubernetes: "Kubernetes",
-        Jenkins: "Jenkins",
-        AWS: "AWS",
-        "Google Cloud": "Google Cloud",
-        Cloud: "Cloud",
-        Git: "Git",
-        Linux: "Linux",
-        TensorFlow: "TensorFlow",
-        PyTorch: "PyTorch",
-        Keras: "Keras",
-        OpenCV: "OpenCV",
-        AI: "AI",
-        Robotics: "Robotics",
-        Solidity: "Solidity",
-        Blockchain: "Blockchain",
+        BuildingConstruction: "Building Construction",
+        CivilEngineering: "Civil Engineering",
+        ConstructionTools: "Construction Tools",
+        HeavyEquipment: "Heavy Equipment",
+        ResidentialBuildings: "Residential Buildings",
+        RoadConstruction: "Road Construction",
+        Landscaping: "Landscaping",
+        FinishingWorks: "Finishing Works",
+        HVACSystems: "HVAC Systems",
+        Maintenance: "Maintenance",
+        MechanicalSystems: "Mechanical Systems",
+        ElectricalWorks: "Electrical Works",
+        Plumbing: "Plumbing",
+        SafetySystems: "Safety Systems",
+        Masonry: "Masonry",
+        ConcreteWorks: "Concrete Works",
+        SteelStructures: "Steel Structures",
+        Excavation: "Excavation",
+        Carpentry: "Carpentry",
+        StoneWorks: "Stone Works",
+        Roofing: "Roofing",
+        Flooring: "Flooring",
+        AutoCAD: "AutoCAD",
+        BIM: "BIM Modeling",
+        SketchUp: "3D Modeling",
       },
     },
     ar: {
-      heading: "التقنيات التي نستخدمها",
-      description:
-        "من الويب والتطبيقات إلى الذكاء الاصطناعي وDevOps والسحابة — نستخدم أحدث التقنيات لبناء حلول مبتكرة.",
+      heading: "التقنيات والأساليب الإنشائية",
+      description: "من تقنيات البناء الحديثة إلى المعدات المتقدمة والممارسات المستدامة — نستخدم أحدث التقنيات لتسليم مشاريع متميزة.",
       techNames: {
-        HTML5: "إتش تي إم إل 5",
-        CSS3: "سي إس إس 3",
-        JavaScript: "جافاسكربت",
-        React: "ريأكت",
-        Angular: "أنجولار",
-        "Vue.js": "فيو ج إس",
-        Redux: "ريدوكس",
-        GraphQL: "جراف كيو إل",
-        "Node.js": "نود ج إس",
-        Python: "بايثون",
-        Django: "جانغو",
-        Flutter: "فلاتر",
-        Java: "جافا",
-        PHP: "بي إتش بي",
-        MySQL: "ماي إس كيو إل",
-        MongoDB: "مونجو دي بي",
-        Docker: "دوكر",
-        Kubernetes: "كوبيرنيتيس",
-        Jenkins: "جينكينز",
-        AWS: "إيه دبليو إس",
-        "Google Cloud": "جوجل كلاود",
-        Cloud: "السحابة",
-        Git: "جيت",
-        Linux: "لينكس",
-        TensorFlow: "تينسور فلو",
-        PyTorch: "باي تورش",
-        Keras: "كيراس",
-        OpenCV: "أوبن سي في",
-        AI: "الذكاء الاصطناعي",
-        Robotics: "الروبوتات",
-        Solidity: "سوليديتي",
-        Blockchain: "البلوكتشين",
+        BuildingConstruction: "إنشاء المباني",
+        CivilEngineering: "الهندسة المدنية",
+        ConstructionTools: "أدوات البناء",
+        HeavyEquipment: "المعدات الثقيلة",
+        ResidentialBuildings: "المباني السكنية",
+        RoadConstruction: "إنشاء الطرق",
+        Landscaping: "التشجير والمسطحات",
+        FinishingWorks: "أعمال التشطيب",
+        HVACSystems: "أنظمة التكييف",
+        Maintenance: "الصيانة",
+        MechanicalSystems: "الأنظمة الميكانيكية",
+        ElectricalWorks: "أعمال الكهرباء",
+        Plumbing: "أعمال السباكة",
+        SafetySystems: "أنظمة السلامة",
+        Masonry: "أعمال المباني",
+        ConcreteWorks: "أعمال الخرسانة",
+        SteelStructures: "المنشآت المعدنية",
+        Excavation: "أعمال الحفر",
+        Carpentry: "أعمال النجارة",
+        StoneWorks: "أعمال الحجر",
+        Roofing: "أعمال الأسقف",
+        Flooring: "أعمال الأرضيات",
+        AutoCAD: "أوتوكاد",
+        BIM: "نمذجة المعلومات",
+        SketchUp: "النمذجة ثلاثية الأبعاد",
       },
     },
   };
 
   const t = translations[lang] ?? translations.en;
 
-  // Tech rows
+  // Construction tech rows - simplified without problematic icons
   const techRows = [
     [
-      { icon: FaHtml5, name: "HTML5" },
-      { icon: FaCss3Alt, name: "CSS3" },
-      { icon: FaJs, name: "JavaScript" },
-      { icon: FaReact, name: "React" },
-      { icon: FaAngular, name: "Angular" },
-      { icon: FaVuejs, name: "Vue.js" },
-      { icon: SiRedux, name: "Redux" },
-      { icon: SiGraphql, name: "GraphQL" },
-      { icon: FaNodeJs, name: "Node.js" },
-      { icon: FaPython, name: "Python" },
-      { icon: SiDjango, name: "Django" },
-      { icon: SiFlutter, name: "Flutter" },
+      { icon: FaBuilding, name: "BuildingConstruction" },
+      { icon: FaHardHat, name: "CivilEngineering" },
+      { icon: FaTools, name: "ConstructionTools" },
+      { icon: FaTruck, name: "HeavyEquipment" },
+      { icon: FaHome, name: "ResidentialBuildings" },
+      { icon: FaRoad, name: "RoadConstruction" },
+      { icon: FaTree, name: "Landscaping" },
+      { icon: FaPaintRoller, name: "FinishingWorks" },
     ],
     [
-      { icon: FaJava, name: "Java" },
-      { icon: FaPhp, name: "PHP" },
-      { icon: SiMysql, name: "MySQL" },
-      { icon: SiMongodb, name: "MongoDB" },
-      { icon: SiDocker, name: "Docker" },
-      { icon: SiKubernetes, name: "Kubernetes" },
-      { icon: SiJenkins, name: "Jenkins" },
-      { icon: FaAws, name: "AWS" },
-      { icon: SiGooglecloud, name: "Google Cloud" },
-      { icon: FaCloud, name: "Cloud" },
-      { icon: FaGitAlt, name: "Git" },
-      { icon: FaLinux, name: "Linux" },
+      { icon: FaSnowflake, name: "HVACSystems" },
+      { icon: FaToolbox, name: "Maintenance" },
+      { icon: FaCogs, name: "MechanicalSystems" },
+      { icon: FaBolt, name: "ElectricalWorks" },
+      { icon: FaWater, name: "Plumbing" },
+      { icon: FaFireExtinguisher, name: "SafetySystems" },
+      { icon: GiBrickWall, name: "Masonry" },
+      { icon: GiConcreteBag, name: "ConcreteWorks" },
     ],
     [
-      { icon: SiTensorflow, name: "TensorFlow" },
-      { icon: SiPytorch, name: "PyTorch" },
-      { icon: SiKeras, name: "Keras" },
-      { icon: SiOpencv, name: "OpenCV" },
-      { icon: GiArtificialIntelligence, name: "AI" },
-      { icon: FaRobot, name: "Robotics" },
-      { icon: SiSolidity, name: "Solidity" },
-      { icon: GiCube, name: "Blockchain" },
+      { icon: GiSteelBeams, name: "SteelStructures" },
+      { icon: GiDigDug, name: "Excavation" },
+      { icon: GiHammerNails, name: "Carpentry" },
+      { icon: GiStoneWall, name: "StoneWorks" },
+      { icon: GiRoof, name: "Roofing" },
+      { icon: GiFloorPolisher, name: "Flooring" },
     ],
   ];
 
@@ -167,7 +140,7 @@ export default function TechMarquee({ lang = "en" }) {
     <section
       className={`tech-marquee-wrapper ${lang === "ar" ? "text-end" : "text-start"}`}
       dir={lang === "ar" ? "rtl" : "ltr"}
-      style={{ backgroundColor: "#" }}
+      style={{ backgroundColor: "#1a1a1a" }}
     >
       <div className="tech-marquee">
         <div className="container text-center py-4 px-3">
@@ -181,15 +154,16 @@ export default function TechMarquee({ lang = "en" }) {
             className={`marquee ${rowIndex % 2 === 0 ? "marquee-left" : "marquee-right"} mt-4`}
           >
             <div className="marquee-content">
-              {row.map((tech, i) => {
-                const Icon = tech.icon;
-                return (
-                  <div key={i} className="tech-item">
-                    <Icon className={`tech-icon ${tech.name.toLowerCase()}`} />
-                    <span>{t.techNames[tech.name]}</span>
-                  </div>
-                );
-              })}
+              {row.map((tech, i) => (
+                <div key={i} className="tech-item">
+                  <SafeIcon 
+                    icon={tech.icon} 
+                    className={`tech-icon ${tech.name.toLowerCase()}`}
+                    name={tech.name}
+                  />
+                  <span>{t.techNames[tech.name]}</span>
+                </div>
+              ))}
             </div>
           </div>
         ))}

@@ -3,16 +3,21 @@
 import React, { useEffect, useRef, use } from "react";
 import { useRouter } from "next/navigation";
 import {
-  FaMobileAlt,
-  FaLaptopCode,
-  FaBullhorn,
-  FaPaintBrush,
+  FaBuilding,
+  FaRoad,
+  FaTree,
+  FaPaintRoller,
+  FaSnowflake,
   FaServer,
-  }
- from "react-icons/fa";
- import { motion } from "framer-motion";
- import styles from "./aboutus.module.css";
- export default function AboutUs({ params }) {
+  FaLaptop,
+  FaVideo,
+  FaUsers,
+  FaToolbox
+} from "react-icons/fa";
+import { motion } from "framer-motion";
+import styles from "./aboutus.module.css";
+
+export default function AboutUs({ params }) {
   const resolvedParams = use(params);
   const currentLang = resolvedParams?.lang || "en";
 
@@ -22,7 +27,7 @@ import {
   const starCanvasStory = useRef(null);
   const starCanvasServices = useRef(null);
 
-   //Starfield Animation
+  //Starfield Animation
   const useStarfield = (canvasRef) => {
     useEffect(() => {
       const canvas = canvasRef.current;
@@ -77,109 +82,145 @@ import {
   useStarfield(starCanvasServices);
 
   // Translations
-const content = {
-  en: {
-    heroTitle: "About Next Future Technology",
-    heroSubtitle:
-      "Empowering businesses through innovation, technology, and strategy.",
-    heroExtra:
-      "We believe the future of business lies at the intersection of technology and creativity. From startups to enterprises, Next Future helps brands redefine how they connect, grow, and succeed in a digital-first world.",
-    history:
-      "Next Future Information Technology was founded to help businesses thrive and shine in the digital era. Our company is led by a team of multi-skilled professionals in web and mobile development, graphic design, digital marketing, and IT solutions — turning innovative ideas into tangible results. We believe every business has the potential to excel, combining creativity, strategy, and technology to build modern websites, mobile apps, brand identities, and marketing campaigns that deliver real impact. Our mission is simple — to elevate your brand to its full potential. Whether you're starting out or already established, Next Future is your trusted partner for clarity, creativity, and growth at every stage of your journey.",
-    servicesTitle: "Our Services",
-    storyHeading: "Our Story",
-    buttons: {
-      mobile: "Mobile Apps",
-      web: "See Web Solutions",
-      marketing: "Explore Marketing",
-      design: "View Designs",
-      it: "Learn IT Solutions",
-      appDev: "App Development",
+  const content = {
+    en: {
+      heroTitle: "About Rock Summit Co. Ltd",
+      heroSubtitle: "General Contracting Company",
+      heroExtra: "In a competitive world where the pace of achievement accelerates, Rock Summit launched in the contracting industry with an ambitious vision that combines professionalism and sustainability in implementation, and a deep commitment to quality values. We strive to be a reliable partner in infrastructure and construction projects by providing integrated solutions that meet our clients' aspirations and align with the objectives of Saudi Vision 2030.",
+      history: "We take pride in our engineering expertise, operational skills, and a history of working in diverse environments with leading entities, where we place accuracy, safety, and time commitment at the top of our priorities in every project. We also believe that the relationship with the community is no less important than the relationship with the client, so we work to enhance our presence as a responsible national institution that respects the local fabric and participates in building a promising developmental future.",
+      servicesTitle: "Our Services",
+      storyHeading: "Our Vision & Mission",
+      mission: "Active contribution to developing the Kingdom's infrastructure through implementing high-quality projects, enhancing operational efficiency, and compliance with approved engineering standards.",
+      values: "Commitment to providing professional contracting works based on: Quality, Timeliness, Continuous Development, Modern Building Technologies, Occupational Safety, Building Sustainable Relationships, Investing in National Cadres.",
+      vision: "To be at the forefront of national contracting companies by providing sustainable and innovative construction solutions that meet our clients' aspirations and support achieving Saudi Vision 2030 objectives.",
+      buttons: {
+        buildings: "Building Construction",
+        roads: "Road Works",
+        landscaping: "Landscaping",
+        finishing: "Finishing Works",
+        hvac: "HVAC Systems",
+        maintenance: "Maintenance",
+        computer: "IT Systems",
+        videoWall: "Video Wall",
+        events: "Events Management"
+      },
     },
-  },
-  ar: {
-    heroTitle: "عن نيكست فيوتشر للتقنية",
-    heroSubtitle:
-      "تمكين الشركات من خلال الابتكار والتكنولوجيا والاستراتيجية.",
-    heroExtra:
-      "نؤمن أن مستقبل الأعمال يكمن في تقاطع التقنية مع الإبداع. من الشركات الناشئة إلى المؤسسات الكبيرة، تساعد نيكست فيوتشر العلامات التجارية على إعادة تعريف كيفية التواصل والنمو والنجاح في عالم رقمي أولًا.",
-    history:
-      "تأسست شركة نيكست فيوتشر لتقنية المعلومات لمساعدة الشركات على الازدهار والتألق في العصر الرقمي. تحت قيادة فريق من الخبراء متعددي المهارات في تطوير المواقع والتطبيقات، التصميم الجرافيكي، التسويق الرقمي، وحلول تكنولوجيا المعلومات — تحول نيكست فيوتشر الأفكار المبتكرة إلى نتائج ملموسة. نحن نؤمن بأن لكل شركة القدرة على التفوق، ولهذا نمزج بين الإبداع والاستراتيجية والتقنية لبناء مواقع حديثة، وتطبيقات متطورة، وهويات بصرية قوية، وحملات تسويقية تحقق أثرًا حقيقيًا. مهمتنا بسيطة — رفع علامتك التجارية إلى أقصى إمكاناتها. سواء كنت في بداية مسيرتك أو تمتلك مؤسسة راسخة، فإن نيكست فيوتشر هي شريكك الموثوق للوضوح والإبداع والنمو في كل مرحلة من رحلتك.",
-    servicesTitle: "خدماتنا",
-    storyHeading: "قصتنا",
-    buttons: {
-      mobile: "تطبيقات الهواتف",
-      web: "حلول الويب",
-      marketing: "التسويق الرقمي",
-      design: "التصميم الجرافيكي",
-      it: "حلول تكنولوجيا المعلومات",
-      appDev: "تطوير التطبيقات",
+    ar: {
+      heroTitle: "عن شركة القمة الصخرية المحدودة",
+      heroSubtitle: "للمقاولات العامة",
+      heroExtra: "في عالم تتسارع فيه وتيرة الإنجاز، انطلقت شركة القمة الصخرية في عالم المقاولات، برؤية طموحة تجمع بين الاحترافية والاستدامة في التنفيذ، والالتزام العميق بقيم الجودة. نسعى لأن نكون شريكا موثوقاً في مشاريع البنية التحتية والإنشاءات، من خلال توفير حلول متكاملة تواكب تطلعات عملائنا وتنسجم مع مستهدفات رؤية المملكة ٢٠٣٠",
+      history: "نفتخر بخبراتنا الهندسية ومهاراتنا التشغيلية وبتاريخ حافل من العمل في بيئات متنوعة ومع جهات رائدة، حيث نضع الدقة والسلامة والالتزام الزمني على رأس أولوياتنا في كل مشروع. كما نؤمن بأن العلاقة مع المجتمع لا تقل أهمية عن العلاقة مع العميل، فنعمل على تعزيز حضورنا كمؤسسة وطنية مسؤولة، تحترم النسيج المحلي وتشارك في بناء مستقبل تنموي واعد.",
+      servicesTitle: "خدماتنا",
+      storyHeading: "رؤيتنا ورسالتنا",
+      mission: "المساهمة الفاعلة في تطوير البنية التحتية للمملكة عبر تنفيذ مشاريع عالية الجودة وتعزيز الكفاءة التشغيلية والامتثال للمعايير الهندسية المعتمدة",
+      values: "الالتزام بتقديم أعمال مقاولات باحترافية عالية ترتكز على: الجودة، الالتزام بالمواعيد، التطوير المستمر، تقنيات البناء الحديثة، السلامة المهنية، بناء علاقات مستدامة، الاستثمار في الكوادر الوطنية",
+      vision: "أن نكون في طليعة شركات المقاولات الوطنية من خلال تقديم حلول إنشائية مستدامة ومبتكرة تواكب تطلعات عملائنا وتدعم تحقيق مستهدفات رؤية المملكة ٢٠٣٠",
+      buttons: {
+        buildings: "إنشاء المباني",
+        roads: "أعمال الطرق",
+        landscaping: "التشجير والملاعب",
+        finishing: "أعمال التشطيب",
+        hvac: "أنظمة التكييف",
+        maintenance: "الصيانة",
+        computer: "أنظمة الحاسب",
+        videoWall: "شاشات العرض",
+        events: "إدارة الفعاليات"
+      },
     },
-  },
-};
+  };
+
   const t = content[currentLang];
 
   const services = [
     {
-      icon: <FaMobileAlt size={50} />,
-      title: { en: "Mobile App Development", ar: "تطوير تطبيقات الجوال" },
+      icon: <FaBuilding size={50} />,
+      title: { en: "Building Construction", ar: "إنشاء المباني" },
       text: {
-        en: "Custom apps for iOS and Android.",
-        ar: "تطبيقات مخصصة لنظامي iOS و Android.",
+        en: "Construction of residential, government, educational, and healthcare buildings with global quality standards.",
+        ar: "إنشاء المباني السكنية والحكومية والمدارس والمستشفيات بمعايير جودة عالمية.",
       },
-      link: "/service/mobile-app",
-      btnKey: "mobile",
+      link: "/service/buildings",
+      btnKey: "buildings",
     },
     {
-      icon: <FaLaptopCode size={50} />,
-      title: { en: "Web Development", ar: "تطوير الويب" },
+      icon: <FaRoad size={50} />,
+      title: { en: "Road Works & Lighting", ar: "أعمال الطرق والإنارة" },
       text: {
-        en: "Responsive websites for business success.",
-        ar: "مواقع ويب متجاوبة لنجاح أعمالك.",
+        en: "Complete road solutions including paving, traffic signals, road markings, and lighting systems.",
+        ar: "حلول متكاملة لأعمال الطرق تشمل التعبيذ، الإشارات المرورية، الخطوط الأرضية، والإنارة.",
       },
-      link: "/service/webdev",
-      btnKey: "web",
+      link: "/service/roads",
+      btnKey: "roads",
     },
     {
-      icon: <FaBullhorn size={50} />,
-      title: { en: "Digital Marketing", ar: "التسويق الرقمي" },
+      icon: <FaTree size={50} />,
+      title: { en: "Landscaping & Sports", ar: "التشجير والملاعب" },
       text: {
-        en: "Grow your brand online effectively.",
-        ar: "نمِّ علامتك التجارية رقمياً بفعالية.",
+        en: "Design and implementation of gardens, sports fields, and recreational facilities.",
+        ar: "تصميم وتنفيذ الحدائق والملاعب ومرافق الرياضة بأنواعها.",
       },
-      link: "/service/digital-marketing",
-      btnKey: "marketing",
+      link: "/service/landscaping",
+      btnKey: "landscaping",
     },
     {
-      icon: <FaMobileAlt size={50} />, // or you can choose any other app-related icon you prefer
-      title: { en: "App Development", ar: "تطوير التطبيقات" },
+      icon: <FaPaintRoller size={50} />,
+      title: { en: "Finishing Works", ar: "أعمال التشطيب" },
       text: {
-        en: "Build powerful and scalable mobile apps.",
-        ar: "بناء تطبيقات جوال قوية وقابلة للتوسع.",
+        en: "Interior and exterior finishing works including modern paints, floors, gypsum board, and cladding.",
+        ar: "تنفيذ جميع أنواع التشطيبات العصرية الداخلية والخارجية والواجهات.",
       },
-      link: "/service/appdev",
-      btnKey: "appDev",
-    },
-
-    {
-      icon: <FaPaintBrush size={50} />,
-      title: { en: "Graphic Design", ar: "تصميم جرافيك" },
-      text: {
-        en: "Creative visuals for your brand.",
-        ar: "تصاميم إبداعية لعلامتك التجارية.",
-      },
-      link: "/service/graphic-design",
-      btnKey: "design",
+      link: "/service/finishing",
+      btnKey: "finishing",
     },
     {
-      icon: <FaServer size={50} />,
-      title: { en: "IT Solutions", ar: "حلول تقنية المعلومات" },
+      icon: <FaSnowflake size={50} />,
+      title: { en: "HVAC Systems", ar: "أنظمة التبريد والتكييف" },
       text: {
-        en: "Reliable IT services for enterprises.",
-        ar: "خدمات تقنية موثوقة للمؤسسات.",
+        en: "Installation of modern cooling and air conditioning systems for comfortable and energy-efficient environments.",
+        ar: "تركيب أنظمة التبريد والتكييف الحديثة لضمان بيئات مريحة وموفرة للطاقة.",
       },
-      link: "/service/itsolutions",
-      btnKey: "it",
+      link: "/service/hvac",
+      btnKey: "hvac",
+    },
+    {
+      icon: <FaToolbox size={50} />,
+      title: { en: "Maintenance & Operation", ar: "الصيانة والتشغيل" },
+      text: {
+        en: "Comprehensive building maintenance, operation, and cleaning services with specialized teams.",
+        ar: "خدمات متكاملة لصيانة وتشغيل ونظافة الأبنية بفرق متخصصة.",
+      },
+      link: "/service/maintenance",
+      btnKey: "maintenance",
+    },
+    {
+      icon: <FaLaptop size={50} />,
+      title: { en: "IT Systems & Networks", ar: "أنظمة الحاسب والشبكات" },
+      text: {
+        en: "Operation, maintenance, and monitoring of computer systems, networks, and BMS systems.",
+        ar: "تشغيل ومتابعة وصيانة أنظمة الحاسب الآلي والشبكات وأنظمة إدارة المباني.",
+      },
+      link: "/service/computer",
+      btnKey: "computer",
+    },
+    {
+      icon: <FaVideo size={50} />,
+      title: { en: "Video Wall Systems", ar: "أنظمة الفيديو وول" },
+      text: {
+        en: "Supply, installation, and maintenance of indoor and outdoor video wall systems.",
+        ar: "توريد وتركيب وصيانة أنظمة الفيديو وول الداخلية والخارجية.",
+      },
+      link: "/service/videowall",
+      btnKey: "videoWall",
+    },
+    {
+      icon: <FaUsers size={50} />,
+      title: { en: "Events Management", ar: "إدارة الفعاليات" },
+      text: {
+        en: "Comprehensive organization and management of exhibitions, conferences, and corporate events.",
+        ar: "خدمة متكاملة لتنظيم وإدارة المعارض والمؤتمرات والفعاليات المؤسسية.",
+      },
+      link: "/service/events",
+      btnKey: "events",
     },
   ];
 
@@ -206,6 +247,16 @@ const content = {
         >
           <motion.div className={styles.storyText}>
             <h2 className={styles.storyHeading}>{t.storyHeading}</h2>
+            <div className={styles.missionVision}>
+              <h3>{currentLang === "en" ? "Our Mission" : "رسالتنا"}</h3>
+              <p>{t.mission}</p>
+              
+              <h3>{currentLang === "en" ? "Our Values" : "قيمنا"}</h3>
+              <p>{t.values}</p>
+              
+              <h3>{currentLang === "en" ? "Our Vision" : "رؤيتنا"}</h3>
+              <p>{t.vision}</p>
+            </div>
             <p className={styles.storyParagraph}>{t.history}</p>
           </motion.div>
           <motion.div className={styles.storyImage}>

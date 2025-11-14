@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { LucideCodeXml, LucideUsers, LucideRocket, LucideTrophy } from "lucide-react";
+import { Building2, Users, Rocket, Trophy, HardHat, Wrench, Home, Award } from "lucide-react";
 import { useEffect, useRef } from "react";
 import styles from "./Team.css"; // for glowing overlay
 
@@ -48,7 +48,7 @@ function StarCanvas({ style }) {
 
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255,255,255,${star.opacity})`;
+        ctx.fillStyle = `rgba(206, 172, 36, ${star.opacity})`; // Golden stars
         ctx.fill();
       });
 
@@ -80,25 +80,25 @@ function StarCanvas({ style }) {
 export default function Team({ lang }) {
   const translations = {
     en: {
-      heading: "Empowering Businesses with Innovative Technology",
+      heading: "Building the Future with Excellence & Precision",
       description:
-        "At Next Future Information Technology Company, we are a dynamic team of passionate software developers, designers, and technology experts dedicated to crafting innovative digital solutions. With over a decade of experience, we've helped businesses across various industries transform their digital presence and streamline their operations.",
+        "At Rock Summit Co. Ltd, we are a dedicated team of construction professionals, engineers, and project managers committed to delivering exceptional contracting services. With years of experience in the construction industry, we've successfully completed numerous projects across residential, commercial, and infrastructure sectors, building lasting structures that stand the test of time.",
       stats: [
-        { value: "200+", label: "Projects Delivered", text: "Successfully completed projects across multiple industries." },
-        { value: "15+", label: "Team Members", text: "Dedicated professionals driving innovation and results." },
-        { value: "5+", label: "Years Experience", text: "Years of combined expertise in delivering digital solutions." },
-        { value: "199+", label: "Successful Clients", text: "Clients who achieved measurable growth through our solutions." },
+        { value: "150+", label: "Projects Completed", text: "Successfully delivered construction projects of all scales." },
+        { value: "50+", label: "Expert Team", text: "Skilled professionals including engineers and technicians." },
+        { value: "10+", label: "Years Experience", text: "Years of combined expertise in construction and contracting." },
+        { value: "120+", label: "Satisfied Clients", text: "Clients who trust us with their construction needs." },
       ],
     },
     ar: {
-      heading: "تمكين الأعمال من خلال التكنولوجيا المبتكرة",
+      heading: "نبني المستقبل بالتميز والدقة",
       description:
-        "في نيكست فيوتشر لتقنية، نحن فريق ديناميكي من مطوري البرمجيات والمصممين وخبراء التكنولوجيا المتحمسين المكرسين لصياغة حلول رقمية مبتكرة. مع أكثر من عقد من الخبرة، ساعدنا الشركات في مختلف الصناعات على تحويل حضورهم الرقمي وتبسيط عملياتهم.",
+        "في شركة القمة الصخرية المحدودة، نحن فريق مخصص من المحترفين في مجال البناء والمهندسين ومديري المشاريع الملتزمين بتقديم خدمات مقاولات استثنائية. مع سنوات من الخبرة في صناعة البناء، أكملنا بنجاح العديد من المشاريع في القطاعات السكنية والتجارية والبنية التحتية، وبناء هياكل دائمة تثبت أمام اختبار الزمن.",
       stats: [
-        { value: "200+", label: "المشاريع المنجزة", text: "مشاريع مكتملة بنجاح في صناعات متعددة." },
-        { value: "15+", label: "أعضاء الفريق", text: "مهنيون ملتزمون يقودون الابتكار والنتائج." },
-        { value: "5+", label: "سنوات الخبرة", text: "سنوات من الخبرة المجمعة في تقديم الحلول الرقمية." },
-        { value: "199+", label: "عملاء ناجحون", text: "عملاء حققوا نموًا ملموسًا من خلال حلولنا." },
+        { value: "150+", label: "المشاريع المكتملة", text: "مشاريع بناء مكتملة بنجاح بجميع المقاييس." },
+        { value: "50+", label: "فريق الخبراء", text: "محترفون مهرة يشملون المهندسين والفنيين." },
+        { value: "10+", label: "سنوات الخبرة", text: "سنوات من الخبرة المجمعة في البناء والمقاولات." },
+        { value: "120+", label: "عملاء راضون", text: "عملاء يثقون بنا في احتياجاتهم الإنشائية." },
       ],
     },
   };
@@ -106,37 +106,56 @@ export default function Team({ lang }) {
   const t = translations[lang] || translations.en;
 
   const stats = [
-    { icon: <LucideCodeXml size={28} className="text-blue-custom" />, ...t.stats[0] },
-    { icon: <LucideUsers size={28} className="text-blue-custom" />, ...t.stats[1] },
-    { icon: <LucideRocket size={28} className="text-blue-custom" />, ...t.stats[2] },
-    { icon: <LucideTrophy size={28} className="text-blue-custom" />, ...t.stats[3] },
+    { icon: <Building2 size={28} className="text-gold-custom" />, ...t.stats[0] },
+    { icon: <HardHat size={28} className="text-gold-custom" />, ...t.stats[1] },
+    { icon: <Wrench size={28} className="text-gold-custom" />, ...t.stats[2] },
+    { icon: <Award size={28} className="text-gold-custom" />, ...t.stats[3] },
   ];
 
   return (
     <section
-      className="py-5 position-relative text-black"
+      className="py-5 position-relative"
       style={{
-        backgroundColor: "#399dd9",
+        backgroundImage: "url('/team.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
         direction: lang === "ar" ? "rtl" : "ltr",
         textAlign: lang === "ar" ? "right" : "left",
         overflow: "hidden",
+        minHeight: "100vh",
+        position: "relative",
       }}
     >
+      {/* Dark Overlay */}
+      <div 
+        className="position-absolute top-0 start-0 w-100 h-100"
+        style={{
+          backgroundColor: "rgba(0, 0, 0, 0.7)",
+          zIndex: 0
+        }}
+      ></div>
+
       {/* Star Canvas */}
       <StarCanvas />
 
       {/* Glowing overlay */}
       <motion.div
-        className={styles.glowOverlay}
+        className="position-absolute top-0 start-0 w-100 h-100"
+        style={{
+          background: "linear-gradient(90deg, transparent, rgba(206, 172, 36, 0.1), transparent)",
+          zIndex: 1
+        }}
         animate={{ x: ["-100%", "100%"] }}
         transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
       />
 
-      <div className="container position-relative" style={{ zIndex: 10 }}>
+      <div className="container position-relative" style={{ zIndex: 2 }}>
         {/* Heading */}
         <div className="text-center mb-5">
           <motion.h2
-            className="display-5 fw-bold"
+            className="display-5 fw-bold text-white"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -144,10 +163,16 @@ export default function Team({ lang }) {
             {t.heading}
           </motion.h2>
           <motion.p
-            className="text-black"
+            className="text-white lead"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            style={{ 
+              maxWidth: "800px", 
+              margin: "0 auto",
+              color: "#e0e0e0",
+              lineHeight: "1.6"
+            }}
           >
             {t.description}
           </motion.p>
@@ -158,30 +183,81 @@ export default function Team({ lang }) {
           {stats.map((stat, idx) => (
             <motion.div
               key={idx}
-              className="col-lg-3 col-md-3 col-sm-12"
+              className="col-lg-3 col-md-6 col-sm-12"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: idx * 0.2 }}
             >
               <motion.div
-                className="text-center p-4 bg-white bg-opacity-10 rounded-3 shadow-sm border border-white border-opacity-20"
-                whileHover={{ scale: 1.05 }}
+                className="text-center p-4 rounded-4 shadow-lg h-100"
+                style={{
+                  background: "rgba(26, 26, 26, 0.8)",
+                  backdropFilter: "blur(10px)",
+                  border: "1px solid rgba(206, 172, 36, 0.3)",
+                }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  borderColor: "rgba(206, 172, 36, 0.6)",
+                  boxShadow: "0 15px 30px rgba(206, 172, 36, 0.3)"
+                }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
                 <div
-                  className="mb-3 d-flex justify-content-center align-items-center rounded-circle bg-white bg-opacity-20 mx-auto"
-                  style={{ width: "60px", height: "60px", backgroundColor:"transparent"}}
+                  className="mb-3 d-flex justify-content-center align-items-center rounded-circle mx-auto"
+                  style={{ 
+                    width: "70px", 
+                    height: "70px", 
+                    backgroundColor: "rgba(206, 172, 36, 0.2)",
+                    border: "1px solid rgba(206, 172, 36, 0.5)"
+                  }}
                 >
                   {stat.icon}
                 </div>
-                <h3 className="fw-bold text-black">{stat.value}</h3>
-                <p className="mb-0">{stat.label}</p>
-                <p className="mb-0">{stat.text}</p>
+                <h3 className="fw-bold mb-2" style={{ fontSize: "2.5rem", color: "#ceac24" }}>{stat.value}</h3>
+                <h5 className="mb-2" style={{ color: "#ffffff" }}>{stat.label}</h5>
+                <p className="mb-0" style={{ color: "#cccccc", lineHeight: "1.5" }}>{stat.text}</p>
               </motion.div>
             </motion.div>
           ))}
         </div>
+
+        {/* Additional Construction Expertise Section */}
+        <motion.div
+          className="row mt-5 pt-4"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <div className="col-12 text-center">
+            <h4 className="mb-4" style={{ color: "#ceac24" }}>
+              {lang === "ar" ? "مجالات تخصصنا" : "Our Areas of Expertise"}
+            </h4>
+            <div className="row g-3">
+              {[
+                { icon: <Home size={20} color="#ceac24" />, text: lang === "ar" ? "المباني السكنية" : "Residential Buildings" },
+                { icon: <Building2 size={20} color="#ceac24" />, text: lang === "ar" ? "المباني التجارية" : "Commercial Buildings" },
+                { icon: <Wrench size={20} color="#ceac24" />, text: lang === "ar" ? "البنية التحتية" : "Infrastructure" },
+                { icon: <HardHat size={20} color="#ceac24" />, text: lang === "ar" ? "أعمال التشطيب" : "Finishing Works" },
+              ].map((item, index) => (
+                <div key={index} className="col-lg-3 col-md-6 col-sm-6">
+                  <div className="d-flex align-items-center justify-content-center gap-2" style={{ color: "#ffffff" }}>
+                    {item.icon}
+                    <span>{item.text}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          section {
+            background-attachment: scroll;
+          }
+        }
+      `}</style>
     </section>
   );
 }

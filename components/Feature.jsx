@@ -1,31 +1,39 @@
 "use client";
 import { useState } from "react";
-import { LucideCpu, LucideDatabase, LucideGlobe, LucideBarChart2 } from "lucide-react";
+import { Building2, Shield, Clock, Award, Users, Wrench, TrendingUp, CheckCircle } from "lucide-react";
 
 export default function WhyChooseUs({ lang }) {
   const [hovered, setHovered] = useState(null);
 
   const translations = {
     en: {
-      title: "Why Choose Next Future Information Technology Company?",
+      title: "Why Choose Rock Summit General Contracting?",
       description:
-        "We provide innovative and tailored solutions across technology, marketing, and design, helping your business achieve measurable growth.",
+        "With years of experience in construction and contracting, we deliver exceptional quality, timely completion, and innovative solutions for all your building needs.",
       features: [
-        { title: "Creative & Strategic", description: "Our work combines design innovation with data-driven strategies to maximize impact." },
-        { title: "Multi-Industry Expertise", description: "We have proven experience across technology, real estate, retail, healthcare, and more." },
-        { title: "Bilingual & Global Reach", description: "We craft solutions in both English and Arabic, enabling global accessibility." },
-        { title: "Results-Driven", description: "Every project is designed to deliver measurable growth and tangible ROI." },
+        { title: "Quality Craftsmanship", description: "We use premium materials and skilled craftsmanship to ensure durable, high-quality construction that stands the test of time." },
+        { title: "Safety First Approach", description: "Comprehensive safety protocols and trained professionals ensure secure working environments and project delivery." },
+        { title: "Timely Project Delivery", description: "We pride ourselves on completing projects on schedule while maintaining the highest quality standards and attention to detail." },
+        { title: "Experienced Professionals", description: "Our team of certified engineers, architects, and construction experts brings decades of combined experience." },
+        { title: "Modern Construction Methods", description: "We employ the latest construction technologies and sustainable building practices for efficient, innovative solutions." },
+        { title: "Transparent Communication", description: "Regular updates, clear timelines, and open communication ensure you're informed throughout the construction process." },
+        { title: "Competitive Pricing", description: "Quality construction doesn't have to break the bank. We offer competitive pricing without compromising on excellence." },
+        { title: "Comprehensive Services", description: "From design to completion, we handle all aspects of construction including permits, materials, and final inspections." },
       ],
     },
     ar: {
-      title: "لماذا تختار شركة نكست فيوتشر لتقنية المعلومات؟",
+      title: "لماذا تختار القمة الصخرية للمقاولات العامة؟",
       description:
-        "نحن نقدم حلولًا مبتكرة ومصممة خصيصًا في مجالات التكنولوجيا والتسويق والتصميم، لمساعدة عملك على تحقيق نمو قابل للقياس.",
+        "بسنوات من الخبرة في مجال البناء والمقاولات، نقدم جودة استثنائية، إنجاز في الوقت المحدد، وحلولاً مبتكرة لجميع احتياجاتك الإنشائية.",
       features: [
-        { title: "إبداعي واستراتيجي", description: "يعمل فريقنا على الجمع بين الابتكار في التصميم والاستراتيجيات القائمة على البيانات لتحقيق أقصى تأثير." },
-        { title: "خبرة متعددة الصناعات", description: "لدينا خبرة مثبتة في مجالات التكنولوجيا والعقارات والتجزئة والرعاية الصحية والمزيد." },
-        { title: "ثنائي اللغة والوصول العالمي", description: "نقوم بصياغة الحلول باللغتين الإنجليزية والعربية، مما يتيح الوصول العالمي." },
-        { title: "موجه نحو النتائج", description: "تم تصميم كل مشروع لتحقيق نمو قابل للقياس وعائد ملموس على الاستثمار." },
+        { title: "جودة في التنفيذ", description: "نستخدم مواد عالية الجودة وحرفية ماهرة لضمان بناء متين وعالي الجودة يثبت أمام اختبار الزمن." },
+        { title: "السلامة أولاً", description: "بروتوكولات سلامة شاملة ومحترفون مدربون يضمنون بيئات عمل آمنة وتسليم مشاريع بدون حوادث." },
+        { title: "التسليم في الوقت المحدد", description: "نفتخر بإنجاز المشاريع في الجدول الزمني مع الحفاظ على أعلى معايير الجودة والاهتمام بالتفاصيل." },
+        { title: "محترفون ذوو خبرة", description: "فريقنا من المهندسين المعتمدين والمهندسين المعماريين وخبراء البناء يجمع عقودًا من الخبرة المجمعة." },
+        { title: "أساليب بناء حديثة", description: "نستخدم أحدث تقنيات البناء وممارسات البناء المستدامة لتقديم حلول فعالة ومبتكرة." },
+        { title: "تواصل شفاف", description: "تحديثات منتظمة، جداول زمنية واضحة، وتواصل مفتوح يضمن إطلاعك خلال عملية البناء بأكملها." },
+        { title: "أسعار تنافسية", description: "لا يجب أن تكون الجودة في البناء مكلفة. نقدم أسعارًا تنافسية دون المساس بالتميز." },
+        { title: "خدمات شاملة", description: "من التصميم إلى الإنجاز، نتعامل مع جميع جوانب البناء بما في ذلك التصاريح والمواد والتفتيش النهائي." },
       ],
     },
   };
@@ -33,10 +41,14 @@ export default function WhyChooseUs({ lang }) {
   const t = translations[lang] || translations.en;
 
   const features = [
-    { icon: <LucideCpu size={60} color="#3B82F6" />, ...t.features[0] },
-    { icon: <LucideDatabase size={60} color="#3B82F6" />, ...t.features[1] },
-    { icon: <LucideGlobe size={60} color="#3B82F6" />, ...t.features[2] },
-    { icon: <LucideBarChart2 size={60} color="#3B82F6" />, ...t.features[3] },
+    { icon: <Building2 size={50} color="#ceac24" />, ...t.features[0] },
+    { icon: <Shield size={50} color="#ceac24" />, ...t.features[1] },
+    { icon: <Clock size={50} color="#ceac24" />, ...t.features[2] },
+    { icon: <Users size={50} color="#ceac24" />, ...t.features[3] },
+    { icon: <Wrench size={50} color="#ceac24" />, ...t.features[4] },
+    { icon: <TrendingUp size={50} color="#ceac24" />, ...t.features[5] },
+    { icon: <CheckCircle size={50} color="#ceac24" />, ...t.features[6] },
+    { icon: <Award size={50} color="#ceac24" />, ...t.features[7] },
   ];
 
   return (
@@ -46,52 +58,152 @@ export default function WhyChooseUs({ lang }) {
         direction: lang === "ar" ? "rtl" : "ltr",
         textAlign: lang === "ar" ? "right" : "left",
         minHeight: "70vh",
-        color: "black",
-        backgroundColor: "", // light background
+        color: "white",
+        backgroundImage: "url('/bg.webp')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        position: "relative",
       }}
     >
-      {/* Section Header */}
-      <div className="d-flex flex-column align-items-center text-center mb-5">
-        <div className="fs-2 mb-3" style={{ fontWeight: 600, color: "#3B82F6" }}>
-          {t.title}
+      {/* Dark Overlay for better readability */}
+      <div 
+        className="position-absolute top-0 start-0 w-100 h-100"
+        style={{
+          backgroundColor: "rgba(0, 0, 0, 0.7)",
+          zIndex: 1
+        }}
+      ></div>
+
+      {/* Section Content */}
+      <div className="container position-relative" style={{ zIndex: 2 }}>
+        {/* Section Header */}
+        <div className="d-flex flex-column align-items-center text-center mb-5">
+          <div 
+            className="display-5 fw-bold mb-3" 
+            style={{ color: "#ffffff", maxWidth: "800px" }}
+          >
+            {t.title}
+          </div>
+          <p
+            className="lead text-center"
+            style={{ 
+              fontSize: "1.25rem", 
+              color: "#e0e0e0",
+              maxWidth: "900px",
+              lineHeight: "1.6"
+            }}
+          >
+            {t.description}
+          </p>
         </div>
-        <p
-          className="w-md-50 text-center"
-          style={{ fontSize: "clamp(16px, 2vw, 18px)", color: "black" }}
-        >
-          {t.description}
-        </p>
+
+        {/* Feature Cards */}
+        <div className="row g-4">
+          {features.map((f, idx) => (
+            <div className="col-12 col-md-6 col-lg-3" key={idx}>
+              <div
+                className="card h-100 text-center p-4"
+                style={{
+                  background: "rgba(26, 26, 26, 0.8)",
+                  border: "1px solid rgba(206, 172, 36, 0.3)",
+                  borderRadius: "16px",
+                  boxShadow: "0 8px 30px rgba(0,0,0,0.3)",
+                  cursor: "pointer",
+                  overflow: "hidden",
+                  color: "white",
+                  transition: "all 0.3s ease",
+                  minHeight: "280px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backdropFilter: "blur(10px)",
+                }}
+                onMouseEnter={() => setHovered(idx)}
+                onMouseLeave={() => setHovered(null)}
+              >
+                <div 
+                  className="mb-4 p-3 rounded-circle d-flex align-items-center justify-content-center"
+                  style={{ 
+                    backgroundColor: "rgba(206, 172, 36, 0.2)",
+                    width: "80px",
+                    height: "80px",
+                    transition: "all 0.3s ease"
+                  }}
+                >
+                  {f.icon}
+                </div>
+                <h5 
+                  className="mb-3 fw-bold" 
+                  style={{ 
+                    color: "#ffffff",
+                    fontSize: "1.1rem"
+                  }}
+                >
+                  {f.title}
+                </h5>
+                <div 
+                  style={{ 
+                    height: hovered === idx ? "auto" : "0",
+                    opacity: hovered === idx ? 1 : 0,
+                    overflow: "hidden",
+                    transition: "all 0.3s ease"
+                  }}
+                >
+                  <p 
+                    className="mt-2 small" 
+                    style={{ 
+                      color: "#cccccc",
+                      lineHeight: "1.5"
+                    }}
+                  >
+                    {f.description}
+                  </p>
+                </div>
+                {hovered !== idx && (
+                  <div className="mt-2">
+                    <div 
+                      style={{
+                        width: "30px",
+                        height: "3px",
+                        backgroundColor: "#ceac24",
+                        margin: "0 auto",
+                        borderRadius: "2px"
+                      }}
+                    ></div>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Feature Cards */}
-      <div className="row g-4 p-5">
-        {features.map((f, idx) => (
-          <div className="col-12 col-md-6 col-lg-3" key={idx}>
-            <div
-              className="card text-center"
-              style={{
-                background: "", // light blue glass effect
-                backdropFilter: "blur(10px)",
-                WebkitBackdropFilter: "blur(10px)",
-                border: "1px solid rgba(59,130,246,0.2)",
-                borderRadius: "16px",
-                boxShadow: "0 8px 20px rgba(0,0,0,0.05)",
-                cursor: "pointer",
-                overflow: "hidden",
-                color: "black",
-              }}
-              onMouseEnter={() => setHovered(idx)}
-              onMouseLeave={() => setHovered(null)}
-            >
-              <div style={{ padding: "15px" }}>{f.icon}</div>
-              <h5 className="mb-3" style={{ fontWeight: 600, color: "black" }}>
-                {f.title}
-              </h5>
-              {hovered === idx && <p className="mt-2" style={{ color: "black" }}>{f.description}</p>}
-            </div>
-          </div>
-        ))}
-      </div>
+      <style jsx>{`
+        .card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(206, 172, 36, 0.3);
+          border-color: rgba(206, 172, 36, 0.5);
+          background: rgba(34, 34, 34, 0.9);
+        }
+        
+        .card:hover .icon-container {
+          background-color: rgba(206, 172, 36, 0.3) !important;
+          transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+          .card {
+            min-height: 250px;
+          }
+          
+          section {
+            background-attachment: scroll;
+          }
+        }
+      `}</style>
     </section>
   );
 }

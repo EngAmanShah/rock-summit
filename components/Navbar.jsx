@@ -11,14 +11,10 @@ export default function Navbar({ lang }) {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [isMegaMenuOpen, setMegaMenuOpen] = useState(false);
-  const [isERPMenuOpen, setERPMenuOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [isMobileERPOpen, setMobileERPOpen] = useState(false);
   const hoverTimeout = useRef(null);
-  const erpHoverTimeout = useRef(null);
   const megaMenuRef = useRef(null);
-  const erpMenuRef = useRef(null);
   const mobileMenuRef = useRef(null);
 
   useEffect(() => {
@@ -31,13 +27,9 @@ export default function Navbar({ lang }) {
       if (megaMenuRef.current && !megaMenuRef.current.contains(event.target)) {
         setMegaMenuOpen(false);
       }
-      if (erpMenuRef.current && !erpMenuRef.current.contains(event.target)) {
-        setERPMenuOpen(false);
-      }
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target) && !event.target.closest('.navbar-toggler')) {
         setMobileMenuOpen(false);
         setMobileServicesOpen(false);
-        setMobileERPOpen(false);
       }
     };
     
@@ -55,7 +47,6 @@ export default function Navbar({ lang }) {
   useEffect(() => {
     setMobileMenuOpen(false);
     setMobileServicesOpen(false);
-    setMobileERPOpen(false);
   }, [pathname]);
 
   const isActive = (href) => {
@@ -69,11 +60,6 @@ export default function Navbar({ lang }) {
       href: "/service",
       label: lang === "ar" ? "الخدمات" : "Services",
       isDropdown: true,
-    },
-    {
-      href: "/service",
-      label: lang === "ar" ? "ERP" : "ERP",
-      isERPDropdown: true,
     },
     { href: "/about-us", label: lang === "ar" ? "من نحن" : "About Us" },
     { href: "/contact-us", label: lang === "ar" ? "اتصل بنا" : "Contact Us" },
@@ -101,22 +87,6 @@ export default function Navbar({ lang }) {
     }
   };
 
-  const handleERPMouseEnter = () => {
-    if (window.innerWidth > 768) {
-      clearTimeout(erpHoverTimeout.current);
-      setERPMenuOpen(true);
-    }
-  };
-
-  const handleERPMouseLeave = () => {
-    if (window.innerWidth > 768) {
-      clearTimeout(erpHoverTimeout.current);
-      erpHoverTimeout.current = setTimeout(() => {
-        setERPMenuOpen(false);
-      }, 300);
-    }
-  };
-
   const handleServicesClick = (e) => {
     if (window.innerWidth <= 768) {
       e.preventDefault();
@@ -124,142 +94,74 @@ export default function Navbar({ lang }) {
     }
   };
 
-  const handleERPClick = (e) => {
-    if (window.innerWidth <= 768) {
-      e.preventDefault();
-      setMobileERPOpen(!isMobileERPOpen);
-    }
-  };
-
   const handleMobileMenuToggle = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
     if (!isMobileMenuOpen) {
       setMobileServicesOpen(false);
-      setMobileERPOpen(false);
     }
   };
 
   const handleLinkClick = () => {
     setMegaMenuOpen(false);
-    setERPMenuOpen(false);
     setMobileMenuOpen(false);
     setMobileServicesOpen(false);
-    setMobileERPOpen(false);
   };
 
-  // Services data
+  // Services data - Updated for construction company
   const servicesData = {
-    appDevelopment: {
+    buildingConstruction: {
       title: {
-        en: "App Development",
-        ar: "تطوير التطبيقات"
+        en: "Building Construction",
+        ar: "إنشاء المباني"
       },
       services: [
-        { en: "Mobile App Development", ar: "تطوير تطبيقات الجوال" },
-        { en: "Android App Development", ar: "تطوير تطبيقات أندرويد" },
-        { en: "iOS App Development", ar: "تطوير تطبيقات iOS" },
-        { en: "Web App Development", ar: "تطوير تطبيقات الويب" },
-        { en: "UX/UI Design", ar: "تصميم واجهة المستخدم وتجربة المستخدم" }
+        { en: "Residential Buildings", ar: "المباني السكنية" },
+        { en: "Commercial Buildings", ar: "المباني التجارية" },
+        { en: "Government Buildings", ar: "المباني الحكومية" },
+        { en: "Educational Facilities", ar: "المرافق التعليمية" },
+        { en: "Healthcare Buildings", ar: "المباني الصحية" }
       ]
     },
-    softwareDevelopment: {
+    infrastructure: {
       title: {
-        en: "Software & Development",
-        ar: "البرمجيات والتطوير"
+        en: "Infrastructure",
+        ar: "البنية التحتية"
       },
       services: [
-        { en: "Backend Development", ar: "تطوير الواجهة الخلفية" },
-        { en: "Frontend Development", ar: "تطوير الواجهة الأمامية" },
-        { en: "Custom Software Development", ar: "تطوير البرمجيات المخصصة" },
-        { en: "Software Testing", ar: "اختبار البرمجيات" },
-        { en: "SAAS Development", ar: "تطوير البرمجيات كخدمة" },
-        { en: "MVP Development", ar: "تطوير المنتج الأدنى القابل للتطبيق" },
-        { en: "Software Consulting", ar: "استشارات البرمجيات" }
+        { en: "Road Construction", ar: "إنشاء الطرق" },
+        { en: "Traffic Systems", ar: "أنظمة المرور" },
+        { en: "Street Lighting", ar: "إنارة الشوارع" },
+        { en: "Urban Development", ar: "التطوير الحضري" },
+        { en: "Utilities Installation", ar: "تركيب المرافق" }
       ]
     },
-    creativeDigital: {
+    finishingWorks: {
       title: {
-        en: "Creative & Digital",
-        ar: "الإبداع والرقمي"
+        en: "Finishing Works",
+        ar: "أعمال التشطيب"
       },
       services: [
-        { en: "Digital Marketing", ar: "التسويق الرقمي" },
-        { en: "Graphic Design", ar: "التصميم الجرافيكي" },
-        { en: "Profile & Logo Design", ar: "تصميم الملف الشخصي والشعارات" },
-        { en: "Video Editing", ar: "مونتاج الفيديو" },
-        { en: "Animation & Video Shooting", ar: "الرسوم المتحركة وتصوير الفيديو" }
+        { en: "Interior Finishing", ar: "التشطيب الداخلي" },
+        { en: "Exterior Finishing", ar: "التشطيب الخارجي" },
+        { en: "Painting Works", ar: "أعمال الدهانات" },
+        { en: "Flooring Installation", ar: "تركيب الأرضيات" },
+        { en: "Cladding & Facades", ar: "الكلادينج والواجهات" }
       ]
     },
-    itSocialMedia: {
+    specializedServices: {
       title: {
-        en: "IT & Social Media",
-        ar: "تكنولوجيا المعلومات ووسائل التواصل"
+        en: "Specialized Services",
+        ar: "الخدمات المتخصصة"
       },
       services: [
-        { en: "Information Technology", ar: "تكنولوجيا المعلومات" },
-        { en: "Social Media Marketing", ar: "التسويق عبر وسائل التواصل الاجتماعي" },
-        { en: "Management Solutions", ar: "حلول الإدارة" }
+        { en: "HVAC Systems", ar: "أنظمة التكييف" },
+        { en: "Landscaping", ar: "التشجير والمسطحات الخضراء" },
+        { en: "Sports Facilities", ar: "المرافق الرياضية" },
+        { en: "Building Maintenance", ar: "صيانة المباني" },
+        { en: "Facility Management", ar: "إدارة المرافق" }
       ]
     }
   };
-
-  // ERP Solutions data
-  const erpSolutions = [
-    { 
-      href: "service", 
-      en: "Odoo ERP", 
-      ar: "أودو ERP",
-      description: {
-        en: "Open-source business management software",
-        ar: "برنامج إدارة الأعمال مفتوح المصدر"
-      }
-    },
-    { 
-      href: "service", 
-      en: "SAP Business One", 
-      ar: "SAP Business One",
-      description: {
-        en: "ERP solution for small to medium businesses",
-        ar: "حل ERP للشركات الصغيرة والمتوسطة"
-      }
-    },
-    { 
-      href: "service", 
-      en: "Oracle NetSuite", 
-      ar: "أوراكل نت سويت",
-      description: {
-        en: "Cloud-based business management suite",
-        ar: "مجموعة إدارة الأعمال القائمة على السحابة"
-      }
-    },
-    { 
-      href: "service", 
-      en: "Microsoft Dynamics 365", 
-      ar: "مايكروسوفت دايناميكس 365",
-      description: {
-        en: "Intelligent business applications",
-        ar: "تطبيقات الأعمال الذكية"
-      }
-    },
-    { 
-      href: "service", 
-      en: "Custom ERP Development", 
-      ar: "تطوير ERP مخصص",
-      description: {
-        en: "Tailored ERP solutions for your business",
-        ar: "حلول ERP مخصصة لعملك"
-      }
-    },
-    { 
-      href: "service", 
-      en: "ERP Implementation", 
-      ar: "تنفيذ ERP",
-      description: {
-        en: "Professional ERP implementation services",
-        ar: "خدمات تنفيذ ERP المهنية"
-      }
-    }
-  ];
 
   return (
     <>
@@ -269,7 +171,7 @@ export default function Navbar({ lang }) {
           mounted
             ? {
                 backgroundColor: scrolled
-                  ? "rgba(255, 255, 255, 0.97)"
+                  ? "rgba(0, 0, 0, 0.97)"
                   : "white",
                 transition: "background-color 0.3s ease",
                 backdropFilter: scrolled ? "blur(10px)" : "none",
@@ -291,15 +193,11 @@ export default function Navbar({ lang }) {
                 <li
                   key={index}
                   className={`nav-item ${
-                    item.isDropdown ? "dropdown mega-menu" : 
-                    item.isERPDropdown ? "dropdown erp-menu" : ""
+                    item.isDropdown ? "dropdown mega-menu" : ""
                   } mx-2`}
-                  onMouseEnter={item.isDropdown ? handleMouseEnter : 
-                              item.isERPDropdown ? handleERPMouseEnter : undefined}
-                  onMouseLeave={item.isDropdown ? handleMouseLeave : 
-                              item.isERPDropdown ? handleERPMouseLeave : undefined}
-                  ref={item.isDropdown ? megaMenuRef : 
-                      item.isERPDropdown ? erpMenuRef : null}
+                  onMouseEnter={item.isDropdown ? handleMouseEnter : undefined}
+                  onMouseLeave={item.isDropdown ? handleMouseLeave : undefined}
+                  ref={item.isDropdown ? megaMenuRef : null}
                 >
                   {item.isDropdown ? (
                     <>
@@ -335,44 +233,6 @@ export default function Navbar({ lang }) {
                                     </li>
                                   ))}
                                 </ul>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  ) : item.isERPDropdown ? (
-                    <>
-                      <Link
-                        href={`/${lang}${item.href}`}
-                        className={`nav-link ${isActive(item.href) ? "active" : ""} d-flex align-items-center gap-1`}
-                      >
-                        {item.label}
-                        {lang === "ar" ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
-                      </Link>
-
-                      {/* ERP Dropdown Menu - Desktop */}
-                      <div
-                        className={`erp-dropdown-menu ${isERPMenuOpen ? "show" : ""}`}
-                      >
-                        <div className="erp-menu-content p-3">
-                          <div className="row">
-                            {erpSolutions.map((solution, index) => (
-                              <div key={index} className="col-lg-6 mb-2">
-                                <Link 
-                                  href={`/${lang}${solution.href}`}
-                                  className="erp-dropdown-item"
-                                  onClick={handleLinkClick}
-                                >
-                                  <div className="erp-item-content">
-                                    <h6 className="erp-item-title mb-1">
-                                      {solution[lang]}
-                                    </h6>
-                                    <p className="erp-item-description mb-0">
-                                      {solution.description[lang]}
-                                    </p>
-                                  </div>
-                                </Link>
                               </div>
                             ))}
                           </div>
@@ -483,39 +343,6 @@ export default function Navbar({ lang }) {
                     ))}
                   </div>
                 </>
-              ) : item.isERPDropdown ? (
-                <>
-                  <div 
-                    className="mobile-menu-link dropdown-toggle"
-                    onClick={handleERPClick}
-                  >
-                    <span>{item.label}</span>
-                    {isMobileERPOpen ? <FaChevronUp size={12} /> : <FaChevronDown size={12} />}
-                  </div>
-                  
-                  <div className={`mobile-submenu ${isMobileERPOpen ? "show" : ""}`}>
-                    <div className="mobile-submenu-section">
-                      <ul>
-                        {erpSolutions.map((solution, solutionIndex) => (
-                          <li key={solutionIndex}>
-                            <Link 
-                              href={`/${lang}${solution.href}`}
-                              onClick={handleLinkClick}
-                              className="erp-mobile-link"
-                            >
-                              <div>
-                                <strong>{solution[lang]}</strong>
-                                <small className="d-block text-muted">
-                                  {solution.description[lang]}
-                                </small>
-                              </div>
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </>
               ) : (
                 <Link
                   href={`/${lang}${item.href === "/" ? "" : item.href}`}
@@ -565,7 +392,7 @@ export default function Navbar({ lang }) {
 
         .navbar-nav .nav-link {
           font-weight: 500;
-          color: #333;
+          color: #ffffffff;
           transition: color 0.3s ease;
           padding: 0.5rem 1rem;
         }
@@ -587,7 +414,7 @@ export default function Navbar({ lang }) {
           transform: translateX(-50%) translateY(10px);
           width: 90%;
           max-width: 1200px;
-          background: white;
+          background: black;
           box-shadow: 0 4px 20px rgba(0,0,0,0.1);
           opacity: 0;
           visibility: hidden;
@@ -602,49 +429,17 @@ export default function Navbar({ lang }) {
           transform: translateX(-50%) translateY(0);
         }
 
-        /* ERP Dropdown Menu Styles */
-        .erp-menu {
-          position: relative;
-        }
-
-        .erp-dropdown-menu {
-          position: absolute;
-          top: 100%;
-          left: 50%;
-          transform: translateX(-50%) translateY(10px);
-          width: 500px;
-          background: white;
-          box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-          opacity: 0;
-          visibility: hidden;
-          transition: all 0.3s ease;
-          z-index: 1000;
-          border-radius: 8px;
-        }
-
-        .erp-dropdown-menu.show {
-          opacity: 1;
-          visibility: visible;
-          transform: translateX(-50%) translateY(0);
-        }
-
-        [dir="rtl"] .mega-menu-dropdown,
-        [dir="rtl"] .erp-dropdown-menu {
+        [dir="rtl"] .mega-menu-dropdown {
           left: 50%;
           right: auto;
           transform: translateX(-50%) translateY(10px);
         }
 
-        [dir="rtl"] .mega-menu-dropdown.show,
-        [dir="rtl"] .erp-dropdown-menu.show {
+        [dir="rtl"] .mega-menu-dropdown.show {
           transform: translateX(-50%) translateY(0);
         }
 
         .mega-menu-content {
-          width: 100%;
-        }
-
-        .erp-menu-content {
           width: 100%;
         }
 
@@ -671,36 +466,6 @@ export default function Navbar({ lang }) {
           padding-left: 0.5rem;
         }
 
-        .erp-dropdown-item {
-          display: block;
-          padding: 0.75rem 1rem;
-          color: #333;
-          text-decoration: none;
-          transition: all 0.3s ease;
-          border-radius: 6px;
-          border: 1px solid transparent;
-        }
-
-        .erp-dropdown-item:hover {
-          background: #f8f9fa;
-          border-color: #399dd9;
-          text-decoration: none;
-          color: #333;
-        }
-
-        .erp-item-title {
-          color: #399dd9;
-          font-weight: 600;
-          font-size: 0.9rem;
-          margin-bottom: 0.25rem;
-        }
-
-        .erp-item-description {
-          color: #666;
-          font-size: 0.8rem;
-          line-height: 1.3;
-        }
-
         [dir="rtl"] .mega-menu-content .dropdown-item:hover {
           padding-left: 0;
           padding-right: 0.5rem;
@@ -723,7 +488,7 @@ export default function Navbar({ lang }) {
           right: -100%;
           width: 320px;
           height: 100vh;
-          background: white;
+          background: black;
           box-shadow: -2px 0 20px rgba(0,0,0,0.1);
           transition: right 0.3s ease;
           z-index: 1050;
@@ -837,15 +602,6 @@ export default function Navbar({ lang }) {
           padding: 0.3rem 0;
         }
 
-        .erp-mobile-link {
-          padding: 0.75rem 0 !important;
-          border-bottom: 1px solid #f0f0f0;
-        }
-
-        .erp-mobile-link:last-child {
-          border-bottom: none;
-        }
-
         .mobile-submenu-section a:hover {
           color: #399dd9;
         }
@@ -886,8 +642,7 @@ export default function Navbar({ lang }) {
 
         /* Responsive */
         @media (max-width: 991px) {
-          .mega-menu-dropdown,
-          .erp-dropdown-menu {
+          .mega-menu-dropdown {
             display: none;
           }
         }
@@ -899,10 +654,6 @@ export default function Navbar({ lang }) {
           
           .mega-menu-dropdown {
             width: 95%;
-          }
-
-          .erp-dropdown-menu {
-            width: 90%;
           }
         }
       `}</style>

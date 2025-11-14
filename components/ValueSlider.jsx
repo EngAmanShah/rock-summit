@@ -13,212 +13,212 @@ export default function ValueSlider({ lang = "en" }) {
   const slides = [
     {
       title: {
-        en: "Custom Software Development",
-        ar: "تطوير البرمجيات المخصصة",
+        en: "Building Construction",
+        ar: "إنشاء المباني",
       },
       subtitle: {
-        en: "Tailored Solutions for Your Business",
-        ar: "حلول مخصصة لأعمالك",
+        en: "Quality Construction for Residential & Commercial Projects",
+        ar: "بناء بجودة عالية للمشاريع السكنية والتجارية",
       },
       description: {
-        en: "We create high-quality software tailored to your business needs, ensuring scalability, security, and efficiency across all platforms.",
-        ar: "نقوم بإنشاء برمجيات عالية الجودة مصممة خصيصًا لاحتياجات عملك، مما يضمن قابلية التوسع والأمان والكفاءة على جميع المنصات.",
+        en: "We specialize in constructing residential, government, educational, and healthcare buildings with global quality standards, ensuring durability and functionality.",
+        ar: "نتخصص في إنشاء المباني السكنية والحكومية والتعليمية والصحية بمعايير جودة عالمية، مع ضمان المتانة والوظائفية.",
       },
       features: [
         {
-          en: "Web & mobile applications",
-          ar: "تطبيقات الويب والجوال",
+          en: "Residential & commercial buildings",
+          ar: "المباني السكنية والتجارية",
         },
         {
-          en: "Scalable architecture",
-          ar: "هندسة قابلة للتوسع",
+          en: "Government & educational facilities",
+          ar: "المرافق الحكومية والتعليمية",
         },
         {
-          en: "Secure coding practices",
-          ar: "ممارسات برمجة آمنة",
+          en: "Healthcare & hospitality projects",
+          ar: "مشاريع الرعاية الصحية والضيافة",
         },
         {
-          en: "Cross-platform compatibility",
-          ar: "التوافق عبر المنصات",
+          en: "Quality assurance & compliance",
+          ar: "ضمان الجودة والامتثال",
         },
       ],
-      image: "/cms.jpg",
+      image: "/services/BC.png",
     },
     {
       title: {
-        en: "AI & Machine Learning Solutions",
-        ar: "حلول الذكاء الاصطناعي والتعلم الآلي",
+        en: "Infrastructure Development",
+        ar: "تطوير البنية التحتية",
       },
       subtitle: {
-        en: "Smart Automation & Predictive Insights",
-        ar: "الأتمتة الذكية والرؤى التنبؤية",
+        en: "Comprehensive Road Works & Urban Development",
+        ar: "أعمال الطرق الشاملة والتطوير الحضري",
       },
       description: {
-        en: "Leverage AI to automate tasks, analyze data, and make smarter business decisions with our advanced machine learning models.",
-        ar: "استفد من الذكاء الاصطناعي لأتمتة المهام وتحليل البيانات واتخاذ قرارات أعمال أكثر ذكاءً باستخدام نماذج التعلم الآلي المتقدمة.",
+        en: "We provide complete infrastructure solutions including road construction, traffic systems, lighting, and urban development projects with modern engineering techniques.",
+        ar: "نوفر حلول بنية تحتية كاملة تشمل إنشاء الطرق، أنظمة المرور، الإنارة، ومشاريع التطوير الحضري بتقنيات هندسية حديثة.",
       },
       features: [
         {
-          en: "AI-powered automation",
-          ar: "الأتمتة المدعومة بالذكاء الاصطناعي",
+          en: "Road construction & paving",
+          ar: "إنشاء الطرق والتعبيد",
         },
         {
-          en: "Predictive analytics",
-          ar: "التحليلات التنبؤية",
+          en: "Traffic signals & systems",
+          ar: "الإشارات المرورية والأنظمة",
         },
         {
-          en: "Data-driven decision making",
-          ar: "اتخاذ القرارات القائمة على البيانات",
+          en: "Street lighting & utilities",
+          ar: "إنارة الشوارع والمرافق",
         },
         {
-          en: "Custom ML models",
-          ar: "نماذج تعلم آلي مخصصة",
+          en: "Urban planning & development",
+          ar: "التخطيط الحضري والتطوير",
         },
       ],
-      image: "/smart.png",
+      image: "/services/MO.png",
     },
     {
       title: {
-        en: "Cloud Solutions",
-        ar: "حلول الحوسبة السحابية",
+        en: "Finishing Works",
+        ar: "أعمال التشطيب",
       },
       subtitle: {
-        en: "Reliable & Scalable Cloud Services",
-        ar: "خدمات سحابية موثوقة وقابلة للتوسع",
+        en: "Premium Interior & Exterior Finishing Solutions",
+        ar: "حلول تشطيب داخلية وخارجية فاخرة",
       },
       description: {
-        en: "We provide cloud architecture, migration, and management services to help your business scale efficiently while ensuring security and performance.",
-        ar: "نوفر خدمات هندسة السحابة والهجرة والإدارة لمساعدة عملك على التوسع بكفاءة مع ضمان الأمان والأداء.",
+        en: "We deliver high-quality finishing works including modern paints, flooring, gypsum board installations, cladding, and comprehensive interior design solutions.",
+        ar: "نقدم أعمال تشطيب عالية الجودة تشمل الدهانات الحديثة، الأرضيات، تركيب الجبس بورد، الكلادينج، وحلول التصميم الداخلي الشاملة.",
       },
       features: [
         {
-          en: "Cloud infrastructure design",
-          ar: "تصميم البنية التحتية السحابية",
+          en: "Interior & exterior painting",
+          ar: "الدهانات الداخلية والخارجية",
         },
         {
-          en: "Migration & deployment",
-          ar: "الهجرة والنشر",
+          en: "Flooring & wall finishes",
+          ar: "تشطيبات الأرضيات والجدران",
         },
         {
-          en: "High availability & security",
-          ar: "التوافر العالي والأمان",
+          en: "Gypsum board & false ceilings",
+          ar: "الجبس بورد والأسقف المعلقة",
         },
         {
-          en: "Cost optimization",
-          ar: "تحسين التكاليف",
+          en: "Cladding & facade works",
+          ar: "أعمال الكلادينج والواجهات",
         },
       ],
-      image: "/cloud.png",
+      image: "/services/FW.png",
     },
     {
       title: {
-        en: "Cybersecurity Services",
-        ar: "خدمات الأمن السيبراني",
+        en: "HVAC Systems",
+        ar: "أنظمة التكييف",
       },
       subtitle: {
-        en: "Protect Your Digital Assets",
-        ar: "حماية أصولك الرقمية",
+        en: "Modern Climate Control Solutions",
+        ar: "حلول التحكم المناخي الحديثة",
       },
       description: {
-        en: "Comprehensive cybersecurity solutions to safeguard your business from threats, ensuring data integrity, privacy, and compliance.",
-        ar: "حلول شاملة للأمن السيبراني لحماية عملك من التهديدات، وضمان سلامة البيانات والخصوصية والامتثال.",
+        en: "We install and maintain advanced HVAC systems that ensure comfortable, energy-efficient environments for residential, commercial, and industrial spaces.",
+        ar: "نقوم بتركيب وصيانة أنظمة التكييف المتقدمة التي تضمن بيئات مريحة وموفرة للطاقة للمساحات السكنية والتجارية والصناعية.",
       },
       features: [
         {
-          en: "Threat detection & prevention",
-          ar: "كشف التهديدات والوقاية منها",
+          en: "Central air conditioning",
+          ar: "التكييف المركزي",
         },
         {
-          en: "Network & endpoint security",
-          ar: "أمان الشبكة ونقاط النهاية",
+          en: "Energy-efficient systems",
+          ar: "أنظمة موفرة للطاقة",
         },
         {
-          en: "Data encryption & backup",
-          ar: "تشفير البيانات والنسخ الاحتياطي",
+          en: "Ventilation & air quality",
+          ar: "التهوية وجودة الهواء",
         },
         {
-          en: "Compliance management",
-          ar: "إدارة الامتثال",
+          en: "Maintenance & servicing",
+          ar: "الصيانة والخدمة",
         },
       ],
-      image: "/cyber-security.png",
+      image: "/services/HVC.png",
     },
     {
       title: {
-        en: "Mobile App Development",
-        ar: "تطوير تطبيقات الجوال",
+        en: "Landscaping & Sports Facilities",
+        ar: "التشجير والمرافق الرياضية",
       },
       subtitle: {
-        en: "Engaging & User-Friendly Apps",
-        ar: "تطبيقات جذابة وسهلة الاستخدام",
+        en: "Creating Beautiful Outdoor Spaces",
+        ar: "إنشاء مساحات خارجية جميلة",
       },
       description: {
-        en: "We design and develop high-performance mobile apps for Android and iOS, focusing on user experience and functionality.",
-        ar: "نصمم ونطور تطبيقات جوال عالية الأداء لنظامي Android و iOS، مع التركيز على تجربة المستخدم والوظائف.",
+        en: "We design and implement stunning landscapes, sports facilities, and recreational areas including gardens, playgrounds, and athletic fields with natural and artificial turf.",
+        ar: "نصمم وننفذ مناظر طبيعية خلابة ومرافق رياضية ومساحات ترفيهية تشمل الحدائق، الملاعب، والمجالات الرياضية بالعشب الطبيعي والصناعي.",
       },
       features: [
         {
-          en: "iOS & Android apps",
-          ar: "تطبيقات iOS و Android",
+          en: "Garden design & implementation",
+          ar: "تصميم وتنفيذ الحدائق",
         },
         {
-          en: "Intuitive UI/UX design",
-          ar: "تصميم واجهة مستخدم وتجربة مستخدم بديهية",
+          en: "Sports fields & playgrounds",
+          ar: "المجالات الرياضية والملاعب",
         },
         {
-          en: "Performance optimization",
-          ar: "تحسين الأداء",
+          en: "Natural & artificial turf",
+          ar: "العشب الطبيعي والصناعي",
         },
         {
-          en: "App maintenance & updates",
-          ar: "صيانة التطبيقات والتحديثات",
+          en: "Irrigation systems",
+          ar: "أنظمة الري",
         },
       ],
-      image: "/mobile-app.png",
+      image: "/services/LS.png",
     },
     {
       title: {
-        en: "IT Consulting & Support",
-        ar: "استشارات تكنولوجيا المعلومات والدعم",
+        en: "Maintenance & Operation",
+        ar: "الصيانة والتشغيل",
       },
       subtitle: {
-        en: "Expert Guidance for Your Tech Needs",
-        ar: "توجيه خبير لاحتياجاتك التقنية",
+        en: "Comprehensive Facility Management",
+        ar: "إدارة المرافق الشاملة",
       },
       description: {
-        en: "Our IT consulting services help businesses implement technology strategies that drive growth, efficiency, and innovation.",
-        ar: "تساعد خدمات استشارات تكنولوجيا المعلومات الخاصة بنا الشركات على تنفيذ استراتيجيات التكنولوجيا التي تعزز النمو والكفاءة والابتكار.",
+        en: "We provide complete building maintenance, operation, and cleaning services with specialized teams and modern equipment to ensure optimal facility performance.",
+        ar: "نوفر خدمات صيانة وتشغيل وتنظيف المباني الكاملة بفرق متخصصة ومعدات حديثة لضمان الأداء الأمثل للمرافق.",
       },
       features: [
         {
-          en: "Technology strategy planning",
-          ar: "تخطيط استراتيجية التكنولوجيا",
+          en: "Building maintenance & repairs",
+          ar: "صيانة وإصلاح المباني",
         },
         {
-          en: "System integration",
-          ar: "تكامل الأنظمة",
+          en: "Electrical & plumbing services",
+          ar: "خدمات الكهرباء والسباكة",
         },
         {
-          en: "IT support & maintenance",
-          ar: "دعم تكنولوجيا المعلومات والصيانة",
+          en: "Cleaning & sanitation",
+          ar: "التنظيف والتعقيم",
         },
         {
-          en: "Business process optimization",
-          ar: "تحسين عمليات الأعمال",
+          en: "Facility management",
+          ar: "إدارة المرافق",
         },
       ],
-      image: "/it.png",
+      image: "/services/MO.png",
     },
   ];
 
   const content = {
     heading: {
-      en: "We Provide These Services",
-      ar: "نحن نقدم هذه الخدمات",
+      en: "Our Core Services",
+      ar: "خدماتنا الأساسية",
     },
     subheading: {
-      en: "Comprehensive door solutions and structural steel fabrication services for commercial, industrial, and residential applications",
-      ar: "حلول شاملة للأبواب وخدمات تصنيع الصلب الهيكلي للتطبيقات التجارية والصناعية والسكنية",
+      en: "Comprehensive contracting and construction solutions for commercial, industrial, and residential applications",
+      ar: "حلول مقاولات وإنشاءات شاملة للتطبيقات التجارية والصناعية والسكنية",
     },
   };
 

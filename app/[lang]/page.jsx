@@ -1,6 +1,7 @@
-import Products from "@/components/Products/Products";
+// import Products from "@/components/Products/Products";
 import Testimonials from "@/components/Testimonials";
-import Services from "@/components/Services";
+// import Services from "@/components/Services"; // Remove this
+import NewServices from "@/components/NewServices/NewServices"; // Add this
 import Hero from '../../components/Hero';
 import Features from '../../components/Feature';
 import Badge from '../../components/Badge/Badge';
@@ -15,157 +16,130 @@ export default async function Home({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams;
 
-const content = {
-  en: {
-    heroTitle: "Next Future Information Technology",
+  const content = {
+    en: {
+    
+    heroTitle: "Rock Summit Co. Ltd",
+    heroSubtitle: "General Contracting Company",
     heroDescription:
-      "Transforming your digital presence with innovative solutions — from web and app development to IT consulting — tailored to elevate your business and achieve measurable success.",
-    shopNow: "Get Your Free Consultation",
-    whyChooseTitle: "Why Partner with Next Future Information",
+      "In a competitive world where the pace of achievement accelerates, Rock Summit launched in the contracting industry with an ambitious vision that combines professionalism and sustainability in implementation, and a deep commitment to quality values.",
+    shopNow: "Start Your Project",
+    whyChooseTitle: "Why Choose Rock Summit",
     whyChooseDescription:
-      "We deliver impactful solutions across industries, helping businesses grow sustainably and gain global recognition.",
+      "We take pride in our engineering expertise, operational skills, and a history of working in diverse environments with leading entities, where we place accuracy, safety, and time commitment at the top of our priorities.",
     features: [
       {
-        title: "Creative & Strategic",
+        title: "Quality & Precision",
         description:
-          "Combining innovative design with data-driven strategies to maximize results.",
+          "Uncompromising commitment to quality standards and precision in every project we undertake.",
       },
       {
-        title: "Industry-Wide Expertise",
+        title: "Diverse Expertise",
         description:
-          "Extensive experience in technology, real estate, retail, healthcare, and more.",
+          "Extensive experience across residential, commercial, government, and infrastructure projects.",
       },
       {
-        title: "Bilingual & Global Reach",
+        title: "Safety First Approach",
         description:
-          "Solutions crafted in both English and Arabic to reach audiences worldwide.",
+          "Comprehensive safety protocols ensuring secure working environments and project delivery.",
       },
       {
-        title: "Results-Oriented",
+        title: "Timely Delivery",
         description:
-          "Every project focuses on measurable growth, ROI, and tangible outcomes.",
+          "Proven track record of completing projects on schedule while maintaining highest quality standards.",
       },
     ],
-    discoverTitle: "Explore Our Services",
-    discoverDescription:
-      "Comprehensive digital and creative services designed to grow your brand.",
-    services: [
-      {
-        title: "Digital Marketing",
-        image: "/services/digital.gif",
-        description:
-          "Complete digital marketing solutions — SEO, social media, online ads, and more.",
-      },
-      {
-        title: "Application Development",
-        image: "/services/app-development.gif",
-        description:
-          "Custom web apps and enterprise portals built for performance and scalability.",
-      },
-      {
-        title: "Graphic Design",
-        image: "/services/graphic-design.gif",
-        description:
-          "Professional branding and visuals — from logos to full identity systems.",
-      },
-      {
-        title: "Video & Animation",
-        image: "/services/video-animation.gif",
-        description:
-          "Engaging motion graphics, animations, and video content that tell your story.",
-      },
-      {
-        title: "Information Technology",
-        image: "/services/it.gif",
-        description:
-          "End-to-end IT consulting and infrastructure solutions for modern businesses.",
-      },
-      {
-        title: "Mobile App Development",
-        image: "/services/mobile-app.gif",
-        description:
-          "Cross-platform iOS and Android apps with smooth UX and high performance.",
-      },
-    ],
-  },
-
-  ar: {
-    heroTitle: "نكست فيوتشر لتقنية المعلومات",
-    heroDescription:
-      "نحو حضور رقمي متكامل بحلول مبتكرة — من تطوير المواقع والتطبيقات إلى الاستشارات التقنية — لمساعدة عملك على النمو وتحقيق نتائج ملموسة.",
-    shopNow: "احصل على استشارتك المجانية",
-    whyChooseTitle: "لماذا تختار نكست فيوتشر",
-    whyChooseDescription:
-      "نقدّم حلولاً مبتكرة عبر مختلف الصناعات، لمساعدة الشركات على تحقيق نمو مستدام وبناء سمعة قوية على المستوى العالمي.",
-    features: [
-      {
-        title: "إبداع واستراتيجية",
-        description:
-          "نجمع بين التصميم المبتكر والاستراتيجيات المدعومة بالبيانات لتحقيق أفضل النتائج.",
-      },
-      {
-        title: "خبرة شاملة في الصناعات",
-        description:
-          "خبرة واسعة في التكنولوجيا، العقارات، التجزئة، الرعاية الصحية والمزيد.",
-      },
-      {
-        title: "ثنائي اللغة ونطاق عالمي",
-        description:
-          "حلولنا متاحة باللغتين العربية والإنجليزية للوصول إلى جمهور عالمي.",
-      },
-      {
-        title: "تركيز على النتائج",
-        description:
-          "كل مشروع يركز على تحقيق نمو قابل للقياس وعائد استثمار واضح.",
-      },
-    ],
-    discoverTitle: "اكتشف خدماتنا",
-    discoverDescription:
-      "مجموعة شاملة من الخدمات الرقمية والإبداعية المصممة لتعزيز علامتك التجارية.",
-    services: [
-      {
-        title: "التسويق الرقمي",
-        image: "/services/digital.gif",
-        description:
-          "حلول تسويق رقمي متكاملة — SEO، وسائل التواصل الاجتماعي، الإعلانات والمزيد.",
-      },
-      {
-        title: "تطوير التطبيقات",
-        image: "/services/app-development.gif",
-        description:
-          "تطبيقات ويب وبوابات مؤسسية مخصصة للأداء العالي وسهولة التوسع.",
-      },
-      {
-        title: "التصميم الجرافيكي",
-        image: "/services/graphic-design.gif",
-        description:
-          "تصميمات احترافية — من الشعارات إلى أنظمة الهوية الكاملة.",
-      },
-      {
-        title: "الفيديو والأنيميشن",
-        image: "/services/video-animation.gif",
-        description:
-          "مقاطع فيديو ورسوم متحركة جذابة تعبر عن فكرتك بطريقة احترافية.",
-      },
-      {
-        title: "تكنولوجيا المعلومات",
-        image: "/services/it.gif",
-        description:
-          "استشارات شاملة ودعم للبنية التحتية التقنية للشركات الحديثة.",
-      },
-      {
-        title: "تطبيقات الهواتف",
-        image: "/services/mobile-app.gif",
-        description:
-          "تطبيقات iOS و Android متكاملة بواجهة سلسة وأداء قوي.",
-      },
-    ],
-  },
-};
-
+      discoverTitle: "Our Services",
+      discoverDescription:
+        "Comprehensive contracting and construction services designed to meet diverse project requirements.",
+      services: [
+        {
+          title: "Building Construction",
+          image: "/services/BC.png",
+          description:
+            "Construction of residential, government, educational, and healthcare buildings with global quality standards.",
+        },
+        {
+          title: "Road Works & Infrastructure",
+          image: "/services/RW.png",
+          description:
+            "Complete road solutions including paving, traffic signals, road markings, and lighting systems.",
+        },
+        {
+          title: "Landscaping & Sports Facilities",
+          image: "/services/LS.png",
+          description:
+            "Design and implementation of gardens, sports fields, and recreational facilities with modern techniques.",
+        },
+        {
+          title: "Finishing Works",
+          image: "/services/FW.png",
+          description:
+            "Interior and exterior finishing works including modern paints, floors, gypsum board, and cladding.",
+        },
+        {
+          title: "HVAC Systems",
+          image: "/services/HVC.png",
+          description:
+            "Installation of modern cooling and air conditioning systems for comfortable and energy-efficient environments.",
+        },
+        {
+          title: "Maintenance & Operation",
+          image: "/services/MO.png",
+          description:
+            "Comprehensive building maintenance, operation, and cleaning services with specialized teams.",
+        },
+      ],
+    },
+    ar: {
+      // ... existing Arabic content ...
+      discoverTitle: "خدماتنا",
+      discoverDescription:
+        "خدمات مقاولات وإنشاءات شاملة مصممة لتلبية متطلبات المشاريع المتنوعة.",
+      services: [
+        {
+          title: "إنشاء المباني",
+          image: "/services/BC.png",
+          description:
+            "إنشاء المباني السكنية والحكومية والمدارس والمستشفيات بمعايير جودة عالمية.",
+        },
+        {
+          title: "أعمال الطرق والبنية التحتية",
+          image: "/services/RW.png",
+          description:
+            "حلول متكاملة لأعمال الطرق تشمل التعبيذ، الإشارات المرورية، الخطوط الأرضية، والإنارة.",
+        },
+        {
+          title: "التشجير والمرافق الرياضية",
+          image: "/services/LS.png",
+          description:
+            "تصميم وتنفيذ الحدائق والملاعب ومرافق الرياضة باستخدام أحدث التقنيات.",
+        },
+        {
+          title: "أعمال التشطيب",
+          image: "/services/FW.png",
+          description:
+            "تنفيذ جميع أنواع التشطيبات العصرية الداخلية والخارجية والواجهات.",
+        },
+        {
+          title: "أنظمة التكييف",
+          image: "/services/HVC.png",
+          description:
+            "تركيب أنظمة التبريد والتكييف الحديثة لضمان بيئات مريحة وموفرة للطاقة.",
+        },
+        {
+          title: "الصيانة والتشغيل",
+          image: "/services/MO.png",
+          description:
+            "خدمات متكاملة لصيانة وتشغيل ونظافة الأبنية بفرق متخصصة.",
+        },
+      ],
+    },
+  };
 
   const {
     heroTitle,
+    heroSubtitle,
     heroDescription,
     shopNow,
     whyChooseTitle,
@@ -174,47 +148,55 @@ const content = {
     discoverTitle,
     discoverDescription,
     services,
-    heroButton,
-
-    products,
-
-
   } = content[lang] || content.en;
 
   return (
     <>
       {/* Hero Section */}
-      <Hero lang={lang} text={heroButton} heroTitle={heroTitle} heroDescription={heroDescription} />
+      <Hero 
+        lang={lang} 
+        text={shopNow} 
+        heroTitle={heroTitle} 
+        heroSubtitle={heroSubtitle}
+        heroDescription={heroDescription} 
+      />
+      
       {/* Feature Section */}
       <Features
         title={whyChooseTitle}
         description={whyChooseDescription}
         features={features}
-          lang={lang}
+        lang={lang}
       />
-      {/* Services */}
-      <Services
+      
+      {/* New Services Component */}
+      <NewServices
         lang={lang}
         servicesData={services}
         sectionTitle={discoverTitle}
         sectionDescription={discoverDescription}
       />
-      {/* Badge  */}
- <Badge    lang={lang} />
+      
+      {/* Badge */}
+      <Badge lang={lang} />
 
-        {/* Market  */}
-<Market   lang={lang}  />
-         <ValueSlider lang={lang} />
+      {/* Market */}
+      <Market lang={lang} />
 
-   {/* Team  */}
-   <Team lang={lang}/>
-       {/* Products  */}
-      <Products lang={lang} />
-         {/* Skills  */}
-         <Skills lang={lang}/>
-              {/* Start Project  */}
-         <StartProject lang={lang}  />
-    <TeamSection lang={lang}  />
+      {/* ValueSlider */}
+      <ValueSlider lang={lang} />
+
+      {/* Team */}
+      <Team lang={lang}/>
+      
+      {/* Skills */}
+      <Skills lang={lang}/>
+      
+      {/* Start Project */}
+      <StartProject lang={lang} />
+      
+      {/* Team Section */}
+      <TeamSection lang={lang} />
     </>
   );
 }

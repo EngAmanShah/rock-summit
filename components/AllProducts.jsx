@@ -8,42 +8,68 @@ import Pagination from "@mui/material/Pagination";
 import usePagination from "@/hooks/UsePagination";
 import Link from "next/link";
 
-export default function AllProducts({ lang, products }) {
+export default function AllProjects({ lang, projects }) {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [search, setSearch] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredProjects, setFilteredProjects] = useState([]);
   const [searchResult, setSearchResult] = useState([]);
   
   const content = {
     en: {
-      buyLabel: "Buy Now",
-      searchPlaceholder: "Search products...",
-      filterLabel: "Categories",
-      notFound: "No products found",
-      noProducts: "No Products To Show",
+      viewLabel: "View Details",
+      searchPlaceholder: "Search projects...",
+      filterLabel: "Project Types",
+      notFound: "No projects found",
+      noProjects: "No Projects To Show",
+      status: "Status",
+      completed: "Completed",
+      inProgress: "In Progress",
+      upcoming: "Upcoming",
+      location: "Location",
+      duration: "Duration",
+      client: "Client",
     },
     ar: {
-      buyLabel: "اشتري الآن",
-      searchPlaceholder: "ابحث عن منتج...",
-      filterLabel: "الفئات",
-      notFound: "لم يتم العثور على منتجات",
-      noProducts: "لا توجد منتجات للعرض",
+      viewLabel: "عرض التفاصيل",
+      searchPlaceholder: "ابحث عن مشاريع...",
+      filterLabel: "أنواع المشاريع",
+      notFound: "لم يتم العثور على مشاريع",
+      noProjects: "لا توجد مشاريع للعرض",
+      status: "الحالة",
+      completed: "مكتمل",
+      inProgress: "قيد التنفيذ",
+      upcoming: "قادم",
+      location: "الموقع",
+      duration: "المدة",
+      client: "العميل",
     },
   };
 
-  const { buyLabel, searchPlaceholder, filterLabel, notFound, noProducts } =
-    content[lang] || content.en;
+  const { 
+    viewLabel, 
+    searchPlaceholder, 
+    filterLabel, 
+    notFound, 
+    noProjects,
+    status,
+    completed,
+    inProgress,
+    upcoming,
+    location,
+    duration,
+    client
+  } = content[lang] || content.en;
 
-  const categories = [...new Set(products.map((p) => p.category))];
+  const categories = [...new Set(projects.map((p) => p.category))];
 
-  const productsToDisplay =
-    searchResult.length > 0 && filteredProducts.length > 0
+  const projectsToDisplay =
+    searchResult.length > 0 && filteredProjects.length > 0
       ? searchResult
-      : filteredProducts.length > 0
-      ? filteredProducts
+      : filteredProjects.length > 0
+      ? filteredProjects
       : searchResult.length > 0
       ? searchResult
-      : products;
+      : projects;
 
   const {
     totalPages,
@@ -52,9 +78,9 @@ export default function AllProducts({ lang, products }) {
     currentPageIndex,
     setcurrentPageIndex,
     displayPage,
-  } = usePagination(12, productsToDisplay.length);
+  } = usePagination(12, projectsToDisplay.length);
 
-  const currentProducts = productsToDisplay.slice(startPageIndex, endPageIndex);
+  const currentProjects = projectsToDisplay.slice(startPageIndex, endPageIndex);
 
   const toggleCategory = (cat) => {
     setSelectedCategories((prev) =>
@@ -62,10 +88,10 @@ export default function AllProducts({ lang, products }) {
     );
   };
 
-  const searchProducts = (e) => {
+  const searchProjects = (e) => {
     e.preventDefault();
 
-    const filtered = products.filter((p) =>
+    const filtered = projects.filter((p) =>
       p.title.toLowerCase().includes(search.toLowerCase())
     );
 
@@ -77,19 +103,30 @@ export default function AllProducts({ lang, products }) {
     }
   };
 
-  const getUrl = (url) => {
-    if (!url) return "#";
+  const getStatusBadge = (status) => {
+    const statusConfig = {
+      completed: { color: "success", text: completed },
+      inProgress: { color: "warning", text: inProgress },
+      upcoming: { color: "info", text: upcoming }
+    };
+    
+    const config = statusConfig[status] || statusConfig.completed;
+    return (
+      <span className={`badge bg-${config.color}`}>
+        {config.text}
+      </span>
+    );
   };
 
   useEffect(() => {
-    const filtered = products.filter((p) => {
+    const filtered = projects.filter((p) => {
       const matchCategory =
         selectedCategories.length === 0 ||
         selectedCategories.includes(p.category);
       return matchCategory;
     });
     setcurrentPageIndex(1);
-    setFilteredProducts(filtered);
+    setFilteredProjects(filtered);
   }, [selectedCategories]);
 
   useEffect(() => {
@@ -100,7 +137,7 @@ export default function AllProducts({ lang, products }) {
 
   return (
     <div className="container my-5">
-      {products.length > 0 ? (
+      {projects.length > 0 ? (
         <>
           <div className="d-flex justify-content-center mb-5">
             <div
@@ -121,7 +158,7 @@ export default function AllProducts({ lang, products }) {
             </div>
             <form
               className="w-sm-75 position-relative"
-              onSubmit={searchProducts}
+              onSubmit={searchProjects}
             >
               <input
                 type="search"
@@ -214,63 +251,88 @@ export default function AllProducts({ lang, products }) {
             </div>
             <div className="col-md-8 col-lg-9 mb-5">
               <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-                {currentProducts.map((product) => {
+                {currentProjects.map((project) => {
                   return (
-                    <div className="col" key={product.id}>
+                    <div className="col" key={project.id}>
                       <div className="card h-100 shadow-sm rounded-3 overflow-hidden">
                         <div
                           style={{
                             position: "relative",
                             width: "100%",
-                            paddingTop: "83.83%",
+                            paddingTop: "75%",
                             backgroundColor: "#f0f0f0",
                             overflow: "hidden",
                           }}
                           className="card-img-top"
                         >
                           <Link
-                            href={`/${lang}/product-details/${product.slug.replace(
+                            href={`/${lang}/project-details/${project.slug.replace(
                               /\s+/g,
                               "_"
                             )}`}
                           >
                             <img
-                              src={product.image}
-                              alt={product.title}
+                              src={project.image}
+                              alt={project.title}
                               style={{
                                 position: "absolute",
                                 top: 0,
                                 left: 0,
                                 width: "100%",
                                 height: "100%",
+                                objectFit: "cover",
                               }}
                               loading="lazy"
                             />
                           </Link>
+                          <div className="position-absolute top-0 end-0 m-2">
+                            {getStatusBadge(project.status)}
+                          </div>
                         </div>
                         <div className="card-body d-flex flex-column">
                           <Link
-                            href={`/${lang}/product-details/${product.slug.replace(
+                            href={`/${lang}/project-details/${project.slug.replace(
                               /\s+/g,
                               "_"
                             )}`}
                           >
                             <div className="mb-2" style={{ fontWeight: "600" }}>
-                              {product.title}
+                              {project.title}
                             </div>
                           </Link>
 
-                          <p className="text-secondary clamp-3">
-                            {product.shortDesc}
+                          {/* Project Details */}
+                          <div className="mb-3">
+                            {project.location && (
+                              <div className="d-flex align-items-center mb-1">
+                                <small className="text-muted me-2">{location}:</small>
+                                <small>{project.location}</small>
+                              </div>
+                            )}
+                            {project.duration && (
+                              <div className="d-flex align-items-center mb-1">
+                                <small className="text-muted me-2">{duration}:</small>
+                                <small>{project.duration}</small>
+                              </div>
+                            )}
+                            {project.client && (
+                              <div className="d-flex align-items-center mb-2">
+                                <small className="text-muted me-2">{client}:</small>
+                                <small>{project.client}</small>
+                              </div>
+                            )}
+                          </div>
+
+                          <p className="text-secondary clamp-3 mb-3">
+                            {project.shortDesc}
                           </p>
-                          <a
-                            href={getUrl(product.link)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="secondaryButton mt-auto"
+                          
+                          <Link
+                            href={`/${lang}/project-details/${project.slug.replace(/\s+/g, "_")}`}
+                            className="primaryButton mt-auto text-center text-decoration-none"
                           >
-                            {buyLabel}
-                          </a>
+                            {viewLabel}
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -278,7 +340,7 @@ export default function AllProducts({ lang, products }) {
                 })}
               </div>
             </div>
-            {productsToDisplay.length > 12 && (
+            {projectsToDisplay.length > 12 && (
               <div className="d-flex justify-content-center">
                 <Pagination
                   count={totalPages}
@@ -291,7 +353,7 @@ export default function AllProducts({ lang, products }) {
           </div>
         </>
       ) : (
-        <h4 className="text-center my-5">{noProducts}</h4>
+        <h4 className="text-center my-5">{noProjects}</h4>
       )}
     </div>
   );

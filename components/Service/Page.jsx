@@ -1,219 +1,173 @@
-"use client";
+import React from "react";
+import {
+  FaBuilding,
+  FaHardHat,
+  FaTools,
+  FaTruck,
+  FaHome,
+  FaRoad,
+  FaTree,
+  FaPaintRoller,
+  FaSnowflake,
+  FaToolbox,
+  FaCogs,
+  FaBolt,
+  FaWater,
+  FaFireExtinguisher,
+} from "react-icons/fa";
+import {
+  GiBrickWall,
+  GiConcreteBag,
+  GiSteelBeams,
+  GiDigDug,
+  GiHammerNails,
+  GiStoneWall,
+  GiRoof,
+  GiFloorPolisher,
+} from "react-icons/gi";
+import "./Skills.css";
 
-import React, { useRef, useEffect } from "react";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { FaLaptopCode, FaMobileAlt, FaServer } from "react-icons/fa";
-import Skills from "@/components/Skills/Skills";
-             // Video & Animation
-import { HiOutlineSpeakerphone } from "react-icons/hi";       // Digital Marketing
-import { MdOutlineBrush } from "react-icons/md";              // Graphic Design
-import { MdOutlinePhoneIphone } from "react-icons/md";    
-export default function Page({ params }) {
-const { lang } = React.use(params);// Get lang from URL: /en/page or /ar/page
-
- const translations = {
-  en: {
-    heroTitle: "Our Services",
-    heroDesc: "At Next Future, we craft innovative digital solutions to help businesses thrive in the modern digital landscape.",
-    explore: "Explore Services",
-    learnMore: "Learn More",
-    services: [
-      {
-        title: "Web Development",
-        description: "Build scalable and responsive websites tailored to your business needs.",
-        link: "/service/webdev",
-        icon: <FaLaptopCode size={40} color="#fff" />
-      },
-      {
-        title: "App Development",
-        description: "Create intuitive and engaging mobile applications for iOS and Android platforms.",
-        link: "/service/appdev",
-        icon: <FaMobileAlt size={40} color="#fff" />
-      },
-      {
-        title: "IT Solutions",
-        description: "Implement robust IT infrastructure and solutions for seamless business operations.",
-        link: "/service/itsolutions",
-        icon: <FaServer size={40} color="#fff" />
-      },
-      {
-        title: "Digital Marketing",
-        description: "Boost your online presence with SEO, social media, PPC, and content strategies.",
-        link: "/service/digital-marketing",
-        icon: <HiOutlineSpeakerphone size={40} color="#fff" />
-      },
-      {
-        title: "Graphic Design",
-        description: "Design compelling visuals for web, print, and digital platforms to capture attention.",
-        link: "/service/graphic-design",
-        icon: <MdOutlineBrush size={40} color="#fff" />
-      },
-      {
-        title: "Mobile App Development",
-        description: "Build responsive and scalable mobile apps for iOS and Android platforms.",
-        link: "/service/mobile-app",
-        icon: <MdOutlinePhoneIphone size={40} color="#fff" />
-      },
-    ],
-  },
-  ar: {
-    heroTitle: "خدماتنا",
-    heroDesc: "في نكست فيوتشر، نحن نبتكر حلولًا رقمية تساعد الشركات على الازدهار في العصر الرقمي الحديث.",
-    explore: "استكشف الخدمات",
-    learnMore: "اعرف المزيد",
-    services: [
-      {
-        title: "تطوير مواقع الويب",
-        description: "بناء مواقع ويب قابلة للتطوير والاستجابة مصممة وفق احتياجات عملك.",
-        link: "/service/webdev",
-        icon: <FaLaptopCode size={40} color="#fff" />
-      },
-      {
-        title: "تطوير التطبيقات",
-        description: "إنشاء تطبيقات جوال جذابة وسهلة الاستخدام لمنصات iOS وAndroid.",
-        link: "/service/appdev",
-        icon: <FaMobileAlt size={40} color="#fff" />
-      },
-      {
-        title: "حلول تكنولوجيا المعلومات",
-        description: "تنفيذ بنية تحتية وحلول تكنولوجيا المعلومات لضمان تشغيل سلس وفعال.",
-        link: "/service/itsolutions",
-        icon: <FaServer size={40} color="#fff" />
-      },
-      {
-        title: "التسويق الرقمي",
-        description: "عزّز حضورك على الإنترنت من خلال تحسين محركات البحث، ووسائل التواصل الاجتماعي، والإعلانات المدفوعة، واستراتيجيات المحتوى.",
-        link: "/service/digital-marketing",
-        icon: <HiOutlineSpeakerphone size={40} color="#fff" />
-      },
-      {
-        title: "التصميم الجرافيكي",
-        description: "صمّم مرئيات جذابة للويب والطباعة والمنصات الرقمية لجذب الانتباه.",
-        link: "/service/graphic-design",
-        icon: <MdOutlineBrush size={40} color="#fff" />
-      },
-      {
-        title: "تطوير تطبيقات الهواتف",
-        description: "إنشاء تطبيقات جوال متجاوبة وقابلة للتوسع لأنظمة iOS وAndroid.",
-        link: "/service/mobile-app",
-        icon: <MdOutlinePhoneIphone size={40} color="#fff" />
-      },
-    ],
-  },
+// Safe icon component that handles undefined icons
+const SafeIcon = ({ icon: Icon, className, name }) => {
+  if (!Icon || typeof Icon === 'undefined') {
+    return <div className={className}>🏗️</div>;
+  }
+  return <Icon className={className} />;
 };
 
-
-  const t = translations[lang];
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    let animationFrameId;
-
-    const resizeCanvas = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
-    resizeCanvas();
-    window.addEventListener("resize", resizeCanvas);
-
-    const particles = [];
-    const particleCount = 200;
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 1,
-        dx: (Math.random() - 0.5) * 1.5,
-        dy: (Math.random() - 0.5) * 1.5,
-      });
-    }
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p) => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, false);
-        ctx.fillStyle = "rgba(255, 255, 255, 0.6)";
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx = -p.dx;
-        if (p.y < 0 || p.y > canvas.height) p.dy = -p.dy;
-      });
-      animationFrameId = requestAnimationFrame(animate);
-    };
-    animate();
-
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener("resize", resizeCanvas);
-    };
-  }, []);
-
-  const heroVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i = 1) => ({ opacity: 1, y: 0, transition: { delay: i * 0.3, duration: 0.8, ease: "easeOut" } }),
+export default function TechMarquee({ lang = "en" }) {
+  // Translations
+  const translations = {
+    en: {
+      heading: "Construction Technologies & Methods",
+      description: "From modern building techniques to advanced construction equipment and sustainable practices — we utilize cutting-edge technologies for superior project delivery.",
+      techNames: {
+        BuildingConstruction: "Building Construction",
+        CivilEngineering: "Civil Engineering",
+        ConstructionTools: "Construction Tools",
+        HeavyEquipment: "Heavy Equipment",
+        ResidentialBuildings: "Residential Buildings",
+        RoadConstruction: "Road Construction",
+        Landscaping: "Landscaping",
+        FinishingWorks: "Finishing Works",
+        HVACSystems: "HVAC Systems",
+        Maintenance: "Maintenance",
+        MechanicalSystems: "Mechanical Systems",
+        ElectricalWorks: "Electrical Works",
+        Plumbing: "Plumbing",
+        SafetySystems: "Safety Systems",
+        Masonry: "Masonry",
+        ConcreteWorks: "Concrete Works",
+        SteelStructures: "Steel Structures",
+        Excavation: "Excavation",
+        Carpentry: "Carpentry",
+        StoneWorks: "Stone Works",
+        Roofing: "Roofing",
+        Flooring: "Flooring",
+        AutoCAD: "AutoCAD",
+        BIM: "BIM Modeling",
+        SketchUp: "3D Modeling",
+      },
+    },
+    ar: {
+      heading: "التقنيات والأساليب الإنشائية",
+      description: "من تقنيات البناء الحديثة إلى المعدات المتقدمة والممارسات المستدامة — نستخدم أحدث التقنيات لتسليم مشاريع متميزة.",
+      techNames: {
+        BuildingConstruction: "إنشاء المباني",
+        CivilEngineering: "الهندسة المدنية",
+        ConstructionTools: "أدوات البناء",
+        HeavyEquipment: "المعدات الثقيلة",
+        ResidentialBuildings: "المباني السكنية",
+        RoadConstruction: "إنشاء الطرق",
+        Landscaping: "التشجير والمسطحات",
+        FinishingWorks: "أعمال التشطيب",
+        HVACSystems: "أنظمة التكييف",
+        Maintenance: "الصيانة",
+        MechanicalSystems: "الأنظمة الميكانيكية",
+        ElectricalWorks: "أعمال الكهرباء",
+        Plumbing: "أعمال السباكة",
+        SafetySystems: "أنظمة السلامة",
+        Masonry: "أعمال المباني",
+        ConcreteWorks: "أعمال الخرسانة",
+        SteelStructures: "المنشآت المعدنية",
+        Excavation: "أعمال الحفر",
+        Carpentry: "أعمال النجارة",
+        StoneWorks: "أعمال الحجر",
+        Roofing: "أعمال الأسقف",
+        Flooring: "أعمال الأرضيات",
+        AutoCAD: "أوتوكاد",
+        BIM: "نمذجة المعلومات",
+        SketchUp: "النمذجة ثلاثية الأبعاد",
+      },
+    },
   };
 
+  const t = translations[lang] ?? translations.en;
+
+  // Construction tech rows - simplified without problematic icons
+  const techRows = [
+    [
+      { icon: FaBuilding, name: "BuildingConstruction" },
+      { icon: FaHardHat, name: "CivilEngineering" },
+      { icon: FaTools, name: "ConstructionTools" },
+      { icon: FaTruck, name: "HeavyEquipment" },
+      { icon: FaHome, name: "ResidentialBuildings" },
+      { icon: FaRoad, name: "RoadConstruction" },
+      { icon: FaTree, name: "Landscaping" },
+      { icon: FaPaintRoller, name: "FinishingWorks" },
+    ],
+    [
+      { icon: FaSnowflake, name: "HVACSystems" },
+      { icon: FaToolbox, name: "Maintenance" },
+      { icon: FaCogs, name: "MechanicalSystems" },
+      { icon: FaBolt, name: "ElectricalWorks" },
+      { icon: FaWater, name: "Plumbing" },
+      { icon: FaFireExtinguisher, name: "SafetySystems" },
+      { icon: GiBrickWall, name: "Masonry" },
+      { icon: GiConcreteBag, name: "ConcreteWorks" },
+    ],
+    [
+      { icon: GiSteelBeams, name: "SteelStructures" },
+      { icon: GiDigDug, name: "Excavation" },
+      { icon: GiHammerNails, name: "Carpentry" },
+      { icon: GiStoneWall, name: "StoneWorks" },
+      { icon: GiRoof, name: "Roofing" },
+      { icon: GiFloorPolisher, name: "Flooring" },
+    ],
+  ];
+
   return (
-    <section className={`position-relative overflow-hidden ${lang === "ar" ? "text-end" : "text-start"}`} dir={lang === "ar" ? "rtl" : "ltr"}>
-      {/* Hero Section */}
-      <div className="position-relative">
-        <video autoPlay muted loop className="position-absolute top-0 start-0 w-100 h-100" style={{ objectFit: "cover", zIndex: 0 }}>
-          <source src="/ser.mp4" type="video/mp4" />
-        </video>
-        <div className="position-absolute top-0 start-0 w-100 h-100" style={{ backgroundColor: "rgba(0,0,0,0.6)", zIndex: 1 }}></div>
-        <div className="d-flex flex-column justify-content-center align-items-center text-center text-white" style={{ zIndex: 2, position: "relative", minHeight: "90vh", padding: "6rem 1rem" }}>
-          <motion.h1 className="display-1 fw-bold" custom={1} initial="hidden" animate="visible" variants={heroVariants}>
-            {t.heroTitle}
-          </motion.h1>
-          <motion.p className="lead mt-3 fs-3" custom={2} initial="hidden" animate="visible" variants={heroVariants} style={{ maxWidth: "800px", lineHeight: "1.5" }}>
-            {t.heroDesc}
-          </motion.p>
-          <motion.div custom={3} initial="hidden" animate="visible" variants={heroVariants}>
-            <Link href="/service/webdev" className="btn btn-primary btn-lg mt-4">
-              {t.explore}
-            </Link>
-          </motion.div>
+    <section
+      className={`tech-marquee-wrapper ${lang === "ar" ? "text-end" : "text-start"}`}
+      dir={lang === "ar" ? "rtl" : "ltr"}
+      style={{ backgroundColor: "#1a1a1a" }}
+    >
+      <div className="tech-marquee">
+        <div className="container text-center py-4 px-3">
+          <h1 className="fw-bold text-white">{t.heading}</h1>
+          <p className="text-white text-wrap">{t.description}</p>
         </div>
-      </div>
 
-      {/* Services Section */}
-      <div className="position-relative" style={{ backgroundColor: "#0d1f4c" }}>
-        <canvas ref={canvasRef} className="position-absolute top-0 start-0 w-100 h-100" style={{ zIndex: 0 }}></canvas>
-        <div className="container position-relative py-5" style={{ zIndex: 1 }}>
-          <h2 className="text-center mb-5 fw-bold text-white">{t.heroTitle}</h2>
-          <div className="row">
-            {t.services.map((service, index) => (
-              <div className="col-md-6 col-lg-4 col-sm-12 mb-4" key={index}>
-                <motion.div initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.5, duration: 0.6 }} className="card h-100 p-4 text-center border-0 rounded-4 shadow-lg service-card" style={{ backgroundColor: "transparent", color: "#fff" }}>
-                  <div className="mb-3 p-4 rounded-circle mx-auto d-flex justify-content-center align-items-center" style={{ background: "linear-gradient(135deg, #6610f2, #0d6efd)" }}>
-                    {service.icon}
-                  </div>
-                  <h5 className="fw-bold">{service.title}</h5>
-                  <p>{service.description}</p>
-                  <Link href={service.link} className="btn btn-light mt-3 text-dark">
-                    {t.learnMore}
-                  </Link>
-                </motion.div>
-              </div>
-            ))}
+        {techRows.map((row, rowIndex) => (
+          <div
+            key={rowIndex}
+            className={`marquee ${rowIndex % 2 === 0 ? "marquee-left" : "marquee-right"} mt-4`}
+          >
+            <div className="marquee-content">
+              {row.map((tech, i) => (
+                <div key={i} className="tech-item">
+                  <SafeIcon 
+                    icon={tech.icon} 
+                    className={`tech-icon ${tech.name.toLowerCase()}`}
+                    name={tech.name}
+                  />
+                  <span>{t.techNames[tech.name]}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        ))}
       </div>
-
-      <Skills lang={lang} />
-
-      <style jsx>{`
-        .service-card:hover {
-          transform: translateY(-10px) scale(1.03);
-          transition: all 0.3s ease;
-        }
-      `}</style>
     </section>
   );
 }

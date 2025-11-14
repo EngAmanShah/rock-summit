@@ -7,9 +7,10 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
+  FaMapMarkerAlt,
+  FaPhone,
+  FaEnvelope,
 } from "react-icons/fa";
-import { FaGithub, FaSnapchatGhost } from "react-icons/fa";
-import { SiFiverr } from "react-icons/si"; // Fiverr icon is in 'react-icons/si' (Simple Icons)
 
 export default function Footer({ lang }) {
   const pathname = usePathname();
@@ -24,185 +25,337 @@ export default function Footer({ lang }) {
   }
 
   const arabicText = {
-    companyName: "شركة نكست فيوتشر لتقنية المعلومات",
-    description:
-      "من الفكرة إلى التنفيذ، نحول أفكارك إلى نجاح رقمي. مواقع، تطبيقات، وتقنية — كل ذلك ضمن حل ذكي متكامل.",
-    companyTitle: "شركة",
-    helpTitle: "المساعدة",
+    companyName: "شركة القمة الصخرية المحدودة",
+    description: "للمقاولات العامة - نقدم حلولاً متكاملة في الإنشاءات والبنية التحتية بأعلى معايير الجودة والسلامة.",
+    companyTitle: "الشركة",
+    servicesTitle: "خدماتنا",
+    contactTitle: "اتصل بنا",
     links: {
       home: "الرئيسية",
       about: "من نحن",
+      services: "خدماتنا",
+      projects: "مشاريعنا",
       contact: "اتصل بنا",
-      blog: "المدونة",
-      faq: "الأسئلة المتكررة",
+    },
+    services: {
+      building: "إنشاء المباني",
+      infrastructure: "البنية التحتية",
+      finishing: "أعمال التشطيب",
+      landscaping: "التشجير والملاعب",
+      maintenance: "الصيانة والتشغيل",
     },
     rightsReserved: "جميع الحقوق محفوظة.",
+    address: "الرياض، حي العارض، شارع أحمد بن سعيد ابن الهندي",
+    phone: "0539983393",
+    email: "info@rock-summit.com",
   };
 
   const englishText = {
-    companyName: "Next Future Information Technology",
-    description:
-      "From idea to execution, we turn your ideas into digital success. Web, apps, IT — all under one smart solution.",
+    companyName: "Rock Summit Co. Ltd",
+    description: "General Contracting - We provide integrated solutions in construction and infrastructure with the highest standards of quality and safety.",
     companyTitle: "Company",
-    helpTitle: "Help",
+    servicesTitle: "Our Services",
+    contactTitle: "Contact Us",
     links: {
       home: "Home",
       about: "About Us",
+      services: "Services",
+      projects: "Projects",
       contact: "Contact Us",
-      blog: "Blog",
-      faq: "FAQ",
+    },
+    services: {
+      building: "Building Construction",
+      infrastructure: "Infrastructure",
+      finishing: "Finishing Works",
+      landscaping: "Landscaping & Sports",
+      maintenance: "Maintenance & Operation",
     },
     rightsReserved: "All Rights Reserved.",
+    address: "Riyadh, Al Arid District, Ahmed Bin Saeed Ibn Al Hindi Street",
+    phone: "+966539983393",
+    email: "info@rock-summit.com",
   };
 
   const t = lang === "ar" ? arabicText : englishText;
 
   return (
     <footer
-      className="footer lh-lg text-center-sm text-black"
-      style={{ backgroundColor: "#F0F0F0" }}
+      className="footer lh-lg text-center-sm"
+      style={{ 
+        backgroundColor: "#000000",
+        background: "linear-gradient(135deg, #000000 0%, #1a1a1a 100%)",
+      }}
     >
       <div className="container">
         <div className="row pt-5">
           {/* Company Info */}
-          <div className="col-md-6 mb-4 text-center text-md-start">
+          <div className="col-md-4 mb-4 text-center text-md-start">
             <Link href="/">
               <img
                 src="/logo_black.png"
                 alt={`${t.companyName} logo`}
-                style={{ width: "200px", height: "auto" }}
+                style={{ 
+                  width: "200px", 
+                  height: "auto",
+                  filter: "brightness(0) invert(1)" // Makes black logo white
+                }}
               />
             </Link>
-            <p className="mt-4" style={{ fontSize: "18px" }}>
-              <span className="fw-bold">{t.companyName}</span> — {t.description}
+            <p className="mt-4" style={{ fontSize: "16px", color: "#e0e0e0" }}>
+              <span className="fw-bold" style={{ color: "#ceac24" }}>{t.companyName}</span> — {t.description}
             </p>
 
+            {/* Contact Information */}
+            <div className="mt-4">
+              <div className="d-flex align-items-center mb-2">
+                <FaMapMarkerAlt className="me-2" size={16} style={{ color: "#ceac24" }} />
+                <span style={{ fontSize: "14px", color: "#e0e0e0" }}>{t.address}</span>
+              </div>
+              <div className="d-flex align-items-center mb-2">
+                <FaPhone className="me-2" size={16} style={{ color: "#ceac24" }} />
+                <a 
+                  href={`tel:${t.phone}`} 
+                  className="text-decoration-none"
+                  style={{ fontSize: "14px", color: "#e0e0e0" }}
+                >
+                  {t.phone}
+                </a>
+              </div>
+              <div className="d-flex align-items-center">
+                <FaEnvelope className="me-2" size={16} style={{ color: "#ceac24" }} />
+                <a 
+                  href={`mailto:${t.email}`} 
+                  className="text-decoration-none"
+                  style={{ fontSize: "14px", color: "#e0e0e0" }}
+                >
+                  {t.email}
+                </a>
+              </div>
+            </div>
+
             {/* Social Media Icons */}
-            <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-3">
+            <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-4">
               <a
-                href="https://x.com/nextftechsa/"
+                href="https://www.linkedin.com/company/rock-summit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black"
+                className="social-icon"
+                aria-label="LinkedIn"
+                style={{ color: "#ceac24" }}
+              >
+                <FaLinkedinIn size={20} />
+              </a>
+              <a
+                href="https://twitter.com/rock-summit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
                 aria-label="Twitter"
+                style={{ color: "#ceac24" }}
               >
                 <FaTwitter size={20} />
               </a>
               <a
-                href="https://instagram.com/"
+                href="https://facebook.com/rock-summit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black"
+                className="social-icon"
+                aria-label="Facebook"
+                style={{ color: "#ceac24" }}
+              >
+                <FaFacebookF size={20} />
+              </a>
+              <a
+                href="https://instagram.com/rock-summit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
                 aria-label="Instagram"
+                style={{ color: "#ceac24" }}
               >
                 <FaInstagram size={20} />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/nextftechsa/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedinIn size={20} />
-              </a>
-              {/* GitHub */}
-
-              {/* Snapchat */}
-              <a
-                href="https://www.snapchat.com/ "
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black"
-                aria-label="Snapchat"
-              >
-                <FaSnapchatGhost size={20} />
               </a>
             </div>
           </div>
 
           {/* Company Links */}
           <div className="col-sm-6 col-md-3 mb-4">
-            <h4 className="mb-4" style={{ fontWeight: "600" }}>
+            <h4 className="mb-4" style={{ fontWeight: "600", color: "#ceac24" }}>
               {t.companyTitle}
             </h4>
             <div className="d-flex flex-column">
               <h6 className="mb-3">
-                <Link href="/" className="text-decoration-none text-black">
+                <Link href="/" className="text-decoration-none footer-link">
                   {t.links.home}
                 </Link>
               </h6>
               <h6 className="mb-3">
                 <Link
                   href="/about-us"
-                  className="text-decoration-none text-black"
+                  className="text-decoration-none footer-link"
                 >
                   {t.links.about}
                 </Link>
               </h6>
               <h6 className="mb-3">
                 <Link
-                  href="/contact-us"
-                  className="text-decoration-none text-black"
+                  href="/services"
+                  className="text-decoration-none footer-link"
+                >
+                  {t.links.services}
+                </Link>
+              </h6>
+              <h6 className="mb-3">
+                <Link
+                  href="/projects"
+                  className="text-decoration-none footer-link"
+                >
+                  {t.links.projects}
+                </Link>
+              </h6>
+              <h6>
+                <Link 
+                  href="/contact-us" 
+                  className="text-decoration-none footer-link"
                 >
                   {t.links.contact}
                 </Link>
               </h6>
-              <h6>
-                <Link href="/blog" className="text-decoration-none text-black">
-                  {t.links.blog}
-                </Link>
-              </h6>
             </div>
           </div>
 
-          {/* Help Links */}
+          {/* Services Links */}
           <div className="col-sm-6 col-md-3 mb-4">
-            <h4 className="mb-4" style={{ fontWeight: "600" }}>
-              {t.helpTitle}
+            <h4 className="mb-4" style={{ fontWeight: "600", color: "#ceac24" }}>
+              {t.servicesTitle}
             </h4>
             <div className="d-flex flex-column">
               <h6 className="mb-3">
-                <Link href="/faq" className="text-decoration-none text-black">
-                  {t.links.faq}
+                <Link 
+                  href="/service/buildings" 
+                  className="text-decoration-none footer-link"
+                >
+                  {t.services.building}
                 </Link>
               </h6>
+              <h6 className="mb-3">
+                <Link 
+                  href="/service/infrastructure" 
+                  className="text-decoration-none footer-link"
+                >
+                  {t.services.infrastructure}
+                </Link>
+              </h6>
+              <h6 className="mb-3">
+                <Link 
+                  href="/service/finishing" 
+                  className="text-decoration-none footer-link"
+                >
+                  {t.services.finishing}
+                </Link>
+              </h6>
+              <h6 className="mb-3">
+                <Link 
+                  href="/service/landscaping" 
+                  className="text-decoration-none footer-link"
+                >
+                  {t.services.landscaping}
+                </Link>
+              </h6>
+              <h6>
+                <Link 
+                  href="/service/maintenance" 
+                  className="text-decoration-none footer-link"
+                >
+                  {t.services.maintenance}
+                </Link>
+              </h6>
+            </div>
+          </div>
 
-              {/* Phone number (clickable) */}
+          {/* Contact Info */}
+          <div className="col-md-2 mb-4">
+            <h4 className="mb-4" style={{ fontWeight: "600", color: "#ceac24" }}>
+              {t.contactTitle}
+            </h4>
+            <div className="d-flex flex-column">
               <h6 className="mb-3">
                 <a
-                  href="tel:+966551981751"
-                  className="text-decoration-none text-black"
+                  href="tel:+966539983393"
+                  className="text-decoration-none footer-link"
                 >
-                  0539983393
+                  {lang === "ar" ? "اتصل بنا" : "Call Us"}
                 </a>
               </h6>
-
-              {/* Email (clickable) */}
               <h6 className="mb-3">
                 <a
-                  href="mailto:info@nextfuturetech.net"
-                  className="text-decoration-none text-black"
+                  href="https://wa.me/966539983393"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none footer-link"
                 >
-                  info@nextfuturetech.net
+                  {lang === "ar" ? "واتساب" : "WhatsApp"}
                 </a>
+              </h6>
+              <h6 className="mb-3">
+                <a
+                  href="mailto:info@rock-summit.com"
+                  className="text-decoration-none footer-link"
+                >
+                  {lang === "ar" ? "البريد الإلكتروني" : "Email"}
+                </a>
+              </h6>
+              <h6>
+                <Link
+                  href="/contact-us"
+                  className="text-decoration-none footer-link"
+                >
+                  {lang === "ar" ? "نموذج الاتصال" : "Contact Form"}
+                </Link>
               </h6>
             </div>
           </div>
         </div>
 
-        <hr />
+        <hr style={{ borderColor: "#ceac24", opacity: 0.3 }} />
 
         {/* Footer Bottom */}
-        <div className="row text-center" style={{ color: "black" }}>
-          <div className="col pb-3">
-            &copy; {currentDate?.getFullYear()} {t.companyName}
-            <span className="d-none d-sm-inline"> | </span>
+        <div className="row text-center">
+          <div className="col pb-3" style={{ color: "#e0e0e0" }}>
+            &copy; {currentDate?.getFullYear()} <span style={{ color: "#ceac24" }}>{t.companyName}</span>
+            <span className="d-none d-sm-inline" style={{ color: "#e0e0e0" }}> | </span>
             <br className="d-sm-none" />
-            <span>{t.rightsReserved}</span>
+            <span style={{ color: "#e0e0e0" }}>{t.rightsReserved}</span>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .footer-link {
+          color: #e0e0e0 !important;
+          transition: all 0.3s ease;
+        }
+        
+        .footer-link:hover {
+          color: #ceac24 !important;
+          transform: translateX(5px);
+        }
+        
+        .social-icon {
+          transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+          color: #ffffff !important;
+          transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+          .footer-link:hover {
+            transform: translateX(0);
+          }
+        }
+      `}</style>
     </footer>
   );
 }
