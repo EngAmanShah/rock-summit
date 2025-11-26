@@ -10,16 +10,17 @@ export async function generateMetadata({ params }) {
 
 const metas = {
   en: {
-    title: "Our Services - Next Future",
+    title: "Our Services - Rock Summit Co. Ltd",
     description:
-      "Explore Next Future Information Technology's full range of digital and IT services! From web and mobile app development to digital marketing and IT solutions, we deliver innovative services that elevate your business and drive measurable results.",
+      "Explore Rock Summit Co. Ltd's full range of contracting and construction services! From building construction to infrastructure and landscaping, we deliver projects with professionalism, sustainability, and quality commitment.",
   },
   ar: {
-    title: "خدماتنا - نكست فيوتشر",
+    title: "خدماتنا - شركة القمة الصخرية المحدودة",
     description:
-      "استعرض مجموعة نكست فيوتشر الكاملة من الخدمات الرقمية وحلول تكنولوجيا المعلومات! من تطوير المواقع والتطبيقات إلى التسويق الرقمي وحلول تقنية مبتكرة، نقدم خدمات ترتقي بأعمالك وتحقق نتائج ملموسة.",
+      "استعرض مجموعة شركة القمة الصخرية المحدودة الكاملة من خدمات المقاولات والإنشاءات! من إنشاء المباني إلى البنية التحتية والتشجير، نقدم مشاريعنا بمهنية واستدامة والتزام بقيم الجودة.",
   },
 };
+
 
   const meta = metas[lang] || metas.en;
 

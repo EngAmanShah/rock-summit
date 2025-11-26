@@ -3,19 +3,18 @@ import ContactUsClient from "@/components/ClientContact";
 export async function generateMetadata({ params }) {
   const { lang } = await params;
 
-const metaContent = {
-  en: {
-    title: "Next Future",
-    description:
-      "Get in touch with Next Future Information Technology for questions, feedback, or inquiries. Our team is ready to assist you!",
-  },
-  ar: {
-    title: "تواصل معنا",
-    description:
-      "تواصل مع شركة نكست فيوتشر لتقنية المعلومات لأي استفسارات أو ملاحظات أو استفسارات عامة. فريقنا جاهز لمساعدتك!",
-  },
-};
-
+  const metaContent = {
+    en: {
+      title: "Rock Summit Co. Ltd",
+      description:
+        "In a competitive world where the pace of achievement accelerates, Rock Summit Co. Ltd moves forward with a bold vision that combines professionalism, sustainability, and a deep commitment to quality.",
+    },
+    ar: {
+      title: "شركة القمة الصخرية المحدودة",
+      description:
+        "في عالم تنافسي يتسارع فيه الإنجاز، تنطلق شركة القمة الصخرية المحدودة برؤية طموحة تجمع بين المهنية والاستدامة في التنفيذ، مع التزام عميق بقيم الجودة.",
+    },
+  };
 
   const { title, description } = metaContent[lang] || metaContent.en;
   const baseUrl = "https://brandraize.com";

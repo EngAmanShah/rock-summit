@@ -30,14 +30,14 @@ export async function generateMetadata({ params }) {
 
   const metas = {
     en: {
-      title: "Next Future Information Technology",
+      title: "Rock Summit Co. Ltd",
       description:
-        "Next Future Information Technology is a forward-thinking digital company. We deliver innovative web and mobile app solutions, digital marketing, graphic design, and IT services tailored to drive business growth, credibility, and measurable results.",
+        "In a competitive world where the pace of achievement accelerates, Rock Summit launched in the contracting industry with an ambitious vision that combines professionalism and sustainability in implementation, and a deep commitment to quality values.",
     },
     ar: {
-      title: "نكست فيوتشر لتقنية المعلومات",
+      title: "شركة القمة الصخرية المحدودة  ",
       description:
-        "نكست فيوتشر لتقنية المعلومات هي شركة رقمية مبتكرة. نقدم حلول تطوير المواقع والتطبيقات، التسويق الرقمي، التصميم الجرافيكي، وخدمات تكنولوجيا المعلومات المصممة لتعزيز نمو الشركات والمصداقية وتحقيق نتائج ملموسة.",
+        "في عالم تنافسي يتسارع فيه pace الإنجاز، شركة القمة الصخرية المحدودة برؤية طموحة تجمع بين المهنية والاستدامة في التنفيذ، مع التزام عميق بقيم الجودة.",
     },
   };
 

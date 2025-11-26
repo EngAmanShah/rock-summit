@@ -2,19 +2,18 @@ export async function generateMetadata({ params }) {
   const resolvedParams = await params;
   const { lang } = resolvedParams;
 
-const metas = {
-  en: {
-    title: "Frequently Asked Questions | Next Future",
-    description:
-      "Find answers to the most common questions about our IT, web, and digital services, and discover how we can help your business grow.",
-  },
-  ar: {
-    title: "الأسئلة المتكررة | نكست فيوتشر",
-    description:
-      "اعثر على إجابات لأكثر الأسئلة شيوعًا حول خدمات نكست فيوتشر لتقنية المعلومات والحلول الرقمية، وتعرف على كيفية مساعدتنا لنمو عملك.",
-  },
-};
-
+  const metas = {
+    en: {
+      title: "Rock Summit Co. Ltd",
+      description:
+        "In a competitive world where the pace of achievement accelerates, Rock Summit Co. Ltd moves forward with a bold vision that combines professionalism, sustainability, and a deep commitment to quality.",
+    },
+    ar: {
+      title: "شركة القمة الصخرية المحدودة",
+      description:
+        "في عالم تنافسي يتسارع فيه الإنجاز، شركة القمة الصخرية المحدودة برؤية طموحة تجمع بين المهنية والاستدامة في التنفيذ، مع التزام عميق بقيم الجودة.",
+    },
+  };
 
   const meta = metas[lang] || metas.en;
   const baseUrl = "https://brandraize.com";
@@ -66,8 +65,7 @@ export default async function FAQs({ params }) {
     },
     {
       question: "Do you work with international clients?",
-      answer:
-        "Yes, we work remotely with clients all over the world.",
+      answer: "Yes, we work remotely with clients all over the world.",
     },
     {
       question: "Do you provide support after project delivery?",
@@ -94,7 +92,8 @@ export default async function FAQs({ params }) {
     },
     {
       question: "ما هي خبرة براندرايز؟",
-      answer: "لدينا أكثر من ٥ سنوات من الخبرة في تقديم منتجات برمجية وحلول رقمية مؤثرة.",
+      answer:
+        "لدينا أكثر من ٥ سنوات من الخبرة في تقديم منتجات برمجية وحلول رقمية مؤثرة.",
     },
     {
       question: "ما هي الخدمات التي تقدمونها؟",
@@ -103,13 +102,11 @@ export default async function FAQs({ params }) {
     },
     {
       question: "هل تعملون مع عملاء دوليين؟",
-      answer:
-        "نعم، نحن نعمل عن بُعد مع عملاء في جميع أنحاء العالم.",
+      answer: "نعم، نحن نعمل عن بُعد مع عملاء في جميع أنحاء العالم.",
     },
     {
       question: "هل تقدمون دعمًا بعد تسليم المشروع؟",
-      answer:
-        "نعم، نقدم حزم دعم وصيانة مستمرة لضمان تشغيل برمجياتكم بسلاسة.",
+      answer: "نعم، نقدم حزم دعم وصيانة مستمرة لضمان تشغيل برمجياتكم بسلاسة.",
     },
     {
       question: "ما هي التقنيات التي تستخدمونها؟",

@@ -12,7 +12,7 @@ import {
   FaLaptop,
   FaVideo,
   FaUsers,
-  FaToolbox
+  FaToolbox,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import styles from "./aboutus.module.css";
@@ -86,13 +86,18 @@ export default function AboutUs({ params }) {
     en: {
       heroTitle: "About Rock Summit Co. Ltd",
       heroSubtitle: "General Contracting Company",
-      heroExtra: "In a competitive world where the pace of achievement accelerates, Rock Summit launched in the contracting industry with an ambitious vision that combines professionalism and sustainability in implementation, and a deep commitment to quality values. We strive to be a reliable partner in infrastructure and construction projects by providing integrated solutions that meet our clients' aspirations and align with the objectives of Saudi Vision 2030.",
-      history: "We take pride in our engineering expertise, operational skills, and a history of working in diverse environments with leading entities, where we place accuracy, safety, and time commitment at the top of our priorities in every project. We also believe that the relationship with the community is no less important than the relationship with the client, so we work to enhance our presence as a responsible national institution that respects the local fabric and participates in building a promising developmental future.",
+      heroExtra:
+        "In a competitive world where the pace of achievement accelerates, Rock Summit launched in the contracting industry with an ambitious vision that combines professionalism and sustainability in implementation, and a deep commitment to quality values. We strive to be a reliable partner in infrastructure and construction projects by providing integrated solutions that meet our clients' aspirations and align with the objectives of Saudi Vision 2030.",
+      history:
+        "We take pride in our engineering expertise, operational skills, and a history of working in diverse environments with leading entities, where we place accuracy, safety, and time commitment at the top of our priorities in every project. We also believe that the relationship with the community is no less important than the relationship with the client, so we work to enhance our presence as a responsible national institution that respects the local fabric and participates in building a promising developmental future.",
       servicesTitle: "Our Services",
       storyHeading: "Our Vision & Mission",
-      mission: "Active contribution to developing the Kingdom's infrastructure through implementing high-quality projects, enhancing operational efficiency, and compliance with approved engineering standards.",
-      values: "Commitment to providing professional contracting works based on: Quality, Timeliness, Continuous Development, Modern Building Technologies, Occupational Safety, Building Sustainable Relationships, Investing in National Cadres.",
-      vision: "To be at the forefront of national contracting companies by providing sustainable and innovative construction solutions that meet our clients' aspirations and support achieving Saudi Vision 2030 objectives.",
+      mission:
+        "Active contribution to developing the Kingdom's infrastructure through implementing high-quality projects, enhancing operational efficiency, and compliance with approved engineering standards.",
+      values:
+        "Commitment to providing professional contracting works based on: Quality, Timeliness, Continuous Development, Modern Building Technologies, Occupational Safety, Building Sustainable Relationships, Investing in National Cadres.",
+      vision:
+        "To be at the forefront of national contracting companies by providing sustainable and innovative construction solutions that meet our clients' aspirations and support achieving Saudi Vision 2030 objectives.",
       buttons: {
         buildings: "Building Construction",
         roads: "Road Works",
@@ -102,19 +107,24 @@ export default function AboutUs({ params }) {
         maintenance: "Maintenance",
         computer: "IT Systems",
         videoWall: "Video Wall",
-        events: "Events Management"
+        events: "Events Management",
       },
     },
     ar: {
       heroTitle: "عن شركة القمة الصخرية المحدودة",
       heroSubtitle: "للمقاولات العامة",
-      heroExtra: "في عالم تتسارع فيه وتيرة الإنجاز، انطلقت شركة القمة الصخرية في عالم المقاولات، برؤية طموحة تجمع بين الاحترافية والاستدامة في التنفيذ، والالتزام العميق بقيم الجودة. نسعى لأن نكون شريكا موثوقاً في مشاريع البنية التحتية والإنشاءات، من خلال توفير حلول متكاملة تواكب تطلعات عملائنا وتنسجم مع مستهدفات رؤية المملكة ٢٠٣٠",
-      history: "نفتخر بخبراتنا الهندسية ومهاراتنا التشغيلية وبتاريخ حافل من العمل في بيئات متنوعة ومع جهات رائدة، حيث نضع الدقة والسلامة والالتزام الزمني على رأس أولوياتنا في كل مشروع. كما نؤمن بأن العلاقة مع المجتمع لا تقل أهمية عن العلاقة مع العميل، فنعمل على تعزيز حضورنا كمؤسسة وطنية مسؤولة، تحترم النسيج المحلي وتشارك في بناء مستقبل تنموي واعد.",
+      heroExtra:
+        "في عالم تتسارع فيه وتيرة الإنجاز، انطلقت شركة القمة الصخرية في عالم المقاولات، برؤية طموحة تجمع بين الاحترافية والاستدامة في التنفيذ، والالتزام العميق بقيم الجودة. نسعى لأن نكون شريكا موثوقاً في مشاريع البنية التحتية والإنشاءات، من خلال توفير حلول متكاملة تواكب تطلعات عملائنا وتنسجم مع مستهدفات رؤية المملكة ٢٠٣٠",
+      history:
+        "نفتخر بخبراتنا الهندسية ومهاراتنا التشغيلية وبتاريخ حافل من العمل في بيئات متنوعة ومع جهات رائدة، حيث نضع الدقة والسلامة والالتزام الزمني على رأس أولوياتنا في كل مشروع. كما نؤمن بأن العلاقة مع المجتمع لا تقل أهمية عن العلاقة مع العميل، فنعمل على تعزيز حضورنا كمؤسسة وطنية مسؤولة، تحترم النسيج المحلي وتشارك في بناء مستقبل تنموي واعد.",
       servicesTitle: "خدماتنا",
       storyHeading: "رؤيتنا ورسالتنا",
-      mission: "المساهمة الفاعلة في تطوير البنية التحتية للمملكة عبر تنفيذ مشاريع عالية الجودة وتعزيز الكفاءة التشغيلية والامتثال للمعايير الهندسية المعتمدة",
-      values: "الالتزام بتقديم أعمال مقاولات باحترافية عالية ترتكز على: الجودة، الالتزام بالمواعيد، التطوير المستمر، تقنيات البناء الحديثة، السلامة المهنية، بناء علاقات مستدامة، الاستثمار في الكوادر الوطنية",
-      vision: "أن نكون في طليعة شركات المقاولات الوطنية من خلال تقديم حلول إنشائية مستدامة ومبتكرة تواكب تطلعات عملائنا وتدعم تحقيق مستهدفات رؤية المملكة ٢٠٣٠",
+      mission:
+        "المساهمة الفاعلة في تطوير البنية التحتية للمملكة عبر تنفيذ مشاريع عالية الجودة وتعزيز الكفاءة التشغيلية والامتثال للمعايير الهندسية المعتمدة",
+      values:
+        "الالتزام بتقديم أعمال مقاولات باحترافية عالية ترتكز على: الجودة، الالتزام بالمواعيد، التطوير المستمر، تقنيات البناء الحديثة، السلامة المهنية، بناء علاقات مستدامة، الاستثمار في الكوادر الوطنية",
+      vision:
+        "أن نكون في طليعة شركات المقاولات الوطنية من خلال تقديم حلول إنشائية مستدامة ومبتكرة تواكب تطلعات عملائنا وتدعم تحقيق مستهدفات رؤية المملكة ٢٠٣٠",
       buttons: {
         buildings: "إنشاء المباني",
         roads: "أعمال الطرق",
@@ -124,7 +134,7 @@ export default function AboutUs({ params }) {
         maintenance: "الصيانة",
         computer: "أنظمة الحاسب",
         videoWall: "شاشات العرض",
-        events: "إدارة الفعاليات"
+        events: "إدارة الفعاليات",
       },
     },
   };
@@ -250,10 +260,10 @@ export default function AboutUs({ params }) {
             <div className={styles.missionVision}>
               <h3>{currentLang === "en" ? "Our Mission" : "رسالتنا"}</h3>
               <p>{t.mission}</p>
-              
+
               <h3>{currentLang === "en" ? "Our Values" : "قيمنا"}</h3>
               <p>{t.values}</p>
-              
+
               <h3>{currentLang === "en" ? "Our Vision" : "رؤيتنا"}</h3>
               <p>{t.vision}</p>
             </div>

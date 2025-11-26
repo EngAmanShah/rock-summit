@@ -18,7 +18,6 @@ export default async function Home({ params }) {
 
   const content = {
     en: {
-    
     heroTitle: "Rock Summit Co. Ltd",
     heroSubtitle: "General Contracting Company",
     heroDescription:
@@ -92,13 +91,13 @@ export default async function Home({ params }) {
       ],
     },
   ar: {
-  heroTitle: "شركة روك سامت المحدودة",
-  heroSubtitle: "شركة مقاولات عامة",
+  heroTitle:  "شركة القمة الصخرية المحدودة  ",
+  heroSubtitle: " للمقاولات العامة",
   heroDescription:
-    "في عالم تنافسي يتسارع فيه pace الإنجاز، انطلقت روك سامت في قطاع المقاولات برؤية طموحة تجمع بين المهنية والاستدامة في التنفيذ، مع التزام عميق بقيم الجودة.",
+    "في عالم تنافسي يتسارع فيه pace الإنجاز، شركة القمة الصخرية المحدودة برؤية طموحة تجمع بين المهنية والاستدامة في التنفيذ، مع التزام عميق بقيم الجودة.",
   shopNow: "ابدأ مشروعك",
   
-  whyChooseTitle: "لماذا تختار روك سامت",
+  whyChooseTitle: "لماذا تختار  شركة القمة الصخرية المحدودة",
   whyChooseDescription:
     "نفخر بخبرتنا الهندسية ومهاراتنا التشغيلية وسجلّنا في العمل بمختلف البيئات مع جهات رائدة، حيث نضع الدقة والسلامة والالتزام بالوقت على رأس أولوياتنا.",
   

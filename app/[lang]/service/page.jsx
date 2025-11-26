@@ -6,20 +6,21 @@ export async function generateMetadata({ params }) {
 
 const translations = {
   en: {
-    title: "Our Services | Next Future",
+    title: "Our Services | Rock Summit Co. Ltd",
     description:
-      "Explore Next Future Information Technology services: Web Development, Mobile App Development, IT Solutions, Digital Marketing, Graphic Design, and more — designed to help your business grow and succeed.",
+      "Explore Rock Summit Co. Ltd services: Building Construction, Road Works & Infrastructure, Landscaping & Sports Facilities, Finishing Works, HVAC Systems, Maintenance & Operation — designed to deliver projects with professionalism, sustainability, and quality commitment.",
     keywords:
-      "Next Future services, web development, mobile app development, IT solutions, digital marketing, SEO, graphic design, business solutions, technology services",
+      "Rock Summit services, building construction, road works, infrastructure, landscaping, sports facilities, finishing works, HVAC systems, maintenance, operation, contracting, construction",
   },
   ar: {
-    title: "خدماتنا | نكست فيوتشر",
+    title: "خدماتنا | شركة القمة الصخرية المحدودة",
     description:
-      "استعرض خدمات شركة نكست فيوتشر لتقنية المعلومات: تطوير المواقع، تطوير تطبيقات الهواتف، حلول تكنولوجيا المعلومات، التسويق الرقمي، التصميم الجرافيكي والمزيد — مصممة لدعم نمو عملك ونجاحه.",
+      "استعرض خدمات شركة القمة الصخرية المحدودة: إنشاء المباني، أعمال الطرق والبنية التحتية، التشجير والمرافق الرياضية، أعمال التشطيب، أنظمة التكييف، الصيانة والتشغيل — مصممة لتقديم مشاريع بمهنية واستدامة والتزام بقيم الجودة.",
     keywords:
-      "خدمات نكست فيوتشر, تطوير المواقع, تطوير تطبيقات الهواتف, حلول تكنولوجيا المعلومات, التسويق الرقمي, تحسين محركات البحث, التصميم الجرافيكي, حلول الأعمال, خدمات تقنية",
+      "خدمات شركة القمة الصخرية المحدودة, إنشاء المباني, أعمال الطرق, البنية التحتية, التشجير, الملاعب, أعمال التشطيب, أنظمة التكييف, الصيانة, التشغيل, المقاولات, الإنشاءات",
   },
 };
+
 
 
   const t = translations[lang] ?? translations.en;

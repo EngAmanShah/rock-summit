@@ -161,8 +161,9 @@ export default function NewServices({ lang, servicesData, sectionTitle, sectionD
                   >
                     {service.description}
                   </p>
+                  {/* Fixed Link - using service.id instead of title */}
                   <Link
-                    href={`/${lang}/service/${service.title.toLowerCase().replace(/\s+/g, '-')}`}
+                    href={`/${lang}/services/${service.id}`}
                     className="btn mt-auto align-self-start"
                     style={{
                       background: "linear-gradient(135deg, #ceac24 0%, #d4b445 100%)",

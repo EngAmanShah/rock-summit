@@ -26,45 +26,24 @@ export default function TeamSection({ lang = "en" }) {
   const teamMembers = [
     { 
       id: 1, 
-      name: { en: "Eng. Ahmed Al-Rashid", ar: "م. أحمد الرشيد" }, 
-      position: { en: "Chief Executive Officer", ar: "الرئيس التنفيذي" }, 
-      image: "/aman.jpg",
-      expertise: { en: "Construction Management", ar: "إدارة الإنشاءات" }
+      name: { en: "Ahmed Fouda", ar: "  أحمد فوده" }, 
+      position: { en: "Chief Executive Officer (CEO)", ar: " المدير التنفيذي " }, 
+      image: "/ahmad.png",
+      expertise: { }
     },
     { 
       id: 2, 
-      name: { en: "Eng. Mohammed Al-Ghamdi", ar: "م. محمد الغامدي" }, 
-      position: { en: "Projects Director", ar: "مدير المشاريع" }, 
-      image: "/aman.jpg",
-      expertise: { en: "Civil Engineering", ar: "الهندسة المدنية" }
+      name: { en: "Saud Mubarak Al-Sham‘al", ar: "سعود مبارك الشعمل" }, 
+      position: { en: "General Manager", ar: " المدير العام" }, 
+      image: "/Saud.png",
+      expertise: {  }
     },
     { 
       id: 3, 
-      name: { en: "Eng. Sarah Al-Mansour", ar: "م. سارة المنصور" }, 
-      position: { en: "Operations Manager", ar: "مدير العمليات" }, 
-      image: "/aman.jpg",
-      expertise: { en: "Construction Operations", ar: "عمليات البناء" }
-    },
-    { 
-      id: 4, 
-      name: { en: "Eng. Khalid Al-Otaibi", ar: "م. خالد العتيبي" }, 
-      position: { en: "Technical Director", ar: "المدير الفني" }, 
-      image: "/aman.jpg",
-      expertise: { en: "Structural Engineering", ar: "الهندسة الإنشائية" }
-    },
-    { 
-      id: 5, 
-      name: { en: "Eng. Fatima Al-Zahrani", ar: "م. فاطمة الزهراني" }, 
-      position: { en: "Quality Control Manager", ar: "مدير مراقبة الجودة" }, 
-      image: "/aman.jpg",
-      expertise: { en: "Quality Assurance", ar: "ضمان الجودة" }
-    },
-    { 
-      id: 6, 
-      name: { en: "Eng. Faisal Al-Shammari", ar: "م. فيصل الشمري" }, 
-      position: { en: "Site Operations Manager", ar: "مدير عمليات الموقع" }, 
-      image: "/aman.jpg",
-      expertise: { en: "Site Management", ar: "إدارة المواقع" }
+      name: { en: "Eng.  Naji Al-Hajrasi", ar: "م.  ناجي الهجرسي" }, 
+      position: { en: " Project Manager", ar: " مدير المشاريع" }, 
+      image: "/Naji.png",
+      expertise: {  }
     },
   ];
 
