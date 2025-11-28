@@ -15,32 +15,31 @@ import {
   FaWater,
   FaFireExtinguisher,
 } from "react-icons/fa";
+
 import {
   GiBrickWall,
   GiConcreteBag,
-  GiSteelBeams,
   GiDigDug,
   GiHammerNails,
   GiStoneWall,
-  GiRoof,
   GiFloorPolisher,
+  // GiRoofTile removed because it doesn't exist
 } from "react-icons/gi";
+
 import "./Skills.css";
 
-// Safe icon component that handles undefined icons
-const SafeIcon = ({ icon: Icon, className, name }) => {
-  if (!Icon || typeof Icon === 'undefined') {
-    return <div className={className}>🏗️</div>;
-  }
+// Safe icon component
+const SafeIcon = ({ icon: Icon, className }) => {
+  if (!Icon) return <div className={className}>🏗️</div>; // fallback
   return <Icon className={className} />;
 };
 
 export default function TechMarquee({ lang = "en" }) {
-  // Translations
   const translations = {
     en: {
       heading: "Construction Technologies & Methods",
-      description: "From modern building techniques to advanced construction equipment and sustainable practices — we utilize cutting-edge technologies for superior project delivery.",
+      description:
+        "From modern building techniques to advanced construction equipment and sustainable practices — we utilize cutting-edge technologies for superior project delivery.",
       techNames: {
         BuildingConstruction: "Building Construction",
         CivilEngineering: "Civil Engineering",
@@ -58,7 +57,6 @@ export default function TechMarquee({ lang = "en" }) {
         SafetySystems: "Safety Systems",
         Masonry: "Masonry",
         ConcreteWorks: "Concrete Works",
-        SteelStructures: "Steel Structures",
         Excavation: "Excavation",
         Carpentry: "Carpentry",
         StoneWorks: "Stone Works",
@@ -71,7 +69,8 @@ export default function TechMarquee({ lang = "en" }) {
     },
     ar: {
       heading: "التقنيات والأساليب الإنشائية",
-      description: "من تقنيات البناء الحديثة إلى المعدات المتقدمة والممارسات المستدامة — نستخدم أحدث التقنيات لتسليم مشاريع متميزة.",
+      description:
+        "من تقنيات البناء الحديثة إلى المعدات المتقدمة والممارسات المستدامة — نستخدم أحدث التقنيات لتسليم مشاريع متميزة.",
       techNames: {
         BuildingConstruction: "إنشاء المباني",
         CivilEngineering: "الهندسة المدنية",
@@ -89,7 +88,6 @@ export default function TechMarquee({ lang = "en" }) {
         SafetySystems: "أنظمة السلامة",
         Masonry: "أعمال المباني",
         ConcreteWorks: "أعمال الخرسانة",
-        SteelStructures: "المنشآت المعدنية",
         Excavation: "أعمال الحفر",
         Carpentry: "أعمال النجارة",
         StoneWorks: "أعمال الحجر",
@@ -104,7 +102,6 @@ export default function TechMarquee({ lang = "en" }) {
 
   const t = translations[lang] ?? translations.en;
 
-  // Construction tech rows - simplified without problematic icons
   const techRows = [
     [
       { icon: FaBuilding, name: "BuildingConstruction" },
@@ -127,11 +124,10 @@ export default function TechMarquee({ lang = "en" }) {
       { icon: GiConcreteBag, name: "ConcreteWorks" },
     ],
     [
-      { icon: GiSteelBeams, name: "SteelStructures" },
       { icon: GiDigDug, name: "Excavation" },
       { icon: GiHammerNails, name: "Carpentry" },
       { icon: GiStoneWall, name: "StoneWorks" },
-      { icon: GiRoof, name: "Roofing" },
+      { icon: null, name: "Roofing" }, // fallback icon will render 🏗️
       { icon: GiFloorPolisher, name: "Flooring" },
     ],
   ];
@@ -156,11 +152,7 @@ export default function TechMarquee({ lang = "en" }) {
             <div className="marquee-content">
               {row.map((tech, i) => (
                 <div key={i} className="tech-item">
-                  <SafeIcon 
-                    icon={tech.icon} 
-                    className={`tech-icon ${tech.name.toLowerCase()}`}
-                    name={tech.name}
-                  />
+                  <SafeIcon icon={tech.icon} className="tech-icon" />
                   <span>{t.techNames[tech.name]}</span>
                 </div>
               ))}

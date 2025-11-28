@@ -18,11 +18,9 @@ import {
 import {
   GiBrickWall,
   GiConcreteBag,
-  GiSteelBeams,
   GiDigDug,
   GiHammerNails,
   GiStoneWall,
-  GiRoof,
   GiFloorPolisher,
 } from "react-icons/gi";
 import "./Skills.css";
@@ -127,11 +125,11 @@ export default function TechMarquee({ lang = "en" }) {
       { icon: GiConcreteBag, name: "ConcreteWorks" },
     ],
     [
-      { icon: GiSteelBeams, name: "SteelStructures" },
+      // { icon: GiSteelBeams, name: "SteelStructures" },
       { icon: GiDigDug, name: "Excavation" },
       { icon: GiHammerNails, name: "Carpentry" },
       { icon: GiStoneWall, name: "StoneWorks" },
-      { icon: GiRoof, name: "Roofing" },
+      // { icon: GiRoof, name: "Roofing" },
       { icon: GiFloorPolisher, name: "Flooring" },
     ],
   ];

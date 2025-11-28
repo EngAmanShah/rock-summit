@@ -203,12 +203,13 @@ export default async function Home({ params }) {
       />
       
       {/* New Services Component */}
-      <NewServices
-        lang={lang}
-        servicesData={services}
-        sectionTitle={discoverTitle}
-        sectionDescription={discoverDescription}
-      />
+    <NewServices
+  id="services" // Add this
+  lang={lang}
+  servicesData={services}
+  sectionTitle={discoverTitle}
+  sectionDescription={discoverDescription}
+/>
       
       {/* Badge */}
       <Badge lang={lang} />

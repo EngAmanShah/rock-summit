@@ -1,0 +1,55 @@
+.service-link {
+  transition: all 0.3s ease;
+}
+
+.service-link:hover {
+  transform: translateY(-5px);
+}
+
+.service-card .card {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.service-card .card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+}
+
+.service-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-image {
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.service-card:hover .service-overlay {
+  opacity: 1;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.1);
+}
+
+.view-details {
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+}

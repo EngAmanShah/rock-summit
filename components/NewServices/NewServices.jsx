@@ -161,9 +161,9 @@ export default function NewServices({ lang, servicesData, sectionTitle, sectionD
                   >
                     {service.description}
                   </p>
-                  {/* Fixed Link - using service.id instead of title */}
+                  {/* Fixed Link - goes to main services page */}
                   <Link
-                    href={`/${lang}/services/${service.id}`}
+                    href={`/${lang}/service`}
                     className="btn mt-auto align-self-start"
                     style={{
                       background: "linear-gradient(135deg, #ceac24 0%, #d4b445 100%)",
@@ -172,7 +172,8 @@ export default function NewServices({ lang, servicesData, sectionTitle, sectionD
                       borderRadius: "25px",
                       fontWeight: "600",
                       padding: "0.75rem 1.5rem",
-                      transition: "all 0.3s ease"
+                      transition: "all 0.3s ease",
+                      textDecoration: "none"
                     }}
                     onMouseEnter={(e) => {
                       e.target.style.transform = "translateY(-2px)";
@@ -207,7 +208,8 @@ export default function NewServices({ lang, servicesData, sectionTitle, sectionD
               color: "#ceac24",
               borderRadius: "50px",
               transition: "all 0.3s ease",
-              background: "transparent"
+              background: "transparent",
+              textDecoration: "none"
             }}
             onMouseEnter={(e) => {
               e.target.style.background = "#ceac24";
