@@ -78,7 +78,7 @@ export default function Navbar({ lang }) {
   // Don't render navbar on admin pages
   if (!pathname || pathname?.startsWith(`/${lang}/admin`)) return null;
 
-  const whatsappNumber = "+966539983393";
+  const whatsappNumber = "+966554780747";
 
   const handleMouseEnter = () => {
     if (window.innerWidth > 768) {

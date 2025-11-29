@@ -9,6 +9,7 @@ import ContextProvider from "@/providers/ContextProvider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BackToTopButton from "@/components/BackToTopButton";
+import WhatsAppButton from "@/components/WhatsAppButton"; // Add this import
 
 const primary = Poppins({
   weight: ["400", "700"],
@@ -102,6 +103,9 @@ export default async function RootLayout({ children, params }) {
             {children}
           </main>
           <BackToTopButton />
+
+                   <WhatsAppButton lang={lang} /> {/* Add this line */}
+
           <Footer lang={lang} />
         </ContextProvider>
       </body>

@@ -49,7 +49,7 @@ export default function TeamSection({ lang = "en" }) {
       { 
       id: 4, 
       name: { en: "Shaaban Ahmed Ramadan", ar: " شعبان أحمد رمضان " }, 
-      position: { en: " Purchaser manager  ", ar: " مدير المشتري " }, 
+      position: { en: " Purchaser manager  ", ar: " مدير المشتريات " }, 
       image: "/shaban.png",
       expertise: {  }
     },

@@ -26,7 +26,7 @@ export default function Footer({ lang }) {
 
   const arabicText = {
     companyName: "شركة القمة الصخرية المحدودة",
-    description: " دى عايزه تتظبط ويبقي فيه تنسيق ويخلى شركة القمة الصخريه ف سطر وبقية الانشطه ال بتقدمها الشركه ف السطر التالى",
+    description: " رواد  في تقديم حلول الإنشاءات المتكاملة ومشاريع البنية التحتية، من خلال التزامها بمعايير الجودة والسلامة العالمية ودمج الخبرة التقنية مع الابتكار لتحقيق تطلعات العملاء",
     companyTitle: "الشركة",
     servicesTitle: "خدماتنا",
     contactTitle: "اتصل بنا",
@@ -46,13 +46,13 @@ export default function Footer({ lang }) {
     },
     rightsReserved: "جميع الحقوق محفوظة.",
     address: "الرياض، حي العارض، شارع أحمد بن سعيد ابن الهندي",
-    phone: "0539983393",
+    phone: "0114732078",
     email: "info@rock-summit.com",
   };
 
   const englishText = {
     companyName: "Rock Summit Co. Ltd",
-    description: "This needs to be sorted and organized, with Al Qimma Al Sakhriya Company on one line and the rest of the company's activities on the next.",
+    description: "Ruwad in delivering integrated construction and infrastructure projects, through their commitment to global quality and safety standards, and by merging technical expertise with innovation to achieve client aspirations.",
     companyTitle: "Company",
     servicesTitle: "Our Services",
     contactTitle: "Contact Us",
@@ -72,7 +72,7 @@ export default function Footer({ lang }) {
     },
     rightsReserved: "All Rights Reserved.",
     address: "Riyadh, Al Arid District, Ahmed Bin Saeed Ibn Al Hindi Street",
-    phone: "+966539983393",
+    phone: "+0114732078",
     email: "info@rock-summit.com",
   };
 

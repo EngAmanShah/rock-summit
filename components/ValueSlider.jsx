@@ -42,7 +42,7 @@ export default function ValueSlider({ lang = "en" }) {
           ar: "ضمان الجودة والامتثال",
         },
       ],
-      image: "/services/BC.png",
+      image: "/services/BC.jpeg",
     },
     {
       title: {
@@ -75,7 +75,7 @@ export default function ValueSlider({ lang = "en" }) {
           ar: "التخطيط الحضري والتطوير",
         },
       ],
-      image: "/services/MO.png",
+      image: "/services/MO.jpeg",
     },
     {
       title: {
@@ -108,7 +108,7 @@ export default function ValueSlider({ lang = "en" }) {
           ar: "أعمال الكلادينج والواجهات",
         },
       ],
-      image: "/services/FW.png",
+      image: "/services/FW.jpeg",
     },
     {
       title: {
@@ -141,7 +141,7 @@ export default function ValueSlider({ lang = "en" }) {
           ar: "الصيانة والخدمة",
         },
       ],
-      image: "/services/HVC.png",
+      image: "/services/HVC.jpeg",
     },
     {
       title: {
@@ -174,7 +174,7 @@ export default function ValueSlider({ lang = "en" }) {
           ar: "أنظمة الري",
         },
       ],
-      image: "/services/LS.png",
+      image: "/services/LS.jpeg",
     },
     {
       title: {
@@ -207,7 +207,7 @@ export default function ValueSlider({ lang = "en" }) {
           ar: "إدارة المرافق",
         },
       ],
-      image: "/services/MO.png",
+      image: "/services/MO.jpeg",
     },
   ];
 

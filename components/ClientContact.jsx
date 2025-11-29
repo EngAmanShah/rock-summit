@@ -23,8 +23,8 @@ export default function ContactUsClient({ lang }) {
         {
           icon: <FaPhoneAlt size={28} />,
           label: "Phone Number",
-          value: "+966539983393",
-          link: "tel:+966539983393",
+          value: "0114732078",
+          link: "tel:+0114732078",
         },
         {
           icon: <FaEnvelope size={28} />,
@@ -53,8 +53,8 @@ export default function ContactUsClient({ lang }) {
         {
           icon: <FaPhoneAlt size={28} />,
           label: "رقم الهاتف",
-          value: "+966539983393",
-          link: "tel:+966539983393",
+          value: "+0114732078",
+          link: "tel:+0114732078",
         },
         {
           icon: <FaEnvelope size={28} />,
