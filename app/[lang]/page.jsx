@@ -54,37 +54,37 @@ export default async function Home({ params }) {
       services: [
         {
           title: "Building Construction",
-          image: "/services/BC.jpeg",
+          image: "/services/BC.png",
           description:
             "Construction of residential, government, educational, and healthcare buildings with global quality standards.",
         },
         {
           title: "Road Works & Infrastructure",
-          image: "/services/RW.jpeg",
+          image: "/services/RW.png",
           description:
             "Complete road solutions including paving, traffic signals, road markings, and lighting systems.",
         },
         {
           title: "Landscaping & Sports Facilities",
-          image: "/services/LS.jpeg",
+          image: "/services/LS.png",
           description:
             "Design and implementation of gardens, sports fields, and recreational facilities with modern techniques.",
         },
         {
           title: "Finishing Works",
-          image: "/services/FW.jpeg",
+          image: "/services/FW.png",
           description:
             "Interior and exterior finishing works including modern paints, floors, gypsum board, and cladding.",
         },
         {
           title: "HVAC Systems",
-          image: "/services/HVC.jpeg",
+          image: "/services/HVC.png",
           description:
             "Installation of modern cooling and air conditioning systems for comfortable and energy-efficient environments.",
         },
         {
           title: "Maintenance & Operation",
-          image: "/services/MO.jpeg",
+          image: "/services/MO.png",
           description:
             "Comprehensive building maintenance, operation, and cleaning services with specialized teams.",
         },
@@ -131,37 +131,37 @@ export default async function Home({ params }) {
   services: [
     {
       title: "إنشاء المباني",
-      image: "/services/BC.jpeg",
+      image: "/services/BC.png",
       description:
         "إنشاء المباني السكنية والحكومية والتعليمية والصحية بمعايير جودة عالمية.",
     },
     {
       title: "أعمال الطرق والبنية التحتية",
-      image: "/services/RW.jpeg",
+      image: "/services/RW.png",
       description:
         "حلول متكاملة لأعمال الطرق تشمل السفلته، الإشارات المرورية، تخطيط الطرق، وأنظمة الإنارة.",
     },
     {
       title: "التشجير والمرافق الرياضية",
-      image: "/services/LS.jpeg",
+      image: "/services/LS.png",
       description:
         "تصميم وتنفيذ الحدائق والملاعب والمرافق الترفيهية باستخدام أحدث التقنيات.",
     },
     {
       title: "أعمال التشطيب",
-      image: "/services/FW.jpeg",
+      image: "/services/FW.png",
       description:
         "تنفيذ التشطيبات العصرية الداخلية والخارجية بما في ذلك الدهانات والأرضيات والجبس والكلادينغ.",
     },
     {
       title: "أنظمة التكييف",
-      image: "/services/HVC.jpeg",
+      image: "/services/HVC.png",
       description:
         "تركيب أنظمة التبريد والتكييف الحديثة لتحقيق بيئات مريحة وموفرة للطاقة.",
     },
     {
       title: "الصيانة والتشغيل",
-      image: "/services/MO.jpeg",
+      image: "/services/MO.png",
       description:
         "خدمات متكاملة لصيانة وتشغيل ونظافة المباني بأيدي فرق متخصصة.",
     },

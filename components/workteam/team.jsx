@@ -40,7 +40,7 @@ export default function TeamSection({ lang = "en" }) {
     },
     { 
       id: 3, 
-      name: { en: "Eng.  Naji Al-Hajrasi", ar: "م.  ناجي الهجرسي" }, 
+      name: { en: "Eng. Naji Abdul Moneim Al-Hajrasi", ar: " م. ناجي عبد المنعم الهجرسى" }, 
       position: { en: " Project Manager", ar: " مدير المشاريع" }, 
       image: "/Naji.png",
       expertise: {  }
@@ -50,7 +50,7 @@ export default function TeamSection({ lang = "en" }) {
       id: 4, 
       name: { en: "Shaaban Ahmed Ramadan", ar: " شعبان أحمد رمضان " }, 
       position: { en: " Purchaser manager  ", ar: " مدير المشتريات " }, 
-      image: "/shaban.png",
+      image: "/shaban.jpeg",
       expertise: {  }
     },
   ];

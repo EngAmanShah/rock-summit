@@ -26,7 +26,7 @@ export default function Footer({ lang }) {
 
   const arabicText = {
     companyName: "شركة القمة الصخرية المحدودة",
-    description: " رواد  في تقديم حلول الإنشاءات المتكاملة ومشاريع البنية التحتية، من خلال التزامها بمعايير الجودة والسلامة العالمية ودمج الخبرة التقنية مع الابتكار لتحقيق تطلعات العملاء",
+    description: "رواد في تقديم حلول الإنشاءات المتكاملة ومشاريع البنية التحتية، من خلال التزامها بمعايير الجودة والسلامة العالمية ودمج الخبرة التقنية مع الابتكار لتحقيق تطلعات العملاء",
     companyTitle: "الشركة",
     servicesTitle: "خدماتنا",
     contactTitle: "اتصل بنا",
@@ -46,7 +46,8 @@ export default function Footer({ lang }) {
     },
     rightsReserved: "جميع الحقوق محفوظة.",
     address: "الرياض، حي العارض، شارع أحمد بن سعيد ابن الهندي",
-    phone: "0114732078",
+    landline: "0114732078",
+    whatsapp: "0554780747",
     email: "info@rock-summit.com",
   };
 
@@ -72,7 +73,8 @@ export default function Footer({ lang }) {
     },
     rightsReserved: "All Rights Reserved.",
     address: "Riyadh, Al Arid District, Ahmed Bin Saeed Ibn Al Hindi Street",
-    phone: "+0114732078",
+    landline: "+0114732078",
+    whatsapp: "+966554780747",
     email: "info@rock-summit.com",
   };
 
@@ -102,7 +104,8 @@ export default function Footer({ lang }) {
               />
             </Link>
             <p className="mt-4" style={{ fontSize: "16px", color: "#e0e0e0" }}>
-              <span className="fw-bold" style={{ color: "#ceac24" }}>{t.companyName}</span> — {t.description}
+              <span className="fw-bold d-block" style={{ color: "#ceac24" }}>{t.companyName}</span>
+              <span className="d-block mt-2">{t.description}</span>
             </p>
 
             {/* Contact Information */}
@@ -114,11 +117,23 @@ export default function Footer({ lang }) {
               <div className="d-flex align-items-center mb-2">
                 <FaPhone className="me-2" size={16} style={{ color: "#ceac24" }} />
                 <a 
-                  href={`tel:${t.phone}`} 
+                  href={`tel:${t.landline}`} 
                   className="text-decoration-none"
                   style={{ fontSize: "14px", color: "#e0e0e0" }}
                 >
-                  {t.phone}
+                  {t.landline} {lang === "ar" ? " : رقم التليفون " : ":  Phone Number  "}
+                </a>
+              </div>
+              <div className="d-flex align-items-center mb-2">
+                <FaPhone className="me-2" size={16} style={{ color: "#ceac24" }} />
+                <a 
+                  href={`https://wa.me/${t.whatsapp.replace('+', '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-decoration-none"
+                  style={{ fontSize: "14px", color: "#e0e0e0" }}
+                >
+                  {t.whatsapp} {lang === "ar" ? "   : واتساب " : ": WhatsApp  "}
                 </a>
               </div>
               <div className="d-flex align-items-center">
@@ -281,7 +296,7 @@ export default function Footer({ lang }) {
             <div className="d-flex flex-column">
               <h6 className="mb-3">
                 <a
-                  href="tel:+966539983393"
+                  href={`tel:${t.landline}`}
                   className="text-decoration-none footer-link"
                 >
                   {lang === "ar" ? "اتصل بنا" : "Call Us"}
@@ -289,7 +304,7 @@ export default function Footer({ lang }) {
               </h6>
               <h6 className="mb-3">
                 <a
-                  href="https://wa.me/966539983393"
+                  href={`https://wa.me/${t.whatsapp.replace('+', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-decoration-none footer-link"
