@@ -26,7 +26,7 @@ export default function Footer({ lang }) {
 
   const arabicText = {
     companyName: "شركة القمة الصخرية المحدودة",
-    description: "للمقاولات العامة - نقدم حلولاً متكاملة في الإنشاءات والبنية التحتية بأعلى معايير الجودة والسلامة.",
+    description: " دى عايزه تتظبط ويبقي فيه تنسيق ويخلى شركة القمة الصخريه ف سطر وبقية الانشطه ال بتقدمها الشركه ف السطر التالى",
     companyTitle: "الشركة",
     servicesTitle: "خدماتنا",
     contactTitle: "اتصل بنا",
@@ -52,7 +52,7 @@ export default function Footer({ lang }) {
 
   const englishText = {
     companyName: "Rock Summit Co. Ltd",
-    description: "General Contracting - We provide integrated solutions in construction and infrastructure with the highest standards of quality and safety.",
+    description: "This needs to be sorted and organized, with Al Qimma Al Sakhriya Company on one line and the rest of the company's activities on the next.",
     companyTitle: "Company",
     servicesTitle: "Our Services",
     contactTitle: "Contact Us",
@@ -97,7 +97,7 @@ export default function Footer({ lang }) {
                 style={{ 
                   width: "200px", 
                   height: "auto",
-                  filter: "brightness(0) invert(1)" // Makes black logo white
+                  // filter: "brightness(0) invert(1)" // Makes black logo white
                 }}
               />
             </Link>

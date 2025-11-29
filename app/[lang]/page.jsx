@@ -21,7 +21,7 @@ export default async function Home({ params }) {
     heroTitle: "Rock Summit Co. Ltd",
     heroSubtitle: "General Contracting Company",
     heroDescription:
-      "In a competitive world where the pace of achievement accelerates, Rock Summit launched in the contracting industry with an ambitious vision that combines professionalism and sustainability in implementation, and a deep commitment to quality values.",
+      "In a competitive world where the achievement accelerates, Rock Summit launched in the contracting industry with an ambitious vision that combines professionalism and sustainability in implementation, and a deep commitment to quality values.",
     shopNow: "Start Your Project",
     whyChooseTitle: "Why Choose Rock Summit",
     whyChooseDescription:
@@ -94,7 +94,7 @@ export default async function Home({ params }) {
   heroTitle:  "شركة القمة الصخرية المحدودة  ",
   heroSubtitle: " للمقاولات العامة",
   heroDescription:
-    "في عالم تنافسي يتسارع فيه pace الإنجاز، شركة القمة الصخرية المحدودة برؤية طموحة تجمع بين المهنية والاستدامة في التنفيذ، مع التزام عميق بقيم الجودة.",
+    "في عالم تنافسي يتسارع فيه الإنجاز، شركة القمة الصخرية المحدودة برؤية طموحة تجمع بين المهنية والاستدامة في التنفيذ، مع التزام عميق بقيم الجودة.",
   shopNow: "ابدأ مشروعك",
   
   whyChooseTitle: "لماذا تختار  شركة القمة الصخرية المحدودة",

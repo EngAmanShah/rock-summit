@@ -45,6 +45,14 @@ export default function TeamSection({ lang = "en" }) {
       image: "/Naji.png",
       expertise: {  }
     },
+
+      { 
+      id: 4, 
+      name: { en: "Shaaban Ahmed Ramadan", ar: " شعبان أحمد رمضان " }, 
+      position: { en: " Purchaser manager  ", ar: " مدير المشتري " }, 
+      image: "/shaban.png",
+      expertise: {  }
+    },
   ];
 
   return (

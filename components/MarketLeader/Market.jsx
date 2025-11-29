@@ -14,8 +14,8 @@ export default function Market({ lang }) {
       headerDesc: "With over a decade of construction excellence, Rock Summit delivers superior quality, innovative solutions, and unmatched expertise in building your vision into reality.",
       tabs: [
         {
-          title: "Expert Construction Team",
-          description: "Our team of certified engineers, architects, and construction specialists brings decades of combined experience in delivering high-quality, sustainable building solutions tailored to your specific requirements and vision.",
+          title: "An integrated team of diverse expertise.",
+          description: "Our team combines the efficiency of certified engineers, the creativity of architects, and the experience of construction specialists. Together, we deliver sustainable structural solutions that precisely align with your vision and aspirations.",
         },
         {
           title: "Comprehensive Building Solutions",
@@ -39,8 +39,8 @@ export default function Market({ lang }) {
       headerDesc: "بأكثر من عقد من التميز في البناء، تقدم القمة الصخرية جودة فائقة، حلولاً مبتكرة، وخبرة لا مثيل لها في تحويل رؤيتك إلى واقع ملموس.",
       tabs: [
         {
-          title: "فريق بناء متخصص",
-          description: "يضم فريقنا من المهندسين المعتمدين والمهندسين المعماريين ومتخصصي البناء عقودًا من الخبرة المجمعة في تقديم حلول بناء عالية الجودة ومستدامة مصممة خصيصًا لمتطلباتك ورؤيتك.",
+          title: "  فريق بناء متكامل الخبرات",
+          description: "يجمع فريقنا بين كفاءة المهندسين المعتمدين، وإبداع المعماريين، وخبرة متخصصي البناء، ليقدموا معًا حلولاً إنشائية مستدامة تتوافق بدقة مع رؤيتك وتطلعاتك.",
         },
         {
           title: "حلول بناء شاملة",

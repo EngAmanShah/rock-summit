@@ -1,7 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, Users, Rocket, Trophy, HardHat, Wrench, Home, Award } from "lucide-react";
+import {
+  Building2,
+  Users,
+  Rocket,
+  Trophy,
+  HardHat,
+  Wrench,
+  Home,
+  Award,
+} from "lucide-react";
 import { useEffect, useRef } from "react";
 import styles from "./Team.css"; // for glowing overlay
 
@@ -36,7 +45,7 @@ function StarCanvas({ style }) {
     function draw() {
       ctx.clearRect(0, 0, width, height); // keep background transparent
 
-      stars.forEach(star => {
+      stars.forEach((star) => {
         star.x += star.vx;
         star.y += star.vy;
 
@@ -80,25 +89,57 @@ function StarCanvas({ style }) {
 export default function Team({ lang }) {
   const translations = {
     en: {
-      heading: "Building the Future with Excellence & Precision",
+      heading: "We build the future with precision and mastery",
       description:
-        "At Rock Summit Co. Ltd, we are a dedicated team of construction professionals, engineers, and project managers committed to delivering exceptional contracting services. With years of experience in the construction industry, we've successfully completed numerous projects across residential, commercial, and infrastructure sectors, building lasting structures that stand the test of time.",
+        "At Summit Rock Company Limited, we are distinguished by an integrated team of the most skilled engineers, project managers, and construction professionals. With an ambitious vision and years of experience, we provide integrated structural solutions that combine innovation and quality.",
       stats: [
-        { value: "150+", label: "Projects Completed", text: "Successfully delivered construction projects of all scales." },
-        { value: "50+", label: "Expert Team", text: "Skilled professionals including engineers and technicians." },
-        { value: "10+", label: "Years Experience", text: "Years of combined expertise in construction and contracting." },
-        { value: "120+", label: "Satisfied Clients", text: "Clients who trust us with their construction needs." },
+        {
+          value: "150+",
+          label: "Projects Completed",
+          text: "Successfully delivered construction projects of all scales.",
+        },
+        {
+          value: "50+",
+          label: "Expert Team",
+          text: "Skilled professionals including engineers and technicians.",
+        },
+        {
+          value: "10+",
+          label: "Years Experience",
+          text: "Years of combined expertise in construction and contracting.",
+        },
+        {
+          value: "120+",
+          label: "Satisfied Clients",
+          text: "Clients who trust us with their construction needs.",
+        },
       ],
     },
     ar: {
-      heading: "نبني المستقبل بالتميز والدقة",
+      heading: "نبني المستقبل بدقة وإتقان ",
       description:
-        "في شركة القمة الصخرية المحدودة، نحن فريق مخصص من المحترفين في مجال البناء والمهندسين ومديري المشاريع الملتزمين بتقديم خدمات مقاولات استثنائية. مع سنوات من الخبرة في صناعة البناء، أكملنا بنجاح العديد من المشاريع في القطاعات السكنية والتجارية والبنية التحتية، وبناء هياكل دائمة تثبت أمام اختبار الزمن.",
+        "في شركة القمة الصخرية المحدودة، نتميز بفريق متكامل من أمهر المهندسين ومديري المشاريع والمحترفين في مجال البناء. برؤية طموحة وخبرة تمتد لسنوات، نقدم حلولاً إنشائية متكاملة تجمع بين الابتكار والجودة.",
       stats: [
-        { value: "150+", label: "المشاريع المكتملة", text: "مشاريع بناء مكتملة بنجاح بجميع المقاييس." },
-        { value: "50+", label: "فريق الخبراء", text: "محترفون مهرة يشملون المهندسين والفنيين." },
-        { value: "10+", label: "سنوات الخبرة", text: "سنوات من الخبرة المجمعة في البناء والمقاولات." },
-        { value: "120+", label: "عملاء راضون", text: "عملاء يثقون بنا في احتياجاتهم الإنشائية." },
+        {
+          value: "150+",
+          label: "المشاريع المكتملة",
+          text: "مشاريع بناء مكتملة بنجاح بجميع المقاييس.",
+        },
+        {
+          value: "50+",
+          label: "فريق الخبراء",
+          text: "محترفون مهرة يشملون المهندسين والفنيين.",
+        },
+        {
+          value: "10+",
+          label: "سنوات الخبرة",
+          text: "سنوات من الخبرة المجمعة في البناء والمقاولات.",
+        },
+        {
+          value: "120+",
+          label: "عملاء راضون",
+          text: "عملاء يثقون بنا في احتياجاتهم الإنشائية.",
+        },
       ],
     },
   };
@@ -106,7 +147,10 @@ export default function Team({ lang }) {
   const t = translations[lang] || translations.en;
 
   const stats = [
-    { icon: <Building2 size={28} className="text-gold-custom" />, ...t.stats[0] },
+    {
+      icon: <Building2 size={28} className="text-gold-custom" />,
+      ...t.stats[0],
+    },
     { icon: <HardHat size={28} className="text-gold-custom" />, ...t.stats[1] },
     { icon: <Wrench size={28} className="text-gold-custom" />, ...t.stats[2] },
     { icon: <Award size={28} className="text-gold-custom" />, ...t.stats[3] },
@@ -129,11 +173,11 @@ export default function Team({ lang }) {
       }}
     >
       {/* Dark Overlay */}
-      <div 
+      <div
         className="position-absolute top-0 start-0 w-100 h-100"
         style={{
           backgroundColor: "rgba(0, 0, 0, 0.7)",
-          zIndex: 0
+          zIndex: 0,
         }}
       ></div>
 
@@ -144,8 +188,9 @@ export default function Team({ lang }) {
       <motion.div
         className="position-absolute top-0 start-0 w-100 h-100"
         style={{
-          background: "linear-gradient(90deg, transparent, rgba(206, 172, 36, 0.1), transparent)",
-          zIndex: 1
+          background:
+            "linear-gradient(90deg, transparent, rgba(206, 172, 36, 0.1), transparent)",
+          zIndex: 1,
         }}
         animate={{ x: ["-100%", "100%"] }}
         transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
@@ -167,11 +212,11 @@ export default function Team({ lang }) {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            style={{ 
-              maxWidth: "800px", 
+            style={{
+              maxWidth: "800px",
               margin: "0 auto",
               color: "#e0e0e0",
-              lineHeight: "1.6"
+              lineHeight: "1.6",
             }}
           >
             {t.description}
@@ -195,27 +240,39 @@ export default function Team({ lang }) {
                   backdropFilter: "blur(10px)",
                   border: "1px solid rgba(206, 172, 36, 0.3)",
                 }}
-                whileHover={{ 
-                  scale: 1.05, 
+                whileHover={{
+                  scale: 1.05,
                   borderColor: "rgba(206, 172, 36, 0.6)",
-                  boxShadow: "0 15px 30px rgba(206, 172, 36, 0.3)"
+                  boxShadow: "0 15px 30px rgba(206, 172, 36, 0.3)",
                 }}
                 transition={{ type: "spring", stiffness: 200 }}
               >
                 <div
                   className="mb-3 d-flex justify-content-center align-items-center rounded-circle mx-auto"
-                  style={{ 
-                    width: "70px", 
-                    height: "70px", 
+                  style={{
+                    width: "70px",
+                    height: "70px",
                     backgroundColor: "rgba(206, 172, 36, 0.2)",
-                    border: "1px solid rgba(206, 172, 36, 0.5)"
+                    border: "1px solid rgba(206, 172, 36, 0.5)",
                   }}
                 >
                   {stat.icon}
                 </div>
-                <h3 className="fw-bold mb-2" style={{ fontSize: "2.5rem", color: "#ceac24" }}>{stat.value}</h3>
-                <h5 className="mb-2" style={{ color: "#ffffff" }}>{stat.label}</h5>
-                <p className="mb-0" style={{ color: "#cccccc", lineHeight: "1.5" }}>{stat.text}</p>
+                <h3
+                  className="fw-bold mb-2"
+                  style={{ fontSize: "2.5rem", color: "#ceac24" }}
+                >
+                  {stat.value}
+                </h3>
+                <h5 className="mb-2" style={{ color: "#ffffff" }}>
+                  {stat.label}
+                </h5>
+                <p
+                  className="mb-0"
+                  style={{ color: "#cccccc", lineHeight: "1.5" }}
+                >
+                  {stat.text}
+                </p>
               </motion.div>
             </motion.div>
           ))}
@@ -223,7 +280,7 @@ export default function Team({ lang }) {
 
         {/* Additional Construction Expertise Section */}
         <motion.div
-          className="row mt-5 pt-4"
+          className="row mt-4 pt-4"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.5 }}
@@ -234,13 +291,35 @@ export default function Team({ lang }) {
             </h4>
             <div className="row g-3">
               {[
-                { icon: <Home size={20} color="#ceac24" />, text: lang === "ar" ? "المباني السكنية" : "Residential Buildings" },
-                { icon: <Building2 size={20} color="#ceac24" />, text: lang === "ar" ? "المباني التجارية" : "Commercial Buildings" },
-                { icon: <Wrench size={20} color="#ceac24" />, text: lang === "ar" ? "البنية التحتية" : "Infrastructure" },
-                { icon: <HardHat size={20} color="#ceac24" />, text: lang === "ar" ? "أعمال التشطيب" : "Finishing Works" },
+                {
+                  icon: <Home size={20} color="#ceac24" />,
+                  text:
+                    lang === "ar" ? "المباني السكنية" : "Residential Buildings",
+                },
+                {
+                  icon: <Building2 size={20} color="#ceac24" />,
+                  text:
+                    lang === "ar" ? "المباني التجارية" : "Commercial Buildings",
+                },
+                {
+                  icon: <Wrench size={20} color="#ceac24" />,
+                  text: lang === "ar" ? "البنية التحتية" : "Infrastructure",
+                },
+                {
+                  icon: <HardHat size={20} color="#ceac24" />,
+                  text: lang === "ar" ? "أعمال التشطيب" : "Finishing Works",
+                },
+                {
+                  icon: <Building2 size={20} color="#ceac24" />,
+                  text:
+                    lang === "ar" ? "  التشغيل والصيانه  " : "  Maintenance",
+                },
               ].map((item, index) => (
-                <div key={index} className="col-lg-3 col-md-6 col-sm-6">
-                  <div className="d-flex align-items-center justify-content-center gap-2" style={{ color: "#ffffff" }}>
+                <div key={index} className="col-lg-2 col-md-6 col-sm-6">
+                  <div
+                    className="d-flex align-items-center justify-content-center gap-2"
+                    style={{ color: "#ffffff" }}
+                  >
                     {item.icon}
                     <span>{item.text}</span>
                   </div>
