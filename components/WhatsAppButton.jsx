@@ -13,6 +13,9 @@ const WhatsAppButton = ({ lang = "en" }) => {
     window.open(whatsappUrl, "_blank");
   };
 
+  // Position based on language
+  const position = lang === "ar" ? { left: "20px" } : { right: "20px" };
+
   return (
     <div 
       className="whatsapp-button"
@@ -20,7 +23,7 @@ const WhatsAppButton = ({ lang = "en" }) => {
       style={{
         position: "fixed",
         bottom: "80px",
-        right: "20px", // Always on the right side
+        ...position, // Dynamic position based on language
         zIndex: 1000,
         cursor: "pointer",
         backgroundColor: "#25D366",
