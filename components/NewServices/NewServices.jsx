@@ -71,9 +71,12 @@ export default function NewServices({ lang, servicesData, sectionTitle, sectionD
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="display-4 fw-bold text-white mb-3">
-            {sectionTitle}
-          </h2>
+         <h2 
+  className="display-4 fw-bold mb-3"
+  style={{ color: "#ceac24" }}  // Add this style
+>
+  {sectionTitle}
+</h2>
           <div
             className="mx-auto mb-4"
             style={{ 

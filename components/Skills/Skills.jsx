@@ -30,7 +30,7 @@ import "./Skills.css";
 
 // Safe icon component
 const SafeIcon = ({ icon: Icon, className }) => {
-  if (!Icon) return <div className={className}>🏗️</div>; // fallback
+  if (!Icon) return <div className={className}></div>; // fallback
   return <Icon className={className} />;
 };
 
@@ -60,7 +60,7 @@ export default function TechMarquee({ lang = "en" }) {
         Excavation: "Excavation",
         Carpentry: "Carpentry",
         StoneWorks: "Stone Works",
-        Roofing: "Roofing",
+        // Roofing: "Roofing",
         Flooring: "Flooring",
         AutoCAD: "AutoCAD",
         BIM: "BIM Modeling",
@@ -91,7 +91,7 @@ export default function TechMarquee({ lang = "en" }) {
         Excavation: "أعمال الحفر",
         Carpentry: "أعمال النجارة",
         StoneWorks: "أعمال الحجر",
-        Roofing: "أعمال الأسقف",
+        // Roofing: "أعمال الأسقف",
         Flooring: "أعمال الأرضيات",
         AutoCAD: "أوتوكاد",
         BIM: "نمذجة المعلومات",
@@ -127,7 +127,7 @@ export default function TechMarquee({ lang = "en" }) {
       { icon: GiDigDug, name: "Excavation" },
       { icon: GiHammerNails, name: "Carpentry" },
       { icon: GiStoneWall, name: "StoneWorks" },
-      { icon: null, name: "Roofing" }, // fallback icon will render 🏗️
+      // { icon: null, name: "Roofing" }, // fallback icon will render 🏗️
       { icon: GiFloorPolisher, name: "Flooring" },
     ],
   ];

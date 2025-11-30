@@ -200,7 +200,8 @@ export default function Team({ lang }) {
         {/* Heading */}
         <div className="text-center mb-5">
           <motion.h2
-            className="display-5 fw-bold text-white"
+            className="display-5 fw-bold"
+            style={{ color: "#FFD700" }} // Add this line
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}

@@ -82,7 +82,7 @@ export default function WhyChooseUs({ lang }) {
         <div className="d-flex flex-column align-items-center text-center mb-5">
           <div 
             className="display-5 fw-bold mb-3" 
-            style={{ color: "#ffffff", maxWidth: "800px" }}
+            style={{ color: "#e2d111ff", maxWidth: "800px" }}
           >
             {t.title}
           </div>

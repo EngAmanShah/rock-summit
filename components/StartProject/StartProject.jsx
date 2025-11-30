@@ -71,7 +71,7 @@ export default function StartProject({ lang }) {
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3 }}
-            style={{ color: "#ffffff" }}
+            style={{ color: "#f0c90aff" }}
           >
             {lang === "ar"
               ? "هل أنت مستعد لبدء مشروعك الإنشائي؟"
