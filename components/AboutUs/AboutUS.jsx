@@ -124,7 +124,7 @@ export default function AboutUs({ params }) {
       values:
         "الالتزام بتقديم أعمال مقاولات باحترافية عالية ترتكز على: الجودة، الالتزام بالمواعيد، التطوير المستمر، تقنيات البناء الحديثة، السلامة المهنية، بناء علاقات مستدامة، الاستثمار في الكوادر الوطنية",
       vision:
-        "أن نكون في طليعة شركات المقاولات الوطنية من خلال تقديم حلول إنشائية مستدامة ومبتكرة تواكب تطلعات عملائنا وتدعم تحقيق مستهدفات رؤية المملكة ٢٠٣٠",
+        "أن نكون في طليعة شركات المقاولات الوطنية من خلال تقديم حلول إنشائية مستدامة ومبتكرة تواكب تطلعات عملائنا وتدعم تحقيق  رؤية المملكة ٢٠٣٠",
       buttons: {
         buildings: "إنشاء المباني",
         roads: "أعمال الطرق",
@@ -240,8 +240,9 @@ export default function AboutUs({ params }) {
       <section className={styles.heroSection}>
         <canvas ref={starCanvasHero} className={styles.heroCanvas} />
         <motion.div className={styles.heroContent}>
-          <motion.h1 className={styles.heroTitle}>{t.heroTitle}</motion.h1>
-          <motion.p className={styles.heroSubtitle}>{t.heroSubtitle}</motion.p>
+<motion.h1 className={styles.heroTitle} style={{ color: '#FFD700' }}>
+  {t.heroTitle}
+</motion.h1>          <motion.p className={styles.heroSubtitle}>{t.heroSubtitle}</motion.p>
           <motion.p className={styles.heroExtra}>{t.heroExtra}</motion.p>
         </motion.div>
       </section>

@@ -1,6 +1,6 @@
 .container {
   font-family: 'Somar', sans-serif;
-  background: #001233;
+  background: #000000; /* Black background */
   color: white;
   overflow-x: hidden;
 }
@@ -13,8 +13,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: #001233;
-  padding-top:100px;
+  background: #000000; /* Black background */
+  padding-top: 100px;
 }
 
 .heroCanvas,
@@ -37,29 +37,31 @@
   font-size: 3.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: #FFD700; /* Yellow color */
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 .heroSubtitle {
   font-size: 1.6rem;
   margin-bottom: 1.5rem;
   opacity: 0.9;
+  color: #ffffff; /* White color */
 }
 
 .heroExtra {
   font-size: 1.2rem;
   max-width: 750px;
   margin: 0 auto;
-  color: #cfd9ff;
+  color: #ffffff; /* White color */
   line-height: 1.8;
+  opacity: 0.8;
 }
 
 /* 📜 Story Section */
 .storySection {
   position: relative;
   padding: 4rem 2rem;
-  background: #000c2e;
-
+  background: #1a1a1a; /* Dark gray/black */
 }
 
 .storyWrapper {
@@ -82,34 +84,48 @@
 .storyImage img {
   width: 100%;
   border-radius: 15px;
-  box-shadow: 0 0 25px rgba(0, 70, 200, 0.3);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3); /* Yellow shadow */
+  border: 2px solid #FFD700; /* Yellow border */
 }
 
 .storyHeading {
   font-size: 2.8rem;
   margin-bottom: 1.5rem;
-  color: #ffffff;
-  
+  color: #FFD700; /* Yellow color */
 }
 
 .storyParagraph {
   font-size: 1.3rem;
   line-height: 2;
-  color: #d3ddff;
+  color: #ffffff; /* White color */
+}
+
+.missionVision h3 {
+  color: #FFD700; /* Yellow for headings */
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.missionVision p {
+  color: #ffffff; /* White for text */
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 /* 🧩 Services Section */
 .servicesSection {
   position: relative;
   padding: 5rem 2rem;
-  background: #001233;
+  background: #000000; /* Black background */
 }
 
 .servicesTitle {
   text-align: center;
   font-size: 2.4rem;
   margin-bottom: 3rem;
-  color: #ffffff;
+  color: #FFD700; /* Yellow color */
 }
 
 /* 🎯 Enforce 3 services per row on large screens */
@@ -124,46 +140,59 @@
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
-  background: rgba(0, 12, 46, 0.95);
-  color: #9ecfff;
-  box-shadow: 0 0 25px rgba(0, 70, 200, 0.3);
+  background: #1a1a1a; /* Dark gray/black */
+  color: #ffffff; /* White text */
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.2); /* Yellow shadow */
+  border: 1px solid #333; /* Dark border */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.4); /* Enhanced yellow shadow on hover */
+  border-color: #FFD700; /* Yellow border on hover */
 }
 
 .serviceIcon {
   margin-bottom: 1rem;
+  color: #FFD700; /* Yellow icons */
 }
 
 .serviceTitle {
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #ffffff;
+  color: #FFD700; /* Yellow titles */
 }
 
 .serviceText {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #cfd9ff;
+  color: #ffffff; /* White text */
+  opacity: 0.9;
 }
 
 .serviceButton {
   margin-top: 2rem;
   padding: 0.8rem 1.5rem;
-  background: #007bff;
+  background: #FFD700; /* Yellow background */
   border: none;
   border-radius: 8px;
-  color: #fff;
+  color: #000000; /* Black text */
   cursor: pointer;
   font-size: 1rem;
+  font-weight: 600;
   transition: 0.3s;
   width: 100%;
 }
 
 .serviceButton:hover {
-  background: #0056d2;
+  background: #ffed4e; /* Lighter yellow on hover */
+  color: #000000;
+  transform: scale(1.05);
 }
 
 /* 📱 Responsive Adjustments */

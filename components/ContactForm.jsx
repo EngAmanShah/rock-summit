@@ -161,15 +161,24 @@ export default function ContactForm({ lang }) {
           dir={lang === "ar" ? "rtl" : "ltr"}
         >
           <div className="col-lg-10 col-xl-8">
-            <div className="card shadow-lg border-0 rounded-4 bg-white p-4 p-md-5">
+            <div className="card shadow-lg border-0 rounded-4 p-4 p-md-5" 
+                 style={{ 
+                   background: "#1a1a1a", 
+                   border: "2px solid #333",
+                   boxShadow: "0 20px 60px rgba(255, 215, 0, 0.2) !important"
+                 }}>
               {/* Header Section */}
               <div className="text-center mb-5">
                 <motion.h2
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="fw-bold text-dark mb-3"
-                  style={{ fontSize: "2.2rem", color: "#2d3e8f" }}
+                  className="fw-bold mb-3"
+                  style={{ 
+                    fontSize: "2.2rem", 
+                    color: "#FFD700",
+                    textShadow: "0 0 10px rgba(255, 215, 0, 0.3)"
+                  }}
                 >
                   {lang === "ar" ? "طلب استشارة إنشائية" : "Construction Consultation Request"}
                 </motion.h2>
@@ -177,7 +186,8 @@ export default function ContactForm({ lang }) {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
-                  className="text-muted fs-6"
+                  className="fs-6"
+                  style={{ color: "#ffffff", opacity: 0.9 }}
                 >
                   {lang === "ar" 
                     ? "املأ النموذج أدناه وسنتصل بك لمناقشة متطلبات مشروعك الإنشائي" 
@@ -190,7 +200,7 @@ export default function ContactForm({ lang }) {
                   {/* Name Field */}
                   <div className="col-md-6">
                     <div className="form-group">
-                      <label className="form-label fw-semibold text-dark mb-2">
+                      <label className="form-label fw-semibold mb-2" style={{ color: "#FFD700" }}>
                         {form.name} *
                       </label>
                       <input
@@ -202,16 +212,18 @@ export default function ContactForm({ lang }) {
                         required
                         className="form-control form-control-lg border-2 rounded-3 px-4 py-3"
                         style={{
-                          borderColor: "#e2e8f0",
+                          borderColor: "#333",
+                          background: "#000000",
+                          color: "#ffffff",
                           transition: "all 0.3s ease",
                           fontSize: "1rem",
                         }}
                         onFocus={(e) => {
-                          e.target.style.borderColor = "#2d3e8f";
-                          e.target.style.boxShadow = "0 0 0 3px rgba(45, 62, 143, 0.1)";
+                          e.target.style.borderColor = "#FFD700";
+                          e.target.style.boxShadow = "0 0 0 3px rgba(255, 215, 0, 0.2)";
                         }}
                         onBlur={(e) => {
-                          e.target.style.borderColor = "#e2e8f0";
+                          e.target.style.borderColor = "#333";
                           e.target.style.boxShadow = "none";
                         }}
                       />
@@ -221,7 +233,7 @@ export default function ContactForm({ lang }) {
                   {/* Email Field */}
                   <div className="col-md-6">
                     <div className="form-group">
-                      <label className="form-label fw-semibold text-dark mb-2">
+                      <label className="form-label fw-semibold mb-2" style={{ color: "#FFD700" }}>
                         {form.email} *
                       </label>
                       <input
@@ -233,16 +245,18 @@ export default function ContactForm({ lang }) {
                         required
                         className="form-control form-control-lg border-2 rounded-3 px-4 py-3"
                         style={{
-                          borderColor: "#e2e8f0",
+                          borderColor: "#333",
+                          background: "#000000",
+                          color: "#ffffff",
                           transition: "all 0.3s ease",
                           fontSize: "1rem",
                         }}
                         onFocus={(e) => {
-                          e.target.style.borderColor = "#2d3e8f";
-                          e.target.style.boxShadow = "0 0 0 3px rgba(45, 62, 143, 0.1)";
+                          e.target.style.borderColor = "#FFD700";
+                          e.target.style.boxShadow = "0 0 0 3px rgba(255, 215, 0, 0.2)";
                         }}
                         onBlur={(e) => {
-                          e.target.style.borderColor = "#e2e8f0";
+                          e.target.style.borderColor = "#333";
                           e.target.style.boxShadow = "none";
                         }}
                       />
@@ -252,7 +266,7 @@ export default function ContactForm({ lang }) {
                   {/* Phone Field */}
                   <div className="col-md-6">
                     <div className="form-group">
-                      <label className="form-label fw-semibold text-dark mb-2">
+                      <label className="form-label fw-semibold mb-2" style={{ color: "#FFD700" }}>
                         {form.phone} *
                       </label>
                       <input
@@ -264,16 +278,18 @@ export default function ContactForm({ lang }) {
                         required
                         className="form-control form-control-lg border-2 rounded-3 px-4 py-3"
                         style={{
-                          borderColor: "#e2e8f0",
+                          borderColor: "#333",
+                          background: "#000000",
+                          color: "#ffffff",
                           transition: "all 0.3s ease",
                           fontSize: "1rem",
                         }}
                         onFocus={(e) => {
-                          e.target.style.borderColor = "#2d3e8f";
-                          e.target.style.boxShadow = "0 0 0 3px rgba(45, 62, 143, 0.1)";
+                          e.target.style.borderColor = "#FFD700";
+                          e.target.style.boxShadow = "0 0 0 3px rgba(255, 215, 0, 0.2)";
                         }}
                         onBlur={(e) => {
-                          e.target.style.borderColor = "#e2e8f0";
+                          e.target.style.borderColor = "#333";
                           e.target.style.boxShadow = "none";
                         }}
                       />
@@ -283,7 +299,7 @@ export default function ContactForm({ lang }) {
                   {/* Project Type Field */}
                   <div className="col-md-6">
                     <div className="form-group">
-                      <label className="form-label fw-semibold text-dark mb-2">
+                      <label className="form-label fw-semibold mb-2" style={{ color: "#FFD700" }}>
                         {form.projectType} *
                       </label>
                       <select
@@ -293,22 +309,24 @@ export default function ContactForm({ lang }) {
                         required
                         className="form-control form-control-lg border-2 rounded-3 px-4 py-3"
                         style={{
-                          borderColor: "#e2e8f0",
+                          borderColor: "#333",
+                          background: "#000000",
+                          color: "#ffffff",
                           transition: "all 0.3s ease",
                           fontSize: "1rem",
                         }}
                         onFocus={(e) => {
-                          e.target.style.borderColor = "#2d3e8f";
-                          e.target.style.boxShadow = "0 0 0 3px rgba(45, 62, 143, 0.1)";
+                          e.target.style.borderColor = "#FFD700";
+                          e.target.style.boxShadow = "0 0 0 3px rgba(255, 215, 0, 0.2)";
                         }}
                         onBlur={(e) => {
-                          e.target.style.borderColor = "#e2e8f0";
+                          e.target.style.borderColor = "#333";
                           e.target.style.boxShadow = "none";
                         }}
                       >
-                        <option value="">{form.projectTypePlaceholder}</option>
+                        <option value="" style={{ color: "#666" }}>{form.projectTypePlaceholder}</option>
                         {projectTypes.map((type, index) => (
-                          <option key={index} value={type}>{type}</option>
+                          <option key={index} value={type} style={{ color: "#ffffff", background: "#000000" }}>{type}</option>
                         ))}
                       </select>
                     </div>
@@ -317,7 +335,7 @@ export default function ContactForm({ lang }) {
                   {/* Budget Field */}
                   <div className="col-md-6">
                     <div className="form-group">
-                      <label className="form-label fw-semibold text-dark mb-2">
+                      <label className="form-label fw-semibold mb-2" style={{ color: "#FFD700" }}>
                         {form.budget}
                       </label>
                       <select
@@ -326,22 +344,24 @@ export default function ContactForm({ lang }) {
                         onChange={dataChange}
                         className="form-control form-control-lg border-2 rounded-3 px-4 py-3"
                         style={{
-                          borderColor: "#e2e8f0",
+                          borderColor: "#333",
+                          background: "#000000",
+                          color: "#ffffff",
                           transition: "all 0.3s ease",
                           fontSize: "1rem",
                         }}
                         onFocus={(e) => {
-                          e.target.style.borderColor = "#2d3e8f";
-                          e.target.style.boxShadow = "0 0 0 3px rgba(45, 62, 143, 0.1)";
+                          e.target.style.borderColor = "#FFD700";
+                          e.target.style.boxShadow = "0 0 0 3px rgba(255, 215, 0, 0.2)";
                         }}
                         onBlur={(e) => {
-                          e.target.style.borderColor = "#e2e8f0";
+                          e.target.style.borderColor = "#333";
                           e.target.style.boxShadow = "none";
                         }}
                       >
-                        <option value="">{form.budgetPlaceholder}</option>
+                        <option value="" style={{ color: "#666" }}>{form.budgetPlaceholder}</option>
                         {budgetRanges.map((range, index) => (
-                          <option key={index} value={range}>{range}</option>
+                          <option key={index} value={range} style={{ color: "#ffffff", background: "#000000" }}>{range}</option>
                         ))}
                       </select>
                     </div>
@@ -350,7 +370,7 @@ export default function ContactForm({ lang }) {
                   {/* Timeline Field */}
                   <div className="col-md-6">
                     <div className="form-group">
-                      <label className="form-label fw-semibold text-dark mb-2">
+                      <label className="form-label fw-semibold mb-2" style={{ color: "#FFD700" }}>
                         {form.timeline}
                       </label>
                       <select
@@ -359,22 +379,24 @@ export default function ContactForm({ lang }) {
                         onChange={dataChange}
                         className="form-control form-control-lg border-2 rounded-3 px-4 py-3"
                         style={{
-                          borderColor: "#e2e8f0",
+                          borderColor: "#333",
+                          background: "#000000",
+                          color: "#ffffff",
                           transition: "all 0.3s ease",
                           fontSize: "1rem",
                         }}
                         onFocus={(e) => {
-                          e.target.style.borderColor = "#2d3e8f";
-                          e.target.style.boxShadow = "0 0 0 3px rgba(45, 62, 143, 0.1)";
+                          e.target.style.borderColor = "#FFD700";
+                          e.target.style.boxShadow = "0 0 0 3px rgba(255, 215, 0, 0.2)";
                         }}
                         onBlur={(e) => {
-                          e.target.style.borderColor = "#e2e8f0";
+                          e.target.style.borderColor = "#333";
                           e.target.style.boxShadow = "none";
                         }}
                       >
-                        <option value="">{form.timelinePlaceholder}</option>
+                        <option value="" style={{ color: "#666" }}>{form.timelinePlaceholder}</option>
                         {timelines.map((timeline, index) => (
-                          <option key={index} value={timeline}>{timeline}</option>
+                          <option key={index} value={timeline} style={{ color: "#ffffff", background: "#000000" }}>{timeline}</option>
                         ))}
                       </select>
                     </div>
@@ -384,7 +406,7 @@ export default function ContactForm({ lang }) {
                 {/* Project Details Field */}
                 <div className="mt-4">
                   <div className="form-group">
-                    <label className="form-label fw-semibold text-dark mb-2">
+                    <label className="form-label fw-semibold mb-2" style={{ color: "#FFD700" }}>
                       {form.message} *
                     </label>
                     <textarea
@@ -396,18 +418,20 @@ export default function ContactForm({ lang }) {
                       required
                       className="form-control form-control-lg border-2 rounded-3 px-4 py-3"
                       style={{
-                        borderColor: "#e2e8f0",
+                        borderColor: "#333",
+                        background: "#000000",
+                        color: "#ffffff",
                         transition: "all 0.3s ease",
                         fontSize: "1rem",
                         resize: "vertical",
                         minHeight: "120px",
                       }}
                       onFocus={(e) => {
-                        e.target.style.borderColor = "#2d3e8f";
-                        e.target.style.boxShadow = "0 0 0 3px rgba(45, 62, 143, 0.1)";
+                        e.target.style.borderColor = "#FFD700";
+                        e.target.style.boxShadow = "0 0 0 3px rgba(255, 215, 0, 0.2)";
                       }}
                       onBlur={(e) => {
-                        e.target.style.borderColor = "#e2e8f0";
+                        e.target.style.borderColor = "#333";
                         e.target.style.boxShadow = "none";
                       }}
                     ></textarea>
@@ -421,18 +445,24 @@ export default function ContactForm({ lang }) {
                     disabled={loading}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="btn btn-primary btn-lg fw-semibold py-3 rounded-3 border-0"
+                    className="btn btn-lg fw-semibold py-3 rounded-3 border-0"
                     style={{
-                      background: "linear-gradient(135deg, #2d3e8f 0%, #1a2a5f 100%)",
+                      background: "#FFD700",
+                      color: "#000000",
                       fontSize: "1.1rem",
                       transition: "all 0.3s ease",
+                      fontWeight: "700",
                     }}
                   >
                     {loading ? (
                       <div className="d-flex align-items-center justify-content-center">
                         <div 
                           className="spinner-border spinner-border-sm me-2" 
-                          style={{ width: "1.2rem", height: "1.2rem" }}
+                          style={{ 
+                            width: "1.2rem", 
+                            height: "1.2rem",
+                            borderColor: "#000000 transparent #000000 #000000"
+                          }}
                         ></div>
                         {lang === "ar" ? "جاري الإرسال..." : "Sending..."}
                       </div>
@@ -463,7 +493,7 @@ export default function ContactForm({ lang }) {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="text-center mt-4"
               >
-                <p className="text-muted small">
+                <p className="small" style={{ color: "#ffffff", opacity: 0.8 }}>
                   {lang === "ar" 
                     ? "سيقوم أحد خبرائنا بالاتصال بك خلال 24 ساعة لمناقشة مشروعك" 
                     : "One of our experts will contact you within 24 hours to discuss your project"}
@@ -476,18 +506,20 @@ export default function ContactForm({ lang }) {
 
       <style jsx>{`
         .form-control:focus {
-          border-color: #2d3e8f !important;
-          box-shadow: 0 0 0 3px rgba(45, 62, 143, 0.1) !important;
+          border-color: #FFD700 !important;
+          box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2) !important;
+          background: #000000 !important;
+          color: #ffffff !important;
         }
         
-        .btn-primary:hover {
+        .btn:hover:not(:disabled) {
           transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(45, 62, 143, 0.3);
+          box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+          background: #ffed4e !important;
         }
         
         .card {
-          background: #ffffff !important;
-          backdrop-filter: none !important;
+          background: #1a1a1a !important;
         }
         
         .form-group {
@@ -497,6 +529,15 @@ export default function ContactForm({ lang }) {
         .form-label {
           font-size: 0.95rem;
           letter-spacing: 0.5px;
+        }
+        
+        select option {
+          background: #000000 !important;
+          color: #ffffff !important;
+        }
+        
+        select option:first-child {
+          color: #666 !important;
         }
       `}</style>
     </section>

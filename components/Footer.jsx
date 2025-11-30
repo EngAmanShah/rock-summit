@@ -2,19 +2,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-  FaMapMarkerAlt,
-  FaPhone,
-  FaEnvelope,
-} from "react-icons/fa";
 
 export default function Footer({ lang }) {
   const pathname = usePathname();
   const [currentDate, setCurrentDate] = useState(null);
+  const isArabic = lang === "ar";
 
   useEffect(() => {
     setCurrentDate(new Date());
@@ -78,296 +70,232 @@ export default function Footer({ lang }) {
     email: "info@rock-summit.com",
   };
 
-  const t = lang === "ar" ? arabicText : englishText;
+  const t = isArabic ? arabicText : englishText;
 
   return (
     <footer
-      className="footer lh-lg text-center-sm"
+      className="footer"
+      dir={isArabic ? "rtl" : "ltr"}
       style={{ 
         backgroundColor: "#000000",
         background: "linear-gradient(135deg, #000000 0%, #1a1a1a 100%)",
+        padding: "3rem 0 1rem 0",
       }}
     >
       <div className="container">
-        <div className="row pt-5">
-          {/* Company Info */}
-          <div className="col-md-4 mb-4 text-center text-md-start">
+        <div className="row">
+          {/* Company Info - Full width on mobile, 4 columns on desktop */}
+          <div className="col-12 col-md-4 mb-4" style={{ 
+            textAlign: isArabic ? "right" : "left"
+          }}>
             <Link href="/">
               <img
                 src="/logo_black.png"
                 alt={`${t.companyName} logo`}
                 style={{ 
-                  width: "200px", 
+                  width: "180px", 
                   height: "auto",
-                  // filter: "brightness(0) invert(1)" // Makes black logo white
+                  marginBottom: "1rem",
+                  // filter: "brightness(0) invert(1)"
                 }}
               />
             </Link>
-            <p className="mt-4" style={{ fontSize: "16px", color: "#e0e0e0" }}>
-              <span className="fw-bold d-block" style={{ color: "#ceac24" }}>{t.companyName}</span>
-              <span className="d-block mt-2">{t.description}</span>
+            <p style={{ 
+              fontSize: "14px", 
+              color: "#e0e0e0",
+              lineHeight: "1.6",
+              marginBottom: "1.5rem"
+            }}>
+              <span className="fw-bold d-block mb-2" style={{ color: "#FFD700", fontSize: "16px" }}>{t.companyName}</span>
+              {t.description}
             </p>
 
-            {/* Contact Information */}
-            <div className="mt-4">
-              <div className="d-flex align-items-center mb-2">
-                <FaMapMarkerAlt className="me-2" size={16} style={{ color: "#ceac24" }} />
-                <span style={{ fontSize: "14px", color: "#e0e0e0" }}>{t.address}</span>
+            {/* Contact Information - No icons */}
+            <div style={{ fontSize: "14px", color: "#e0e0e0" }}>
+              <div className="mb-2">
+                <strong style={{ color: "#FFD700" }}>{isArabic ? "العنوان: " : "Address: "}</strong>
+                {t.address}
               </div>
-              <div className="d-flex align-items-center mb-2">
-                <FaPhone className="me-2" size={16} style={{ color: "#ceac24" }} />
-                <a 
-                  href={`tel:${t.landline}`} 
-                  className="text-decoration-none"
-                  style={{ fontSize: "14px", color: "#e0e0e0" }}
-                >
-                  {t.landline} {lang === "ar" ? " : رقم التليفون " : ":  Phone Number  "}
+              <div className="mb-2">
+                <strong style={{ color: "#FFD700" }}>{isArabic ? "رقم الهاتف: " : "Phone: "}</strong>
+                <a href={`tel:${t.landline}`} style={{ color: "#e0e0e0", textDecoration: "none" }}>
+                  {t.landline}
                 </a>
               </div>
-              <div className="d-flex align-items-center mb-2">
-                <FaPhone className="me-2" size={16} style={{ color: "#ceac24" }} />
+              <div className="mb-2">
+                <strong style={{ color: "#FFD700" }}>{isArabic ? "واتساب: " : "WhatsApp: "}</strong>
                 <a 
                   href={`https://wa.me/${t.whatsapp.replace('+', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none"
-                  style={{ fontSize: "14px", color: "#e0e0e0" }}
+                  style={{ color: "#e0e0e0", textDecoration: "none" }}
                 >
-                  {t.whatsapp} {lang === "ar" ? "   : واتساب " : ": WhatsApp  "}
+                  {t.whatsapp}
                 </a>
               </div>
-              <div className="d-flex align-items-center">
-                <FaEnvelope className="me-2" size={16} style={{ color: "#ceac24" }} />
-                <a 
-                  href={`mailto:${t.email}`} 
-                  className="text-decoration-none"
-                  style={{ fontSize: "14px", color: "#e0e0e0" }}
-                >
+              <div className="mb-2">
+                <strong style={{ color: "#FFD700" }}>{isArabic ? "البريد الإلكتروني: " : "Email: "}</strong>
+                <a href={`mailto:${t.email}`} style={{ color: "#e0e0e0", textDecoration: "none" }}>
                   {t.email}
                 </a>
               </div>
             </div>
-
-            {/* Social Media Icons */}
-            <div className="d-flex justify-content-center justify-content-md-start gap-3 mt-4">
-              <a
-                href="https://www.linkedin.com/company/rock-summit"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-                aria-label="LinkedIn"
-                style={{ color: "#ceac24" }}
-              >
-                <FaLinkedinIn size={20} />
-              </a>
-              <a
-                href="https://twitter.com/rock-summit"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-                aria-label="Twitter"
-                style={{ color: "#ceac24" }}
-              >
-                <FaTwitter size={20} />
-              </a>
-              <a
-                href="https://facebook.com/rock-summit"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-                aria-label="Facebook"
-                style={{ color: "#ceac24" }}
-              >
-                <FaFacebookF size={20} />
-              </a>
-              <a
-                href="https://instagram.com/rock-summit"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-                aria-label="Instagram"
-                style={{ color: "#ceac24" }}
-              >
-                <FaInstagram size={20} />
-              </a>
-            </div>
           </div>
 
-          {/* Company Links */}
-          <div className="col-sm-6 col-md-3 mb-4">
-            <h4 className="mb-4" style={{ fontWeight: "600", color: "#ceac24" }}>
+          {/* Company Links - 2 columns on mobile, 2.66 columns on desktop */}
+          <div className="col-6 col-md-2 mb-4" style={{ 
+            textAlign: isArabic ? "right" : "left",
+            paddingLeft: isArabic ? "0" : "15px",
+            paddingRight: isArabic ? "15px" : "0"
+          }}>
+            <h4 style={{ 
+              fontWeight: "600", 
+              color: "#FFD700", 
+              fontSize: "18px",
+              marginBottom: "1rem"
+            }}>
               {t.companyTitle}
             </h4>
-            <div className="d-flex flex-column">
-              <h6 className="mb-3">
-                <Link href="/" className="text-decoration-none footer-link">
+            <div style={{ lineHeight: "2.2" }}>
+              <div>
+                <Link href="/" style={{ color: "#e0e0e0", textDecoration: "none", fontSize: "14px" }}>
                   {t.links.home}
                 </Link>
-              </h6>
-              <h6 className="mb-3">
-                <Link
-                  href="/about-us"
-                  className="text-decoration-none footer-link"
-                >
+              </div>
+              <div>
+                <Link href="/about-us" style={{ color: "#e0e0e0", textDecoration: "none", fontSize: "14px" }}>
                   {t.links.about}
                 </Link>
-              </h6>
-              <h6 className="mb-3">
-                <Link
-                  href="/services"
-                  className="text-decoration-none footer-link"
-                >
+              </div>
+              <div>
+                <Link href="/services" style={{ color: "#e0e0e0", textDecoration: "none", fontSize: "14px" }}>
                   {t.links.services}
                 </Link>
-              </h6>
-              <h6 className="mb-3">
-                <Link
-                  href="/projects"
-                  className="text-decoration-none footer-link"
-                >
+              </div>
+              <div>
+                <Link href="/projects" style={{ color: "#e0e0e0", textDecoration: "none", fontSize: "14px" }}>
                   {t.links.projects}
                 </Link>
-              </h6>
-              <h6>
-                <Link 
-                  href="/contact-us" 
-                  className="text-decoration-none footer-link"
-                >
+              </div>
+              <div>
+                <Link href="/contact-us" style={{ color: "#e0e0e0", textDecoration: "none", fontSize: "14px" }}>
                   {t.links.contact}
                 </Link>
-              </h6>
+              </div>
             </div>
           </div>
 
-          {/* Services Links */}
-          <div className="col-sm-6 col-md-3 mb-4">
-            <h4 className="mb-4" style={{ fontWeight: "600", color: "#ceac24" }}>
+          {/* Services Links - 2 columns on mobile, 2.66 columns on desktop */}
+          <div className="col-6 col-md-3 mb-4" style={{ 
+            textAlign: isArabic ? "right" : "left",
+            paddingLeft: isArabic ? "0" : "15px",
+            paddingRight: isArabic ? "15px" : "0"
+          }}>
+            <h4 style={{ 
+              fontWeight: "600", 
+              color: "#FFD700", 
+              fontSize: "18px",
+              marginBottom: "1rem"
+            }}>
               {t.servicesTitle}
             </h4>
-            <div className="d-flex flex-column">
-              <h6 className="mb-3">
-                <Link 
-                  href="/service/buildings" 
-                  className="text-decoration-none footer-link"
-                >
+            <div style={{ lineHeight: "2.2" }}>
+              <div>
+                <Link href="/service/buildings" style={{ color: "#e0e0e0", textDecoration: "none", fontSize: "14px" }}>
                   {t.services.building}
                 </Link>
-              </h6>
-              <h6 className="mb-3">
-                <Link 
-                  href="/service/infrastructure" 
-                  className="text-decoration-none footer-link"
-                >
+              </div>
+              <div>
+                <Link href="/service/infrastructure" style={{ color: "#e0e0e0", textDecoration: "none", fontSize: "14px" }}>
                   {t.services.infrastructure}
                 </Link>
-              </h6>
-              <h6 className="mb-3">
-                <Link 
-                  href="/service/finishing" 
-                  className="text-decoration-none footer-link"
-                >
+              </div>
+              <div>
+                <Link href="/service/finishing" style={{ color: "#e0e0e0", textDecoration: "none", fontSize: "14px" }}>
                   {t.services.finishing}
                 </Link>
-              </h6>
-              <h6 className="mb-3">
-                <Link 
-                  href="/service/landscaping" 
-                  className="text-decoration-none footer-link"
-                >
+              </div>
+              <div>
+                <Link href="/service/landscaping" style={{ color: "#e0e0e0", textDecoration: "none", fontSize: "14px" }}>
                   {t.services.landscaping}
                 </Link>
-              </h6>
-              <h6>
-                <Link 
-                  href="/service/maintenance" 
-                  className="text-decoration-none footer-link"
-                >
+              </div>
+              <div>
+                <Link href="/service/maintenance" style={{ color: "#e0e0e0", textDecoration: "none", fontSize: "14px" }}>
                   {t.services.maintenance}
                 </Link>
-              </h6>
+              </div>
             </div>
           </div>
 
-          {/* Contact Info */}
-          <div className="col-md-2 mb-4">
-            <h4 className="mb-4" style={{ fontWeight: "600", color: "#ceac24" }}>
+          {/* Contact Info - 2 columns on mobile, 2.66 columns on desktop */}
+          <div className="col-6 col-md-2 mb-4" style={{ 
+            textAlign: isArabic ? "right" : "left",
+            paddingLeft: isArabic ? "0" : "15px",
+            paddingRight: isArabic ? "15px" : "0"
+          }}>
+            <h4 style={{ 
+              fontWeight: "600", 
+              color: "#FFD700", 
+              fontSize: "18px",
+              marginBottom: "1rem"
+            }}>
               {t.contactTitle}
             </h4>
-            <div className="d-flex flex-column">
-              <h6 className="mb-3">
-                <a
-                  href={`tel:${t.landline}`}
-                  className="text-decoration-none footer-link"
-                >
-                  {lang === "ar" ? "اتصل بنا" : "Call Us"}
+            <div style={{ lineHeight: "2.2" }}>
+              <div>
+                <a href={`tel:${t.landline}`} style={{ color: "#e0e0e0", textDecoration: "none", fontSize: "14px" }}>
+                  {isArabic ? "اتصل بنا" : "Call Us"}
                 </a>
-              </h6>
-              <h6 className="mb-3">
+              </div>
+              <div>
                 <a
                   href={`https://wa.me/${t.whatsapp.replace('+', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-decoration-none footer-link"
+                  style={{ color: "#e0e0e0", textDecoration: "none", fontSize: "14px" }}
                 >
-                  {lang === "ar" ? "واتساب" : "WhatsApp"}
+                  {isArabic ? "واتساب" : "WhatsApp"}
                 </a>
-              </h6>
-              <h6 className="mb-3">
-                <a
-                  href="mailto:info@rock-summit.com"
-                  className="text-decoration-none footer-link"
-                >
-                  {lang === "ar" ? "البريد الإلكتروني" : "Email"}
+              </div>
+              <div>
+                <a href="mailto:info@rock-summit.com" style={{ color: "#e0e0e0", textDecoration: "none", fontSize: "14px" }}>
+                  {isArabic ? "البريد الإلكتروني" : "Email"}
                 </a>
-              </h6>
-              <h6>
-                <Link
-                  href="/contact-us"
-                  className="text-decoration-none footer-link"
-                >
-                  {lang === "ar" ? "نموذج الاتصال" : "Contact Form"}
+              </div>
+              <div>
+                <Link href="/contact-us" style={{ color: "#e0e0e0", textDecoration: "none", fontSize: "14px" }}>
+                  {isArabic ? "نموذج الاتصال" : "Contact Form"}
                 </Link>
-              </h6>
+              </div>
             </div>
           </div>
         </div>
 
-        <hr style={{ borderColor: "#ceac24", opacity: 0.3 }} />
+        <hr style={{ 
+          borderColor: "#FFD700", 
+          opacity: 0.3,
+          margin: "2rem 0 1rem 0"
+        }} />
 
         {/* Footer Bottom */}
         <div className="row text-center">
-          <div className="col pb-3" style={{ color: "#e0e0e0" }}>
-            &copy; {currentDate?.getFullYear()} <span style={{ color: "#ceac24" }}>{t.companyName}</span>
-            <span className="d-none d-sm-inline" style={{ color: "#e0e0e0" }}> | </span>
-            <br className="d-sm-none" />
-            <span style={{ color: "#e0e0e0" }}>{t.rightsReserved}</span>
+          <div className="col pb-3" style={{ color: "#e0e0e0", fontSize: "14px" }}>
+            &copy; {currentDate?.getFullYear()} <span style={{ color: "#FFD700" }}>{t.companyName}</span>
+            <span className="mx-2">|</span>
+            {t.rightsReserved}
           </div>
         </div>
       </div>
 
       <style jsx>{`
-        .footer-link {
-          color: #e0e0e0 !important;
-          transition: all 0.3s ease;
-        }
-        
-        .footer-link:hover {
-          color: #ceac24 !important;
-          transform: translateX(5px);
-        }
-        
-        .social-icon {
-          transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-          color: #ffffff !important;
-          transform: translateY(-3px);
+        a:hover {
+          color: #FFD700 !important;
         }
         
         @media (max-width: 768px) {
-          .footer-link:hover {
-            transform: translateX(0);
+          .col-6 {
+            margin-bottom: 1.5rem;
           }
         }
       `}</style>

@@ -79,12 +79,13 @@ export default function ContactUsClient({ lang }) {
       {/* Hero Section */}
       <section
         style={{
-          background: "linear-gradient(135deg, #2d3e8f 0%, #1a2a5f 100%)",
+          background: "#000000", // Black background
           color: "#fff",
           textAlign: "center",
           padding: "6rem 1.5rem",
           position: "relative",
           overflow: "hidden",
+          borderBottom: "3px solid #FFD700", // Yellow border
         }}
       >
         <div style={{
@@ -98,8 +99,24 @@ export default function ContactUsClient({ lang }) {
           zIndex: 0
         }}></div>
         <div style={{ position: "relative", zIndex: 1 }}>
-          <FaBuilding size={60} style={{ marginBottom: "1.5rem", opacity: 0.9 }} />
-          <h1 style={{ fontSize: "3rem", marginBottom: "1.5rem", fontWeight: "700" }}>{heroTitle}</h1>
+          <FaBuilding 
+            size={60} 
+            style={{ 
+              marginBottom: "1.5rem", 
+              opacity: 0.9,
+              color: "#FFD700", // Yellow icon
+              filter: "drop-shadow(0 0 10px rgba(255, 215, 0, 0.5))"
+            }} 
+          />
+          <h1 style={{ 
+            fontSize: "3rem", 
+            marginBottom: "1.5rem", 
+            fontWeight: "700",
+            color: "#FFD700", // Yellow title
+            textShadow: "0 0 15px rgba(255, 215, 0, 0.4)"
+          }}>
+            {heroTitle}
+          </h1>
           <p
             style={{
               fontSize: "1.25rem",
@@ -107,6 +124,7 @@ export default function ContactUsClient({ lang }) {
               margin: "auto",
               lineHeight: 1.6,
               opacity: 0.9,
+              color: "#ffffff", // White text
             }}
           >
             {heroSubtitle}
@@ -117,8 +135,9 @@ export default function ContactUsClient({ lang }) {
       {/* Contact Info */}
       <section
         style={{
-          background: "#f8f9fa",
+          background: "#000000", // Black background
           padding: "4rem 1.5rem",
+          borderBottom: "3px solid #FFD700", // Yellow border
         }}
       >
         <div
@@ -134,15 +153,15 @@ export default function ContactUsClient({ lang }) {
             <div
               key={i}
               style={{
-                background: "#fff",
+                background: "#1a1a1a", // Dark gray/black cards
                 padding: "2.5rem 2rem",
                 borderRadius: "16px",
                 textAlign: "center",
-                color: "#2d3e8f",
-                boxShadow: "0 8px 30px rgba(0,0,0,0.08)",
+                color: "#FFD700", // Yellow text
+                boxShadow: "0 8px 30px rgba(255, 215, 0, 0.2)", // Yellow shadow
                 transition: "all 0.3s ease",
                 cursor: info.iframe ? "pointer" : "default",
-                border: "1px solid #e9ecef",
+                border: "2px solid #333",
                 position: "relative",
                 overflow: "hidden",
               }}
@@ -150,26 +169,30 @@ export default function ContactUsClient({ lang }) {
               onMouseEnter={(e) => {
                 if (info.iframe || info.link) {
                   e.currentTarget.style.transform = "translateY(-8px)";
-                  e.currentTarget.style.boxShadow = "0 15px 40px rgba(45, 62, 143, 0.15)";
+                  e.currentTarget.style.boxShadow = "0 15px 40px rgba(255, 215, 0, 0.4)";
+                  e.currentTarget.style.borderColor = "#FFD700";
                 }
               }}
               onMouseLeave={(e) => {
                 if (info.iframe || info.link) {
                   e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 8px 30px rgba(0,0,0,0.08)";
+                  e.currentTarget.style.boxShadow = "0 8px 30px rgba(255, 215, 0, 0.2)";
+                  e.currentTarget.style.borderColor = "#333";
                 }
               }}
             >
               <div style={{ 
                 marginBottom: "1.5rem",
-                color: info.iframe ? "#2d3e8f" : "#ceac24"
+                color: "#FFD700", // Yellow icons
+                filter: "drop-shadow(0 0 8px rgba(255, 215, 0, 0.3))"
               }}>
                 {info.icon}
               </div>
               <h3 style={{ 
                 marginBottom: "1rem", 
                 fontSize: "1.4rem",
-                fontWeight: "600"
+                fontWeight: "600",
+                color: "#FFD700", // Yellow headings
               }}>
                 {info.label}
               </h3>
@@ -177,14 +200,21 @@ export default function ContactUsClient({ lang }) {
                 <a 
                   href={info.link}
                   style={{
-                    color: "#2d3e8f",
+                    color: "#ffffff", // White text
                     textDecoration: "none",
                     fontSize: "1.1rem",
                     lineHeight: "1.6",
-                    display: "block"
+                    display: "block",
+                    transition: "color 0.3s ease"
                   }}
-                  onMouseEnter={(e) => e.target.style.color = "#ceac24"}
-                  onMouseLeave={(e) => e.target.style.color = "#2d3e8f"}
+                  onMouseEnter={(e) => {
+                    e.target.style.color = "#FFD700";
+                    e.target.style.textShadow = "0 0 8px rgba(255, 215, 0, 0.3)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.color = "#ffffff";
+                    e.target.style.textShadow = "none";
+                  }}
                 >
                   {info.value}
                 </a>
@@ -193,7 +223,7 @@ export default function ContactUsClient({ lang }) {
                   margin: 0, 
                   fontSize: "1.1rem",
                   lineHeight: "1.6",
-                  color: "#495057"
+                  color: "#ffffff" // White text
                 }}>
                   {info.value}
                 </p>
@@ -212,8 +242,8 @@ export default function ContactUsClient({ lang }) {
               marginRight: "auto",
               borderRadius: "16px",
               overflow: "hidden",
-              boxShadow: "0 20px 50px rgba(0,0,0,0.15)",
-              border: "2px solid #2d3e8f",
+              boxShadow: "0 20px 50px rgba(255, 215, 0, 0.3)",
+              border: "3px solid #FFD700",
             }}
           >
             <iframe
@@ -232,7 +262,7 @@ export default function ContactUsClient({ lang }) {
       {/* Contact Form */}
       <section
         style={{
-          background: "linear-gradient(135deg, #2d3e8f 0%, #1a2a5f 100%)",
+          background: "#000000", // Black background
           color: "#fff",
           padding: "5rem 1.5rem",
           position: "relative",
@@ -254,28 +284,37 @@ export default function ContactUsClient({ lang }) {
             margin: "auto",
             borderRadius: "20px",
             padding: "3rem",
-            background: "rg(255, 255, 255, 0.95)",
-            boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
+            background: "#1a1a1a", // Dark gray/black form background
+            boxShadow: "0 20px 60px rgba(255, 215, 0, 0.2)",
             position: "relative",
             zIndex: 1,
-            backdropFilter: "blur(10px)",
+            border: "2px solid #333",
           }}
         >
           <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-            <FaHardHat size={40} style={{ color: "#2d3e8f", marginBottom: "1rem" }} />
+            <FaHardHat 
+              size={40} 
+              style={{ 
+                color: "#FFD700", 
+                marginBottom: "1rem",
+                filter: "drop-shadow(0 0 8px rgba(255, 215, 0, 0.4))"
+              }} 
+            />
             <h2 style={{ 
-              color: "#2d3e8f", 
+              color: "#FFD700", 
               fontSize: "2.5rem",
               fontWeight: "700",
-              marginBottom: "1rem"
+              marginBottom: "1rem",
+              textShadow: "0 0 10px rgba(255, 215, 0, 0.3)"
             }}>
               {isArabic ? "طلب استشارة إنشائية" : "Request Construction Consultation"}
             </h2>
             <p style={{ 
-              color: "#666",
+              color: "#ffffff",
               fontSize: "1.2rem",
               maxWidth: "600px",
-              margin: "0 auto"
+              margin: "0 auto",
+              opacity: 0.9
             }}>
               {isArabic 
                 ? "املأ النموذج وسنتصل بك لمناقشة متطلبات مشروعك" 

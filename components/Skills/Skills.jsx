@@ -139,10 +139,10 @@ export default function TechMarquee({ lang = "en" }) {
       style={{ backgroundColor: "#1a1a1a" }}
     >
       <div className="tech-marquee">
-        <div className="container text-center py-4 px-3">
-          <h1 className="fw-bold text-white">{t.heading}</h1>
-          <p className="text-white text-wrap">{t.description}</p>
-        </div>
+      <div className="container text-center py-4 px-3">
+  <h1 className="fw-bold" style={{ color: '#FFD700' }}>{t.heading}</h1>
+  <p className="text-white text-wrap">{t.description}</p>
+</div>
 
         {techRows.map((row, rowIndex) => (
           <div

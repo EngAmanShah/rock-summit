@@ -15,13 +15,16 @@
   background-size: cover;
   background-position: center;
   color: #fff;
+  background: #000000; /* Black background */
 }
 
 .heroContent {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8); /* Darker black overlay */
   padding: 2rem;
   border-radius: 1rem;
   max-width: 700px;
+  border: 2px solid #FFD700; /* Yellow border */
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3); /* Yellow glow */
 }
 
 .heroTitle {
@@ -29,17 +32,22 @@
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.2;
+  color: #FFD700; /* Yellow title */
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 .heroSubtitle {
   font-size: 1.3rem;
   font-weight: 400;
   line-height: 1.5;
+  color: #ffffff; /* White subtitle */
+  opacity: 0.9;
 }
 
 .infoSection {
-  background-color: #fff5f7;
+  background-color: #000000; /* Black background */
   padding: 4rem 1.5rem;
+  border-top: 3px solid #FFD700; /* Yellow top border */
 }
 
 .infoHeading {
@@ -47,6 +55,7 @@
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 2rem;
+  color: #FFD700; /* Yellow heading */
 }
 
 .infoGrid {
@@ -58,33 +67,42 @@
 }
 
 .infoCard {
-  background: white;
+  background: #1a1a1a; /* Dark gray/black cards */
   padding: 1.5rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.2); /* Yellow shadow */
   transition: transform 0.2s ease;
   text-align: center;
+  border: 1px solid #333;
+  color: #ffffff; /* White text */
 }
 
 .infoCard:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4); /* Enhanced yellow shadow on hover */
+  border-color: #FFD700; /* Yellow border on hover */
 }
 
 .infoIcon {
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  color: #FFD700; /* Yellow icons */
+  filter: brightness(0) saturate(100%) invert(84%) sepia(95%) saturate(749%) hue-rotate(358deg) brightness(105%) contrast(101%); /* Yellow filter for consistency */
 }
 
 .infoLabel {
   margin-bottom: 0.3rem;
   font-weight: 600;
+  color: #FFD700; /* Yellow labels */
 }
 
 .infoValue {
-  color: #555;
+  color: #ffffff; /* White values */
+  opacity: 0.9;
 }
 
 .formSection {
   padding: 4rem 1.5rem;
-  background: #fafafa;
+  background: #000000; /* Black background */
+  border-top: 3px solid #FFD700; /* Yellow top border */
 }
