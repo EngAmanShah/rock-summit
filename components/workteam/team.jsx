@@ -57,9 +57,9 @@ export default function TeamSection({ lang = "en" }) {
 
   return (
     <section className="team-section" dir={lang === "ar" ? "rtl" : "ltr"}>
-      <div className="container">
-        <h2>{t.heading}</h2>
-        <p>{t.description}</p>
+     <div className="container">
+  <h2 style={{ color: '#FFD700' }}>{t.heading}</h2>
+  <p style={{ color: '#dedcd0ff' }}>{t.description}</p>
 
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
@@ -104,7 +104,7 @@ export default function TeamSection({ lang = "en" }) {
           padding: 5rem 1rem;
           text-align: center;
           font-family: 'Somar', sans-serif;
-          background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+          background: linear-gradient(135deg, #000000ff 0%, #1a1804ff 100%);
         }
         
         h2 {
