@@ -54,7 +54,7 @@ export default function HeroSection({
       >
         <motion.h1
           style={{
-            color: "white",
+            color: "#ceac24",
             fontSize: "clamp(2rem, 5vw, 3rem)",
             fontWeight: "bold",
             lineHeight: 1.2,
