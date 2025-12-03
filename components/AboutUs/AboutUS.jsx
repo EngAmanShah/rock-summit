@@ -55,7 +55,7 @@ export default function AboutUs({ params }) {
         ctx.fillStyle = "#001233";
         ctx.fillRect(0, 0, width, height);
 
-        ctx.fillStyle = "#fff";
+        ctx.fillStyle = "#eed00dff";
         stars.forEach((s) => {
           ctx.beginPath();
           ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
